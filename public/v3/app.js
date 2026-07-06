@@ -183,7 +183,9 @@
       }
     }
   }
+  var lastScrollAt = 0; // consumed by the aurora canvas to yield frames while scrolling
   function onScroll() {
+    lastScrollAt = (win.performance && win.performance.now) ? win.performance.now() : Date.now();
     if (!scrollTicking) {
       scrollTicking = true;
       raf(runScrollSubs);
@@ -311,7 +313,10 @@
     function loop(ts) {
       if (!running) return;
       if (!startTs) startTs = ts;
-      paint(ts - startTs);
+      // Yield the frame budget to scrolling: freezing the drift for ~160ms
+      // after the last scroll event is imperceptible, repainting the whole
+      // viewport during scroll is not.
+      if (ts - lastScrollAt > 160 || lastScrollAt === 0) paint(ts - startTs);
       rafId = raf(loop);
     }
     function start() {
@@ -1446,7 +1451,17 @@
     var total = steps.length, vh = win.innerHeight || 800;
     function applyHeight() { vh = win.innerHeight || 800; section.style.minHeight = Math.round(vh * (1 + total * 0.85)) + "px"; }
     applyHeight();
-    subscribeResize(applyHeight);
+    // Mobile URL-bar collapse fires height-only resizes mid-scroll; rebuilding
+    // the pin height then shifts the layout under the finger. Only rebuild on
+    // width changes or big (orientation-scale) height jumps.
+    var lastW = win.innerWidth || 0, lastH = vh;
+    subscribeResize(function () {
+      var w = win.innerWidth || 0, h = win.innerHeight || 800;
+      vh = h;
+      if (w === lastW && Math.abs(h - lastH) < lastH * 0.25) return;
+      lastW = w; lastH = h;
+      applyHeight();
+    });
     var activeIdx = -1;
     function setActive(idx) {
       if (idx === activeIdx) return;

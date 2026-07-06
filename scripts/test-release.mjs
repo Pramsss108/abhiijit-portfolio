@@ -28,8 +28,8 @@ for (const path of ["/", "/privacy.html", "/404.html"]) {
   if (errors.length) failures.push(`${path}: ${errors.join(" | ")}`);
   if (state.overflow > 1) failures.push(`${path}: ${state.overflow}px horizontal overflow.`);
   if (state.failedImages.length) failures.push(`${path}: failed images ${state.failedImages.join(", ")}.`);
-  if (path === "/" && state.canonical !== "https://abhijit.works/") failures.push("Homepage canonical is incorrect.");
-  if (path === "/privacy.html" && state.canonical !== "https://abhijit.works/privacy.html") failures.push("Privacy canonical is incorrect.");
+  if (path === "/" && state.canonical !== "https://abhiijit.works/") failures.push("Homepage canonical is incorrect.");
+  if (path === "/privacy.html" && state.canonical !== "https://abhiijit.works/privacy.html") failures.push("Privacy canonical is incorrect.");
   await page.close();
 }
 

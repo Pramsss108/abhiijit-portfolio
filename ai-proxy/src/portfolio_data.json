@@ -1,47 +1,387 @@
 {
-  "name": "Abhijit Pramanik",
-  "role": "I Build Proof | Proof-Backed SEO, Content, WordPress & AI Workflows",
-  "experience": {
-    "video_editing": {
-      "metrics": "300+ videos edited",
-      "focus": "From the first hook to the final sound cue, I edit for attention. Each cut combines platform-aware pacing, video marketing and trend-led audio.",
-      "client": "MadQuick",
-      "impact": "Delivered 300+ videos worldwide"
-    },
-    "expertise": [
-      {
-        "name": "Content Writing (SEO + GEO)",
-        "description": "SEO helps people find the work in search; GEO helps AI answers cite it now that people search there too."
-      },
-      {
-        "name": "Growth Strategy",
-        "description": "A plan, publish and review social content so the next post is informed by the last one."
-      },
-      {
-        "name": "Canva Design",
-        "description": "I create polished Canva assets that teams can edit and reuse themselves."
-      }
-    ],
-    "process": [
-      {
-        "step": 1,
-        "title": "Discovery",
-        "description": "Understanding the core goals and current bottlenecks."
-      },
-      {
-        "step": 2,
-        "title": "Strategy",
-        "description": "Formulating a content and SEO plan."
-      },
-      {
-        "step": 3,
-        "title": "Execution",
-        "description": "Building the proof through content, video, and design."
-      }
-    ]
+ "name": "Abhijit Pramanik",
+ "tagline": "I Build Proof — Proof-Backed SEO, Content, WordPress & AI Workflows",
+ "summary": "Freelance digital marketing specialist from India, working hands-on since 2019 across SEO, content writing, social media, video editing and websites for 36+ companies in India, Dubai and the USA.",
+ "headline_stats": [
+  "36+ companies served across India, Dubai and the USA (since 2019)",
+  "300+ videos edited and delivered for 13+ different companies (not just one client)",
+  "400+ SEO articles written across his career (including 33 articles in 30 days for Ymedia)",
+  "3.78M views (3,783,817) grown on his own Instagram page @thebongbari, with 2.53M accounts reached (+436.5% reach in 90 days)",
+  "+117% organic search clicks (8,480 to 18,400) and +115% impressions (192,000 to 412,000) in 6 months on bongbari.com",
+  "40+ documented proof projects"
+ ],
+ "services": [
+  {
+   "name": "Video Editing",
+   "detail": "Platform-aware short-form (Reels/Shorts) and long-form editing — hooks, pacing, trend-led audio, motion graphics. 300+ videos delivered for clients including MadQuick, Pursueit Dubai, RuDe Labs, Kaboodle, Indica AI, X1RACE, Marpu Foundation and more."
   },
-  "contact": {
-    "availability": "Open for new projects",
-    "email": "contact@abhiijit.works"
+  {
+   "name": "Content Writing (SEO + GEO)",
+   "detail": "SEO articles that rank in search, plus GEO (Generative Engine Optimization) so AI assistants cite the work. 400+ articles on record."
+  },
+  {
+   "name": "Growth Strategy & Social Media",
+   "detail": "He plans, publishes and reviews social content so the next post is informed by the last one — tested on his own 3.78M-view page and client accounts."
+  },
+  {
+   "name": "Websites",
+   "detail": "Custom-coded, WordPress and template-based websites — mobile-friendly and SEO-ready."
+  },
+  {
+   "name": "Canva Design",
+   "detail": "Polished Canva assets that teams can edit and reuse themselves."
   }
+ ],
+ "process_six_steps": [
+  "1. Learn what you need",
+  "2. Find the right opportunities",
+  "3. Make a clear plan",
+  "4. Create and publish",
+  "5. Check what works",
+  "6. Share the result"
+ ],
+ "video_editing_clients": [
+  "Aura Love Yourself USA",
+  "Dinco Automobiles Private Limited",
+  "Indica Ai",
+  "Kaboodle",
+  "Kodeclamp",
+  "Lazy Quote Lab",
+  "MAMAI CARE",
+  "Madquick",
+  "Marpu Foundation",
+  "Pregamate PVT LTD",
+  "Pursueit Dubai",
+  "RuDe Labs Private Limited",
+  "X1RACE"
+ ],
+ "companies": [
+  {
+   "company": "Aura Love Yourself USA",
+   "highlights": [
+    "Executed Facebook ad funnels for engagement and edited creative assets with CapCut for short-form social campaigns.",
+    "Developed SEO-friendly content using AI research, SEMrush, keyword strategy, blog writing, eBooks, and social media content."
+   ],
+   "roles": [
+    "Content Specialist, Social Media Manager and Motion Graphics Editor"
+   ]
+  },
+  {
+   "company": "BYJUS",
+   "highlights": [
+    "Technical keywords: BYJU'S, logo design, branding.",
+    "My approach combined advanced customer engagement techniques like personalized communication, strategic upselling, and effective objection handling."
+   ],
+   "roles": [
+    "Advanced Outbound Customer Service Executive"
+   ]
+  },
+  {
+   "company": "Balihans Bengaluru",
+   "highlights": [
+    "Supported ServiceNow-focused lead generation, LinkedIn content, website updates, content strategy, CRM management, data analytics, and customer engagement.",
+    "Managed client communication, digital marketing, SEO, copywriting, WordPress updates, email marketing, and Canva design."
+   ],
+   "roles": [
+    "Associate Marketing Analyst",
+    "Marketing Analyst"
+   ]
+  },
+  {
+   "company": "Betterzila B2B SaaS",
+   "highlights": [
+    "Used advanced tools for emotional and confident word inclusion, ensuring SEO optimization.",
+    "Technical keywords: B2B SaaS, logo design, branding."
+   ]
+  },
+  {
+   "company": "Bilex",
+   "highlights": [
+    "My responsibilities expanded to include SEO keyword research using tools like SEMrush, SurferSEO, and Ubersuggest.",
+    "Used AI, I crafted blogs adhering to SEO density rules, implementing long-tail keywords, PAA (People Also Ask), SERP (Search Engine Results Page) analysis, LSI…"
+   ],
+   "roles": [
+    "Advanced Content Strategist and SEO Specialist"
+   ]
+  },
+  {
+   "company": "CS MOCK",
+   "highlights": [
+    "Day-to-day, I managed LinkedIn and Instagram accounts for multiple clients, crafting engaging captions and implementing strategies across SEO, SEM, SMM, and SMO.",
+    "They appreciated our advanced tactics like predictive analytics for content performance and AI-driven insights for audience engagement, which kept them with us for an…"
+   ],
+   "roles": [
+    "Social Media Marketing"
+   ]
+  },
+  {
+   "company": "Contract with Siddharth Dalmia",
+   "highlights": [
+    "Used advanced tools like SEMrush for keyword optimization, ensuring high visibility.",
+    "My strategy included creating short blogs for LinkedIn, derived from existing website content, to drive traffic back to their site, a technique rooted in Off-Page SEO."
+   ]
+  },
+  {
+   "company": "Dinco Automobiles Private Limited",
+   "highlights": [
+    "Used advanced audio mixing techniques, such as dynamic range compression, equalization, and spatial effects, I enhanced the clarity and impact of the vocals.",
+    "This project demanded not only technical skills but also a creative touch to ensure the highest quality of sound."
+   ],
+   "roles": [
+    "Vocal Artist and Sound Engineer"
+   ]
+  },
+  {
+   "company": "Google Project",
+   "highlights": [
+    "Used advanced communication techniques, data accuracy validation, customer engagement strategies, script adherence, and AI-driven software, I ensured each interaction…",
+    "The project demanded a blend of technical acumen and interpersonal skills, which I thoroughly enjoyed."
+   ]
+  },
+  {
+   "company": "Greenverze",
+   "highlights": [
+    "Utilized WordPress to manage and publish articles on the Greenverze website.",
+    "Technical keywords: logo design, graphic design, branding, content writing, digital marketing, Greenverze, WordPress, posts management, bulk edit, Elementor Pro,…"
+   ],
+   "roles": [
+    "SEO Content Specialist & Digital Marketer"
+   ]
+  },
+  {
+   "company": "IDEOHOLICS",
+   "highlights": [
+    "This involved SEO tasks like on-page and off-page optimization to boost website visibility.",
+    "Technical keywords: Logo Design, Graphic Design, Branding."
+   ],
+   "roles": [
+    "Digital Marketing Strategist"
+   ]
+  },
+  {
+   "company": "IIMI",
+   "highlights": [
+    "This file acts as contract, certificate, or offer-letter evidence rather than task-level workflow proof.",
+    "Project proof supports wordpress work for IIMI."
+   ],
+   "roles": [
+    "Data Entry Operator"
+   ]
+  },
+  {
+   "company": "Indica Ai",
+   "highlights": [
+    "Working under the project manager's guidance, I honed my skills in audio analysis, linguistic precision, and efficient workflow management.",
+    "This required keen listening skills and a strong grasp of the English language."
+   ],
+   "roles": [
+    "English Trascriber"
+   ]
+  },
+  {
+   "company": "Kaboodle",
+   "highlights": [
+    "Used advanced techniques such as spectral editing, dynamic range compression, 3D audio spatialization, psychoacoustic modeling, and adaptive equalization, I…",
+    "These skills allowed me to enhance the overall auditory impact of each video."
+   ],
+   "roles": [
+    "Audio Enhancement Specialist"
+   ]
+  },
+  {
+   "company": "Kodeclamp",
+   "highlights": [
+    "The final step involved seamlessly integrating the polished audio with the video using Adobe Premiere Pro.",
+    "Adobe Premiere Pro Integration My role in this project demonstrates my expertise in audio editing and video integration, ensuring a professional and high quality…"
+   ],
+   "roles": [
+    "Voiceover and Audio-Video Integration Specialist"
+   ]
+  },
+  {
+   "company": "Kutum Bari",
+   "highlights": [
+    "We managed their Instagram effectively and guided them in listing their products on Zomato and Swiggy, enhancing their online presence.",
+    "Organized and managed files and folders for projects."
+   ],
+   "roles": [
+    "Online and Offline Marketing Asssociate"
+   ]
+  },
+  {
+   "company": "Lazy Quote Lab",
+   "highlights": [
+    "Technical keywords: content creation, logo design, icon creation, graphic design, blockchain, peer-to-peer networks, presentation design, digital slides, Instagram…",
+    "Organized and managed digital files for social media content creation, including creation of folders and files for Instagram Story Templates and announcements."
+   ],
+   "roles": [
+    "Social Media and Digital Marketing Strategist"
+   ]
+  },
+  {
+   "company": "MAMAI CARE",
+   "highlights": [
+    "Tools/platforms: Canva, image editing software, canva design, Instagram, Graphic Design.",
+    "Managed managing their social media presence on Facebook and Instagram using Meta Business Suite."
+   ],
+   "roles": [
+    "Social Media Manager"
+   ]
+  },
+  {
+   "company": "Madquick",
+   "highlights": [
+    "Technical keywords: Voice Over artist, Music Production.",
+    "My work involved using techniques such as spectral noise reduction, dynamic range compression, equalization fine-tuning, and audio layering."
+   ],
+   "roles": [
+    "Sound Production Specialist"
+   ]
+  },
+  {
+   "company": "Marpu Foundation",
+   "highlights": [
+    "My task involved creating engaging reels using Adobe Premiere Pro and Canva Premium.",
+    "This wasn't just about posting content; it was about crafting stories that resonate with the audience and drive engagement."
+   ],
+   "roles": [
+    "Content Development"
+   ]
+  },
+  {
+   "company": "OTAKUKART",
+   "highlights": [
+    "This included keyword optimization, meta-tagging, backlinking, user engagement techniques, and SERP analysis to ensure maximum online visibility and reader engagement.",
+    "Technical keywords: graphic design, visual design, spiral shape, star shape, gradient background."
+   ],
+   "roles": [
+    "SEO Content Specialist"
+   ]
+  },
+  {
+   "company": "Panalal Bengali And Other Grocery Stores OPC pvt ltd",
+   "highlights": [
+    "Developed a promotional banner for a grocery sale event.",
+    "Designed a logo for a grocery store."
+   ],
+   "roles": [
+    "Digital Marketing Specialist"
+   ]
+  },
+  {
+   "company": "Pathshala",
+   "highlights": [
+    "This involved reviewing their entire work process, collaborating with all teams including website, social media, and more, and creating a compelling strategy that…",
+    "In Pathshala, which was a one time project, I was assigned to identify their content gaps and devise a unique social media strategy."
+   ],
+   "roles": [
+    "Strategy and Content Gap Specialist"
+   ]
+  },
+  {
+   "company": "Pregamate PVT LTD",
+   "highlights": [
+    "This file acts as contract, certificate, or offer-letter evidence rather than task-level workflow proof.",
+    "Position Name: Audio Visual Production Specialist --- At Pregamate Pvt Ltd, my role as an Audio-Visual Production Specialist brought diverse and challenging tasks."
+   ],
+   "roles": [
+    "Audio Visual Production Specialist"
+   ]
+  },
+  {
+   "company": "Pursueit Dubai",
+   "highlights": [
+    "Mastered advanced SEO and crafted data-driven content strategies using SEMrush, LSI keywords, PAA analysis, and SERP insights.",
+    "Managed social media engagement with Meta Business Suite while supporting project management, content visibility, and audience growth."
+   ],
+   "roles": [
+    "Advanced SEO Content Strategist & Social Media Manager",
+    "SEO Content Strategist and Social Media Manager"
+   ],
+   "metrics": [
+    "898 followers"
+   ]
+  },
+  {
+   "company": "Rabin's Photography",
+   "highlights": [
+    "Increased followers from 5k to 25k through social media campaigns, content calendar management, and analytics-led adjustments.",
+    "Created platform content and campaign improvements that supported brand awareness, engagement, and SEO-friendly web traffic."
+   ],
+   "roles": [
+    "Senior Digital Marketer"
+   ]
+  },
+  {
+   "company": "ReachHub",
+   "highlights": [
+    "Managed Instagram and Facebook through Meta Business Suite while leading WordPress integration and social media planning.",
+    "Executed on-page and off-page SEO with Ubersuggest keyword research, short-tail and long-tail keywords, PAA, LSI, and content optimization."
+   ],
+   "roles": [
+    "Digital Marketing Strategist"
+   ]
+  },
+  {
+   "company": "Revenue Rushy Inc.",
+   "highlights": [
+    "Managed online presence through social media content creation, visual design, and project coordination for digital marketing work.",
+    "Built SEO content strategy with keyword research, LSI and PAA optimization, search-focused blog content, and audience-first copy."
+   ],
+   "roles": [
+    "Senior Digital Marketing Executive"
+   ]
+  },
+  {
+   "company": "RuDe Labs Private Limited",
+   "highlights": [
+    "Additionally, I managed SEM campaigns by running targeted Google Ads for select videos, significantly boosting their visibility and engagement.",
+    "This required a deep understanding of YouTube's algorithms and content guidelines."
+   ],
+   "roles": [
+    "YouTube SEO and SEM Specialist"
+   ]
+  },
+  {
+   "company": "X1RACE",
+   "highlights": [
+    "My role extended to mixing and mastering the entire track, ensuring seamless integration with the game's visuals using Adobe Premiere Pro.",
+    "Used advanced audio techniques like spatial audio design, dynamic range compression, 3D sound layering, adaptive audio sequencing, and Foley artistry, I crafted an…"
+   ],
+   "roles": [
+    "Audio Engineer and Sound Designer"
+   ]
+  },
+  {
+   "company": "Ymedia",
+   "highlights": [
+    "My assignment was to craft 33 SEO optimized articles in 30 days.",
+    "Managed Twitter and LinkedIn accounts, enhancing social media presence."
+   ],
+   "roles": [
+    "Advanced SEO Content Specialist"
+   ],
+   "metrics": [
+    "30 days"
+   ]
+  },
+  {
+   "company": "Zest Money",
+   "highlights": [
+    "Working with Zest Money Outbound, a project from Squadrun, was a unique experience in outbound calling.",
+    "Worked on a project related to Zest Money."
+   ],
+   "roles": [
+    "Outbond Calling Executive"
+   ]
+  }
+ ],
+ "contact": {
+  "email": "growabhijit@gmail.com",
+  "whatsapp": "+91 87778 49865",
+  "website": "https://abhiijit.works",
+  "resume": "https://abhiijit.works/abhijit-pramanik-resume.pdf",
+  "instagram": "https://www.instagram.com/thebongbari/",
+  "availability": "Open for new projects"
+ }
 }

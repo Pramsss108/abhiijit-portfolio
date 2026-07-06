@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-06T14:54:00.943Z",
-  "files": 85,
-  "bytes": 18365858,
+  "generatedAt": "2026-07-06T19:45:36.160Z",
+  "files": 83,
+  "bytes": 18283495,
   "excludedRoots": [
     "public/_proof",
     "public/madquick-ref",
@@ -11,11 +11,6 @@
   ],
   "assets": [
     {
-      "file": ".htaccess",
-      "bytes": 965,
-      "sha256": "a6ea3ad969e011597b93901a9dddf9752e26f5113b7cd48a3bf1c530353c5b24"
-    },
-    {
       "file": "404.html",
       "bytes": 1352,
       "sha256": "d46d05469d7ac0a84416776bfdb1760d9f10ba6ef5f6b6e29d38eae52ceee87b"
@@ -24,16 +19,6 @@
       "file": "CNAME",
       "bytes": 15,
       "sha256": "1e5b8a2d3702e0879e6d448bb431ffc2baf9b8ccec54af27fee51d26693ecccc"
-    },
-    {
-      "file": "_headers",
-      "bytes": 679,
-      "sha256": "d15acb34842499cafa7aa1a491ea9c609f284e87d9f2826f51ce26ca5b158e75"
-    },
-    {
-      "file": "_redirects",
-      "bytes": 89,
-      "sha256": "001d355359669e6c3645b24e7b72a3445635b5a3fa2f38196bbd8e48aac17900"
     },
     {
       "file": "abhijit-pramanik-resume.pdf",
@@ -247,8 +232,8 @@
     },
     {
       "file": "images/hero-glow-720.webp",
-      "bytes": 104758,
-      "sha256": "4ff7479770d74016f46f87fef881f1ae9d33c06461eb66a5e2a8abc9bcbca1c9"
+      "bytes": 19004,
+      "sha256": "f8f5ea048f96d2edec714b614fabd6e59714eca80f9acd3b086fb0150481ab48"
     },
     {
       "file": "images/skl-bg-ai-720.webp",
@@ -362,33 +347,38 @@
     },
     {
       "file": "index.html",
-      "bytes": 143280,
-      "sha256": "f3da463988af4fe5c4b12e786a61e3bb48b28c69c2ebcae01bbafcf993bdc6c2"
+      "bytes": 144957,
+      "sha256": "72605486ea7118c4191fc8d4847d90c0df037727b357a301ad6d3a977fff8579"
+    },
+    {
+      "file": "llms.txt",
+      "bytes": 1502,
+      "sha256": "52da93f8db772065601e69d0f772371880f4587315baf74edd7139229bbcf291"
     },
     {
       "file": "privacy.html",
-      "bytes": 4868,
-      "sha256": "d825ea841da5e79c06e1df405ec037f5d48837648d7e494e378e81155756693a"
+      "bytes": 4829,
+      "sha256": "b5143bdcfcc98608386c3547b27f8bc34140d0231972a142969dd5c379956fbc"
     },
     {
       "file": "robots.txt",
-      "bytes": 71,
-      "sha256": "094bc0aca25c2debd35d686132f9bb8715e6b23074b51f1e269735f248a090f1"
+      "bytes": 72,
+      "sha256": "ce1f30166ea586c3e054881a6ba9d13994f1dd05bc133d24438f8183a16f10b5"
     },
     {
       "file": "sitemap.xml",
-      "bytes": 446,
-      "sha256": "ecc76ebe0770bee4f184de90cbb280245ef8141cbf9b6eae7edbb6bdd9e374f2"
+      "bytes": 448,
+      "sha256": "f089faa46ed9731bdc3c1303d199ebc00b0d6a39b50177da9295df65e611ca02"
     },
     {
       "file": "v3/app.min.js",
-      "bytes": 36950,
-      "sha256": "74b37ad52eda0bbdc052d366ee09f24749cd746a89a035d0b3bff578c575242c"
+      "bytes": 37014,
+      "sha256": "b4544e41e7d3c49c1ac428a6a7e13643e55da095ab7eab38ed3f722d29b2fb14"
     },
     {
       "file": "v3/chat.js",
-      "bytes": 1859,
-      "sha256": "38fd49e861d382a4ee6600df69822820b6e88c1d9244f59b95264fa5cecab1ec"
+      "bytes": 2208,
+      "sha256": "3793bd680a3396f58fffd096f97345d527beb656b41677023539137a9ad360ff"
     },
     {
       "file": "v3/fonts/fraunces-latin-italic-used.woff2",
@@ -402,8 +392,8 @@
     },
     {
       "file": "v3/styles.min.css",
-      "bytes": 247484,
-      "sha256": "2feeb38263e76530d521b45c22bb365d403d597840a89f15734930d54bbbbf54"
+      "bytes": 249052,
+      "sha256": "e5902732d96e6558fb3bb1cebea416e04edafe1187f39c909f807b4d66157c73"
     },
     {
       "file": "videos/video-showcase/landscape-01.mp4",

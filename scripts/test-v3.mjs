@@ -78,7 +78,7 @@ const desktopState = await desktop.evaluate(() => {
     processTitleVisible: getComputedStyle(document.querySelector("#process-title")).opacity === "1",
   };
 });
-assert(desktopState.canonical === "https://abhijit.works/", "Canonical URL is not wired to abhijit.works.");
+assert(desktopState.canonical === "https://abhiijit.works/", "Canonical URL is not wired to abhiijit.works.");
 assert(desktopState.metaDescription?.length >= 120 && desktopState.structuredVideos === 6, "SEO/GEO description or six-video structured data is incomplete.");
 assert(desktopState.buttons === 4 && desktopState.files === 4, "Evidence Desk does not expose four claims.");
 assert(desktopState.enhanced && desktopState.desktop, "Desktop Evidence Desk enhancement did not initialise.");
@@ -258,7 +258,7 @@ const rootState = await rootPage.evaluate(() => ({
   desk: !!document.querySelector("[data-evidence-desk]"),
   css: document.querySelector('link[rel="stylesheet"]')?.href,
 }));
-assert(rootState.canonical === "https://abhijit.works/" && rootState.desk, "Production root is not serving the canonical v3 document.");
+assert(rootState.canonical === "https://abhiijit.works/" && rootState.desk, "Production root is not serving the canonical v3 document.");
 assert(rootState.css.includes("/v3/styles.min.css"), "Production root does not load the v3 stylesheet.");
 
 await browser.close();

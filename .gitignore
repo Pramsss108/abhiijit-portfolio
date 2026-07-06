@@ -1,0 +1,8 @@
+node_modules/
+perf-reports/
+backups/
+*.log
+.DS_Store
+Thumbs.db
+.wrangler/
+ai-proxy/.wrangler/

@@ -249,7 +249,8 @@ p { text-wrap: pretty; }
 .bg-glow {
   position: absolute;
   border-radius: 50%;
-  filter: blur(100px);
+  filter: blur(64px);
+  will-change: transform, opacity;
   pointer-events: none;
   animation: bgPulse 12s ease-in-out infinite;
   z-index: 1;
@@ -538,8 +539,8 @@ p { text-wrap: pretty; }
 }
 .site-header[data-scrolled] {
   background: var(--glass-strong);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-bottom-color: var(--hairline);
 }
 .site-header__inner {
@@ -6536,7 +6537,7 @@ html,body{ overflow-x:clip !important; }
      own edges. CSS gradients band on near-black (that was the recurring "line");
      a noise-dithered raster cannot band and has no element edge. */
   background:transparent !important;
-  background-image:url("/images/hero-glow-720.webp?v=3") !important;
+  background-image:url("/images/hero-glow-720.webp?v=4") !important;
   background-repeat:no-repeat !important;
   background-position:82% 22% !important;          /* behind head/upper body, not the whole left */
   background-size:clamp(540px,50vw,840px) auto !important;
@@ -14666,6 +14667,8 @@ html.media-player-open{ overflow:hidden; }
   transform: translateY(20px);
   pointer-events: none;
   display: flex !important;
+  /* keep the closed panel out of the tab order and accessibility tree */
+  visibility: hidden;
 }
 .ai-ab-head {
   padding: 0.9rem 1rem;
@@ -14829,4 +14832,99 @@ html.media-player-open{ overflow:hidden; }
   .ai-ab-panel { transition: none; }
   .ai-ab-toggle { transition: none; }
   .ai-ab-typing span { animation: none; opacity: 0.6; }
+}
+
+
+/* ============================================================
+   SCROLL-PERF GUARDS (2026-07-06 audit)
+   ============================================================ */
+/* LCP: never JS-gate the hero's first-paint content. The intro curtain
+   already choreographs the hero entrance; hiding it behind .reveal only
+   delays LCP until app.min.js executes. */
+.js .hero .reveal { opacity: 1; transform: none; }
+
+/* Glassmorphism is the single biggest scroll cost on phone GPUs: every
+   backdrop-filter layer re-filters its moving backdrop each frame. The
+   semi-transparent fallback backgrounds keep the look; the blur goes. */
+@media (max-width: 820px), (pointer: coarse) {
+  *, *::before, *::after {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+  .bg-glow { animation: none; opacity: 0.45; }
+}
+
+
+/* ============================================================
+   MOBILE OVERHAUL (2026-07-06)
+   ============================================================ */
+/* --- Hero: Abhijit above the fold. The copy box dissolves into the hero
+   grid (display:contents) so the portrait slots directly under the
+   headline instead of a full screen of text. --- */
+@media (max-width: 820px) {
+  .hero__copy--editorial { display: contents; }
+  .hero__rule { order: 1; }
+  .hero__eyebrow--ed { order: 2; }
+  .hero__title--editorial { order: 3; }
+  .hero--editorial .hero__visual--editorial {
+    order: 4;
+    min-height: 0 !important;   /* several earlier layers set tall min-heights */
+    margin-top: 0.25rem;
+    align-items: flex-start;
+  }
+  .hero__photo--editorial { max-height: min(44svh, 400px); }
+  .hero__rotator { order: 5; margin-top: 0.4rem; }
+  .hero__lead--editorial { order: 6; }
+  .hero__cta--editorial { order: 7; }
+  .hero__signature-img { order: 8; }
+}
+
+/* --- Chat on phones: no iOS zoom-on-focus, safe-area aware --- */
+@media (max-width: 820px) {
+  #ai-ab-input { font-size: 16px; } /* below 16px iOS zooms the page on focus */
+  .ai-ab-container {
+    bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+    right: calc(1rem + env(safe-area-inset-right, 0px));
+  }
+}
+
+/* --- Real touch targets (44px minimum) --- */
+@media (pointer: coarse) {
+  .ai-ab-close { width: 2.75rem; height: 2.75rem; }
+  #ai-ab-send { width: 2.75rem; height: 2.75rem; }
+  .skl-dot { width: 44px; height: 44px; }
+  .skl-pause { min-width: 44px; min-height: 44px; }
+  .skl-arrow { width: 44px; height: 44px; }
+}
+
+/* --- Mobile menu: never taller than the visible viewport --- */
+@media (max-width: 820px) {
+  .mobile-menu {
+    max-height: calc(100dvh - var(--header-h));
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Pinned stepper stage: svh is stable while mobile browser chrome
+   collapses; 100vh makes the pinned stage jump mid-scroll. */
+@supports (height: 100svh) {
+  #process .process.is-stepper .process__stage { min-height: 100svh; }
+}
+
+/* --- Mobile legibility floor: no caption below ~10.5px on phones --- */
+@media (max-width: 820px) {
+  .hero__metric-lbl,
+  .proof-metric-lbl,
+  .showreel__caption small,
+  .showreel__credit small,
+  .showreel__credit span,
+  .showreel__cue span,
+  .showreel__frame span,
+  .showreel__number,
+  .evidence-chain > span,
+  .evidence-stamp,
+  .company-mark small,
+  .company-ribbon__caption span,
+  .proof-case__tools-label { font-size: 0.66rem !important; }
 }

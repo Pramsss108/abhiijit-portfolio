@@ -201,7 +201,7 @@ const schema = await desktop.evaluate(() => {
     names: list?.itemListElement?.map((entry) => entry.item?.name) || [],
   };
 });
-assert(schema.canonical === "https://abhijit.works/" && schema.count === 6, "Canonical URL or six VideoObject records are missing.");
+assert(schema.canonical === "https://abhiijit.works/" && schema.count === 6, "Canonical URL or six VideoObject records are missing.");
 assert(schema.names[0] === "Creator Before & After" && schema.names[3] === "Podcast Reel Breakdown", "Video structured data does not match the visible fresh clips.");
 reports.schema = schema;
 

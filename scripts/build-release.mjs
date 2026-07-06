@@ -11,8 +11,8 @@ await rm(release, { recursive: true, force: true });
 await mkdir(release, { recursive: true });
 
 const required = [
-  "index.html", "privacy.html", "404.html", "robots.txt", "sitemap.xml",
-  "abhijit-pramanik-resume.pdf", ".htaccess", "_headers", "_redirects",
+  "index.html", "privacy.html", "404.html", "robots.txt", "sitemap.xml", "llms.txt",
+  "abhijit-pramanik-resume.pdf",
   "CNAME", "v3/styles.min.css", "v3/app.min.js", "v3/chat.js",
 ];
 

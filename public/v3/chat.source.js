@@ -17,12 +17,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const history = [];
   let pending = false;
 
-  toggle.addEventListener("click", () => {
-    panel.hidden = !panel.hidden;
-    if (!panel.hidden) input.focus();
-  });
-  closeBtn.addEventListener("click", () => {
-    panel.hidden = true;
+  // Autofocus pops the keyboard (and zooms) on phones — desktop only.
+  const finePointer = window.matchMedia && window.matchMedia("(pointer: fine)").matches;
+  input.maxLength = 500;
+  messages.setAttribute("aria-live", "polite");
+  toggle.setAttribute("aria-expanded", "false");
+
+  function setOpen(open) {
+    panel.hidden = !open;
+    toggle.setAttribute("aria-expanded", String(open));
+    if (open && finePointer) input.focus();
+    if (!open) toggle.focus();
+  }
+  toggle.addEventListener("click", () => setOpen(panel.hidden));
+  closeBtn.addEventListener("click", () => setOpen(false));
+  panel.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") setOpen(false);
   });
 
   // Escape via textContent first, then allow only **bold** and line breaks.
@@ -55,6 +65,8 @@ document.addEventListener("DOMContentLoaded", () => {
     addMessage(text, "user");
     input.value = "";
     history.push({ role: "user", content: text });
+    // Cap what we resend: old turns cost tokens and can outgrow the model context.
+    if (history.length > 12) history.splice(0, history.length - 12);
     const loadingId = "ai-ab-loading-" + Date.now();
     addMessage("", "loading", loadingId);
     try {
@@ -79,15 +91,16 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById(loadingId)?.remove();
       addMessage("Can't reach the AI right now — please try again in a moment.", "error");
       history.pop();
+      input.value = text; // let the user retry without retyping
     } finally {
       pending = false;
       send.disabled = false;
-      input.focus();
+      if (finePointer) input.focus();
     }
   }
 
   send.addEventListener("click", submit);
   input.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") submit();
+    if (e.key === "Enter" && !e.isComposing) submit();
   });
 });
