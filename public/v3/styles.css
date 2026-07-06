@@ -2114,13 +2114,20 @@ body.is-menu-open { overflow: hidden; }
 .faq__trigger[aria-expanded="true"] .faq__icon::after { opacity: 0; transform: translate(-50%, -50%) rotate(0); }
 .faq__item:hover { border-color: color-mix(in srgb, var(--violet-light, #f1c45a) 45%, transparent); }
 
-/* panel: grid-rows 0fr -> 1fr transition */
+/* panel: grid-rows 0fr -> 1fr transition. visibility keeps the collapsed
+   answer out of the accessibility tree so it matches aria-expanded=false;
+   the delay on close lets the collapse animation finish before it hides. */
 .faq__panel {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows .4s ease;
+  visibility: hidden;
+  transition: grid-template-rows .4s ease, visibility 0s linear .4s;
 }
-.faq__panel[data-open] { grid-template-rows: 1fr; }
+.faq__panel[data-open] {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  transition: grid-template-rows .4s ease, visibility 0s linear 0s;
+}
 .faq__panel-inner { overflow: hidden; min-height: 0; }
 .faq__answer {
   margin: 0;
@@ -10234,7 +10241,7 @@ body::before{
 }
 .skl-dot::before{
   content:""; position:absolute; left:50%; top:50%; width:9px; height:9px; border-radius:999px;
-  background:rgba(245,186,74,0.28); transform:translate(-50%,-50%);
+  background:rgba(245,186,74,0.55); transform:translate(-50%,-50%); /* 3:1+ non-text contrast — was 0.28 (1.83:1, failing) */
   transition:background var(--dur-base) var(--ease-out),
              transform var(--dur-base) var(--ease-out),
              box-shadow var(--dur-base) var(--ease-out);
@@ -13617,7 +13624,7 @@ html.media-player-open{ overflow:hidden; }
   align-items:center;
   gap:.45rem;
   margin:clamp(1rem,1.6vw,1.35rem) 0 0;
-  color:rgba(238,232,218,.48);
+  color:rgba(238,232,218,.68); /* 4.5:1+ against dark bg — was .48 (4.27:1, failing) */
   font:650 .57rem/1.3 var(--font-body);
   letter-spacing:.08em;
   text-transform:uppercase;
@@ -14928,3 +14935,27 @@ html.media-player-open{ overflow:hidden; }
   .company-ribbon__caption span,
   .proof-case__tools-label { font-size: 0.66rem !important; }
 }
+
+/* ============================================================
+   MOTION PAUSE CONTROLS (SC 2.2.2 — 2026-07-06 audit)
+   ============================================================ */
+.motion-pause{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:1.65rem; height:1.65rem; flex:none; margin-left:.5rem;
+  border-radius:50%; border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.05); color:#cdc7b8; cursor:pointer; padding:0;
+  transition:background .2s ease, color .2s ease, border-color .2s ease;
+}
+.motion-pause:hover{ background:rgba(255,255,255,.1); color:#fff; border-color:rgba(255,255,255,.28); }
+.motion-pause:focus-visible{ outline:2px solid #f1c45a; outline-offset:2px; }
+.motion-pause__icon--play{ display:none; }
+.motion-pause[aria-pressed="true"] .motion-pause__icon--pause{ display:none; }
+.motion-pause[aria-pressed="true"] .motion-pause__icon--play{ display:block; }
+
+.marquees-wrap{ position:relative; }
+.motion-pause--floating{ position:absolute; top:.5rem; right:.75rem; z-index:2; }
+.marquees.is-paused .marquee__track{ animation-play-state:paused; }
+.company-ribbon.is-paused .company-ribbon__track{ animation-play-state:paused !important; }
+
+.hero__rotator{ display:flex; align-items:center; flex-wrap:wrap; }
+.company-ribbon__caption{ display:flex; align-items:center; justify-content:center; }

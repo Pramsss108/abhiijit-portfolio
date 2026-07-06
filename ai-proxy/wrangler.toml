@@ -5,6 +5,12 @@ compatibility_date = "2024-03-20"
 [observability]
 enabled = true
 
+[[kv_namespaces]]
+binding = "AI_PROXY_KV"
+id = "1cdccde57c674561b0658b3c028588c1"
+
 [vars]
 # You will need to set this via wrangler secret put HUGGINGFACE_API_KEY
 # Do NOT commit your API key here.
+# To view analytics: wrangler secret put STATS_KEY (pick any password), then visit
+# https://abhijit-portfolio-ai.guitarguitarabhijit.workers.dev/stats?key=<that password>

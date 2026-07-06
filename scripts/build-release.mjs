@@ -1,6 +1,17 @@
 import { cp, mkdir, readFile, rm, stat, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { dirname, resolve, relative, sep } from "node:path";
+import { minify as minifyHtml } from "html-minifier-terser";
+
+const HTML_FILES = new Set(["index.html", "privacy.html", "404.html"]);
+const htmlMinifyOptions = {
+  collapseWhitespace: true,
+  conservativeCollapse: true,
+  removeComments: true,
+  removeRedundantAttributes: false,
+  minifyCSS: true,
+  minifyJS: false, // JSON-LD + inline scripts stay untouched — not worth the breakage risk
+};
 
 const root = resolve(import.meta.dirname, "..");
 const source = resolve(root, "public");
@@ -11,9 +22,11 @@ await rm(release, { recursive: true, force: true });
 await mkdir(release, { recursive: true });
 
 const required = [
-  "index.html", "privacy.html", "404.html", "robots.txt", "sitemap.xml", "llms.txt",
+  "index.html", "privacy.html", "404.html", "robots.txt", "sitemap.xml", "llms.txt", "manifest.json",
   "abhijit-pramanik-resume.pdf",
-  "CNAME", "v3/styles.min.css", "v3/app.min.js", "v3/chat.js",
+  "CNAME", "v3/styles.min.css", "v3/app.min.js", "v3/chat.js", "v3/vendor/chart.umd.min.js",
+  "images/brand/favicon.ico", "images/brand/apple-touch-icon-180.png",
+  "images/brand/pwa-icon-192.png", "images/brand/pwa-icon-512.png",
 ];
 
 const textFiles = ["index.html", "privacy.html", "404.html", "v3/styles.min.css", "v3/app.min.js", "v3/chat.js"];
@@ -45,7 +58,13 @@ for (const file of [...discovered].sort()) {
   const info = await stat(from).catch(() => null);
   if (!info?.isFile()) throw new Error(`Required release file is missing: ${file}`);
   await mkdir(dirname(to), { recursive: true });
-  await cp(from, to);
+  if (HTML_FILES.has(file)) {
+    const raw = await readFile(from, "utf8");
+    const minified = await minifyHtml(raw, htmlMinifyOptions);
+    await writeFile(to, minified);
+  } else {
+    await cp(from, to);
+  }
   const bytes = await readFile(to);
   copied.push({ file: file.replaceAll(sep, "/"), bytes: bytes.length, sha256: createHash("sha256").update(bytes).digest("hex") });
 }

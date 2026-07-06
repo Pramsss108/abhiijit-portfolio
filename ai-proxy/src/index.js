@@ -17,10 +17,14 @@ const MAX_BODY_BYTES = 16_000;
 const MAX_MESSAGES = 12;
 const MAX_MESSAGE_CHARS = 600;
 
+// Rate limit: keeps any one visitor from burning the whole HF free-tier quota.
+const RATE_LIMIT_MAX = 20;
+const RATE_LIMIT_WINDOW_SECONDS = 600; // 10 minutes
+
 function corsHeaders(origin) {
   return {
     "Access-Control-Allow-Origin": ALLOWED_ORIGINS.has(origin) ? origin : "https://abhiijit.works",
-    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type",
     "Vary": "Origin",
   };
@@ -33,9 +37,50 @@ function json(body, status, origin) {
   });
 }
 
+async function checkRateLimit(env, ip) {
+  if (!env.AI_PROXY_KV) return true; // fail-open if KV isn't bound (e.g. local dev)
+  const bucket = Math.floor(Date.now() / (RATE_LIMIT_WINDOW_SECONDS * 1000));
+  const key = `rl:${ip}:${bucket}`;
+  const current = parseInt((await env.AI_PROXY_KV.get(key)) || "0", 10);
+  if (current >= RATE_LIMIT_MAX) return false;
+  await env.AI_PROXY_KV.put(key, String(current + 1), { expirationTtl: RATE_LIMIT_WINDOW_SECONDS + 60 });
+  return true;
+}
+
+async function handleBeacon(request, env, origin) {
+  if (request.method === "OPTIONS") return new Response(null, { headers: corsHeaders(origin) });
+  if (!env.AI_PROXY_KV) return new Response(null, { status: 204, headers: corsHeaders(origin) });
+  const day = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+  const key = `pv:${day}`;
+  const current = parseInt((await env.AI_PROXY_KV.get(key)) || "0", 10);
+  await env.AI_PROXY_KV.put(key, String(current + 1), { expirationTtl: 60 * 60 * 24 * 400 });
+  return new Response(null, { status: 204, headers: corsHeaders(origin) });
+}
+
+async function handleStats(request, env, origin) {
+  const url = new URL(request.url);
+  if (!env.STATS_KEY || url.searchParams.get("key") !== env.STATS_KEY) {
+    return json({ error: "Set STATS_KEY as a worker secret, then pass ?key=<value>." }, 401, origin);
+  }
+  if (!env.AI_PROXY_KV) return json({ error: "KV not bound" }, 500, origin);
+  const list = await env.AI_PROXY_KV.list({ prefix: "pv:" });
+  const days = {};
+  let total = 0;
+  for (const { name } of list.keys) {
+    const value = parseInt((await env.AI_PROXY_KV.get(name)) || "0", 10);
+    days[name.slice(3)] = value;
+    total += value;
+  }
+  return json({ totalPageviews: total, byDay: days }, 200, origin);
+}
+
 export default {
   async fetch(request, env, ctx) {
     const origin = request.headers.get("Origin") || "";
+    const { pathname } = new URL(request.url);
+
+    if (pathname === "/beacon") return handleBeacon(request, env, origin);
+    if (pathname === "/stats") return handleStats(request, env, origin);
 
     if (request.method === "OPTIONS") {
       return new Response(null, { headers: corsHeaders(origin) });
@@ -45,6 +90,11 @@ export default {
     }
 
     try {
+      const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+      if (!(await checkRateLimit(env, ip))) {
+        return json({ error: "Too many requests — please try again in a few minutes." }, 429, origin);
+      }
+
       const raw = await request.text();
       if (raw.length > MAX_BODY_BYTES) {
         return json({ error: "Request too large" }, 413, origin);

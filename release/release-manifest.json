@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-06T19:45:36.160Z",
-  "files": 83,
-  "bytes": 18283495,
+  "generatedAt": "2026-07-06T21:50:51.318Z",
+  "files": 87,
+  "bytes": 15542470,
   "excludedRoots": [
     "public/_proof",
     "public/madquick-ref",
@@ -12,8 +12,8 @@
   "assets": [
     {
       "file": "404.html",
-      "bytes": 1352,
-      "sha256": "d46d05469d7ac0a84416776bfdb1760d9f10ba6ef5f6b6e29d38eae52ceee87b"
+      "bytes": 1328,
+      "sha256": "744ee241470ff05826c8ed91347c8ddb78c281473a24f96650aa8377e78bdcb3"
     },
     {
       "file": "CNAME",
@@ -51,11 +51,6 @@
       "sha256": "ce937f96d868cc6cfd4c62228b46598f37c6c6bd2253b385fb70c41c3e2251a7"
     },
     {
-      "file": "images/abhijit-hero-v7.png",
-      "bytes": 908884,
-      "sha256": "f7fb986ae4c2d6a555017663c26d43d0f7d03774e7e705fc27baeca592ca6645"
-    },
-    {
       "file": "images/abhijit-hero-v7.webp",
       "bytes": 109916,
       "sha256": "864c37b731f40de94933f5256fc22b43883e82ac7959acb38e0ee9ee9c8d15f9"
@@ -74,11 +69,6 @@
       "file": "images/abhijit-macbook-640.webp",
       "bytes": 48276,
       "sha256": "e2084cb2cfd505319b1efa29944ba9e2d65fc6601c64cd442d4e717c2e1bd27d"
-    },
-    {
-      "file": "images/abhijit-macbook.png",
-      "bytes": 1021443,
-      "sha256": "a478db2e8d23c83f7ff80389f4c5761ff3530edbb1bc6cfc10f4baf10a66b53f"
     },
     {
       "file": "images/abhijit-macbook.webp",
@@ -121,6 +111,26 @@
       "sha256": "4dfdd8e33d230b2babe3ae4e1f077d7eab6df1e83c3206771654681543931b20"
     },
     {
+      "file": "images/brand/apple-touch-icon-180.png",
+      "bytes": 19156,
+      "sha256": "48b7e959d53d6e7d9f57d18826df53aeb5c23c27a36bde917268025627ed80cb"
+    },
+    {
+      "file": "images/brand/favicon.ico",
+      "bytes": 898,
+      "sha256": "45aa280c375ea82cb7b1f7e7c3d42c370f40febcef0c043809a5cf7204015f17"
+    },
+    {
+      "file": "images/brand/pwa-icon-192.png",
+      "bytes": 19609,
+      "sha256": "1d570258f089dcfc65de9aaa934c27550e85da1a0900323c4727c45d58ec62b4"
+    },
+    {
+      "file": "images/brand/pwa-icon-512.png",
+      "bytes": 40195,
+      "sha256": "ea2c8af5802bb9f44edf2c40e6fedb98097af7a4b69901683009655952e3f904"
+    },
+    {
       "file": "images/company-logos/balihans.png",
       "bytes": 1881,
       "sha256": "fae1aaf0d447b34d4a81ffb33432871d398ee9db56d8414c9ddbc3ba5c4f21fe"
@@ -132,8 +142,8 @@
     },
     {
       "file": "images/company-logos/byjus.svg",
-      "bytes": 32720,
-      "sha256": "794d71eb162d4f16e98e11fb43d02fd8736728c8c09e0656b077fccb7f4d7319"
+      "bytes": 16720,
+      "sha256": "0f2142ac4dea858324e065b5242c8367dca077dfcf1f5fa5c411815a2392b2f9"
     },
     {
       "file": "images/company-logos/google.png",
@@ -347,8 +357,8 @@
     },
     {
       "file": "index.html",
-      "bytes": 144957,
-      "sha256": "72605486ea7118c4191fc8d4847d90c0df037727b357a301ad6d3a977fff8579"
+      "bytes": 117675,
+      "sha256": "cbb54a6ca54cbe6be7bf115c7c08cf2905523c1a5fc211853ce4a7b2ebadae41"
     },
     {
       "file": "llms.txt",
@@ -356,9 +366,14 @@
       "sha256": "52da93f8db772065601e69d0f772371880f4587315baf74edd7139229bbcf291"
     },
     {
+      "file": "manifest.json",
+      "bytes": 414,
+      "sha256": "24067710b7a7c917a9b9b56e420e05362a966d2e7f7719cc5655efc73a0a1457"
+    },
+    {
       "file": "privacy.html",
-      "bytes": 4829,
-      "sha256": "b5143bdcfcc98608386c3547b27f8bc34140d0231972a142969dd5c379956fbc"
+      "bytes": 4707,
+      "sha256": "d0dbfbbc39114f3baaf07f009ae770957d6722e85e3ddcd9253d14e6d85bc023"
     },
     {
       "file": "robots.txt",
@@ -372,8 +387,8 @@
     },
     {
       "file": "v3/app.min.js",
-      "bytes": 37014,
-      "sha256": "b4544e41e7d3c49c1ac428a6a7e13643e55da095ab7eab38ed3f722d29b2fb14"
+      "bytes": 37721,
+      "sha256": "59b25d5be290be468606a377614165726d62f94fe210321ed10417e6cda505b7"
     },
     {
       "file": "v3/chat.js",
@@ -392,8 +407,13 @@
     },
     {
       "file": "v3/styles.min.css",
-      "bytes": 249052,
-      "sha256": "e5902732d96e6558fb3bb1cebea416e04edafe1187f39c909f807b4d66157c73"
+      "bytes": 250147,
+      "sha256": "38bb23f0faa17a0392ea3113256ab11ed49f32869e0aff165aab7870478d9385"
+    },
+    {
+      "file": "v3/vendor/chart.umd.min.js",
+      "bytes": 205399,
+      "sha256": "d2af8974e95271638772e9e9524db5b9a6f58d6ec2d5d781400447b4a31c681e"
     },
     {
       "file": "videos/video-showcase/landscape-01.mp4",
@@ -422,8 +442,8 @@
     },
     {
       "file": "videos/video-showcase/reel-04.mp4",
-      "bytes": 5493635,
-      "sha256": "95ccb0cd4ce5296855043381fe8663a4d5967dfa9860362a087bfc36e43b8086"
+      "bytes": 4438892,
+      "sha256": "32674e9fc650cc7aaf7243a9e4bb9445db81eaf1d885ab37f1b539fce05bd1ab"
     }
   ]
 }

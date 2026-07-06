@@ -68,7 +68,7 @@
     var panel = $(".content-panel");
     var proofSection = $("#proof-numbers");
     var evidenceSection = $("#evidence");
-    var ribbons = $(".marquees", proofSection);
+    var ribbons = proofSection && ($(".marquees-wrap", proofSection) || $(".marquees", proofSection));
     if (proofSection && evidenceSection && ribbons) {
       proofSection.insertBefore(evidenceSection, ribbons);
     }
@@ -748,6 +748,28 @@
 
     show(0);
     start();
+  }
+
+  /* =========================================================================
+   * MOTION PAUSE — CSS-driven auto-moving regions (marquees, company ribbon).
+   * Each [data-motion-pause] button toggles .is-paused on its target region,
+   * satisfying WCAG 2.2.2 for content that moves for longer than 5 seconds.
+   * ======================================================================= */
+  function initMotionPauseButtons() {
+    var targets = {
+      marquees: ".marquees",
+      companies: ".company-ribbon",
+    };
+    $all("[data-motion-pause]").forEach(function (btn) {
+      var key = btn.getAttribute("data-motion-pause");
+      if (key === "rotator") return; // handled inside initRotator
+      var region = $(targets[key]);
+      if (!region) return;
+      btn.addEventListener("click", function () {
+        var paused = region.classList.toggle("is-paused");
+        btn.setAttribute("aria-pressed", String(paused));
+      });
+    });
   }
 
   /* =========================================================================
@@ -2362,9 +2384,9 @@
         return;
       }
       var script = doc.createElement("script");
-      script.src = "https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js";
+      // Self-hosted: no third-party origin, no CORS/SRI concerns on the critical path.
+      script.src = "/v3/vendor/chart.umd.min.js";
       script.async = true;
-      script.crossOrigin = "anonymous";
       script.setAttribute("fetchpriority", "low");
       script.onload = function () {
         initProofCharts();
@@ -2872,12 +2894,40 @@
     });
   }
 
+  /* =========================================================================
+   * MAIL LINKS — the address is split across two data attributes (no "@" in
+   * the raw HTML) so basic scrapers never see a harvestable address; real
+   * visitors get a working mailto the instant JS runs.
+   * ======================================================================= */
+  function initMailLinks() {
+    $all(".js-mail").forEach(function (el) {
+      var u = el.getAttribute("data-mail-u"), dom = el.getAttribute("data-mail-d");
+      if (!u || !dom) return;
+      var address = u + "@" + dom;
+      el.setAttribute("href", "mailto:" + address);
+      if (el.getAttribute("data-mail-text") === "1") el.textContent = address;
+    });
+  }
+
+  /* Self-hosted, privacy-friendly pageview beacon — one counter, no cookies,
+     no third party. Fire-and-forget; failures are silently ignored. */
+  function sendAnalyticsBeacon() {
+    try {
+      var url = "https://abhijit-portfolio-ai.guitarguitarabhijit.workers.dev/beacon";
+      if (navigator.sendBeacon) navigator.sendBeacon(url);
+      else fetch(url, { method: "POST", keepalive: true, mode: "no-cors" }).catch(function () {});
+    } catch (e) {}
+  }
+
   function init() {
     // Critical structural/navigation work stays synchronous and small.
     normalizeNarrativeOrder();
     initHeaderAndProgress();
     initNav();
     initSmoothScroll();
+    initMailLinks();
+    initMotionPauseButtons();
+    sendAnalyticsBeacon();
 
     // Split startup work across frames so mobile never receives one large
     // DOMContent task. Split still precedes reveal within this batch.
