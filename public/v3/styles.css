@@ -14959,3 +14959,12 @@ html.media-player-open{ overflow:hidden; }
 
 .hero__rotator{ display:flex; align-items:center; flex-wrap:wrap; }
 .company-ribbon__caption{ display:flex; align-items:center; justify-content:center; }
+
+/* Evidence Desk rail: the tablist wrapper is layout-transparent so the
+   label / tab buttons / hint keep flowing in the rail's flex column while
+   role=tablist contains only tabs (ARIA fix, 2026-07-06 audit 7.5). */
+.evidence-index__list{ display:contents; }
+/* Pinned case-study lede: svh so mobile URL-bar collapse can't overflow it. */
+@supports (height: 100svh) {
+  .work__lede, #work .work__lede { max-height: calc(100svh - var(--header-h) - 2rem); }
+}

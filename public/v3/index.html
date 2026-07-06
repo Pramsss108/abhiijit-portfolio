@@ -759,26 +759,28 @@
     </header>
 
     <div class="evidence-desk reveal reveal--delay-1" data-evidence-desk>
-      <p class="evidence-index__label" id="evidence-index-label">Results <span>4 items</span></p>
-      <nav class="evidence-index" aria-labelledby="evidence-index-label" role="tablist" aria-orientation="vertical">
-        <button id="evidence-tab-social" class="evidence-index__item is-active" type="button" role="tab" aria-selected="true" aria-controls="evidence-social" data-evidence-target="social">
-          <span class="evidence-index__num">01</span>
-          <span class="evidence-index__copy"><b>3.78M views</b><small><i class="evidence-status evidence-status--public"></i> Screenshot available</small></span>
-        </button>
-        <button id="evidence-tab-search" class="evidence-index__item" type="button" role="tab" aria-selected="false" aria-controls="evidence-search" data-evidence-target="search" tabindex="-1">
-          <span class="evidence-index__num">02</span>
-          <span class="evidence-index__copy"><b>+117% clicks</b><small><i class="evidence-status evidence-status--owned"></i> Private source</small></span>
-        </button>
-        <button id="evidence-tab-content" class="evidence-index__item" type="button" role="tab" aria-selected="false" aria-controls="evidence-content" data-evidence-target="content" tabindex="-1">
-          <span class="evidence-index__num">03</span>
-          <span class="evidence-index__copy"><b>400+ articles</b><small><i class="evidence-status evidence-status--aggregate"></i> Counted from records</small></span>
-        </button>
-        <button id="evidence-tab-companies" class="evidence-index__item" type="button" role="tab" aria-selected="false" aria-controls="evidence-companies" data-evidence-target="companies" tabindex="-1">
-          <span class="evidence-index__num">04</span>
-          <span class="evidence-index__copy"><b>36+ companies</b><small><i class="evidence-status evidence-status--private"></i> Work history</small></span>
-        </button>
-      </nav>
-      <p class="evidence-index__hint">Use <kbd>&uarr;</kbd><kbd>&darr;</kbd> to switch</p>
+      <div class="evidence-index">
+        <p class="evidence-index__label" id="evidence-index-label">Results <span>4 items</span></p>
+        <nav class="evidence-index__list" aria-labelledby="evidence-index-label" role="tablist" aria-orientation="vertical">
+          <button id="evidence-tab-social" class="evidence-index__item is-active" type="button" role="tab" aria-selected="true" aria-controls="evidence-social" data-evidence-target="social">
+            <span class="evidence-index__num">01</span>
+            <span class="evidence-index__copy"><b>3.78M views</b><small><i class="evidence-status evidence-status--public"></i> Screenshot available</small></span>
+          </button>
+          <button id="evidence-tab-search" class="evidence-index__item" type="button" role="tab" aria-selected="false" aria-controls="evidence-search" data-evidence-target="search" tabindex="-1">
+            <span class="evidence-index__num">02</span>
+            <span class="evidence-index__copy"><b>+117% clicks</b><small><i class="evidence-status evidence-status--owned"></i> Private source</small></span>
+          </button>
+          <button id="evidence-tab-content" class="evidence-index__item" type="button" role="tab" aria-selected="false" aria-controls="evidence-content" data-evidence-target="content" tabindex="-1">
+            <span class="evidence-index__num">03</span>
+            <span class="evidence-index__copy"><b>400+ articles</b><small><i class="evidence-status evidence-status--aggregate"></i> Counted from records</small></span>
+          </button>
+          <button id="evidence-tab-companies" class="evidence-index__item" type="button" role="tab" aria-selected="false" aria-controls="evidence-companies" data-evidence-target="companies" tabindex="-1">
+            <span class="evidence-index__num">04</span>
+            <span class="evidence-index__copy"><b>36+ companies</b><small><i class="evidence-status evidence-status--private"></i> Work history</small></span>
+          </button>
+        </nav>
+        <p class="evidence-index__hint">Use <kbd>&uarr;</kbd><kbd>&darr;</kbd> to switch</p>
+      </div>
 
       <div class="evidence-files">
         <details class="evidence-file is-active" id="evidence-social" data-evidence-panel="social" role="tabpanel" aria-labelledby="evidence-tab-social" open>
