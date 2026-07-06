@@ -14,7 +14,8 @@ const canonicalHtml = resolve(root, "public", "index.html");
 const [css, js, chatJs, html] = await Promise.all([
   readFile(cssSource, "utf8"),
   readFile(jsSource, "utf8"),
-  readFile(resolve(pageDir, "chat.js"), "utf8"),
+  // chat.source.js is the editable source; chat.js is its minified build output.
+  readFile(resolve(pageDir, "chat.source.js"), "utf8"),
   readFile(htmlSource, "utf8"),
 ]);
 
@@ -47,7 +48,9 @@ const purgeResult = await new PurgeCSS().purge({
       "rv-marquee",
       "rv-stagger",
     ],
-    greedy: [/^is-/, /^has-/, /^intro-/, /^ap-cursor-/, /^rv-/, /^editor-/],
+    // ai-ab-* classes are composed at runtime ("ai-ab-msg--" + kind), so
+    // PurgeCSS cannot see them in the source — safelist the whole prefix.
+    greedy: [/^is-/, /^has-/, /^intro-/, /^ap-cursor-/, /^rv-/, /^editor-/, /^ai-ab-/],
   },
   fontFace: false,
   keyframes: true,

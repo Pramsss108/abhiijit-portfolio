@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-06T14:27:25.967Z",
+  "generatedAt": "2026-07-06T14:54:00.943Z",
   "files": 85,
-  "bytes": 18363577,
+  "bytes": 18365858,
   "excludedRoots": [
     "public/_proof",
     "public/madquick-ref",
@@ -362,8 +362,8 @@
     },
     {
       "file": "index.html",
-      "bytes": 143189,
-      "sha256": "72623fb59f46bbd58ebc21b0eeba6878579d1e2f5a3a6028c2ccf3c18163eddd"
+      "bytes": 143280,
+      "sha256": "f3da463988af4fe5c4b12e786a61e3bb48b28c69c2ebcae01bbafcf993bdc6c2"
     },
     {
       "file": "privacy.html",
@@ -387,8 +387,8 @@
     },
     {
       "file": "v3/chat.js",
-      "bytes": 1799,
-      "sha256": "a114caa28c6030a5b5b70b20f52f0961a62726d867a84bc18360c6c2e43a33b8"
+      "bytes": 1859,
+      "sha256": "38fd49e861d382a4ee6600df69822820b6e88c1d9244f59b95264fa5cecab1ec"
     },
     {
       "file": "v3/fonts/fraunces-latin-italic-used.woff2",
@@ -402,8 +402,8 @@
     },
     {
       "file": "v3/styles.min.css",
-      "bytes": 245354,
-      "sha256": "2b10ae91924fb92a476ebc365910cb47a041d47ff0781079c85aeac8d996cacb"
+      "bytes": 247484,
+      "sha256": "2feeb38263e76530d521b45c22bb365d403d597840a89f15734930d54bbbbf54"
     },
     {
       "file": "videos/video-showcase/landscape-01.mp4",
