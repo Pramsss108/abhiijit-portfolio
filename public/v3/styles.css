@@ -738,40 +738,6 @@ body.is-menu-open { overflow: hidden; }
 }
 
 /* ============================================================
-   ACCORDION  (interaction contract — FAQ)
-   ============================================================ */
-.faq__item { border-bottom: 1px solid var(--hairline); }
-.faq__trigger {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-4);
-  width: 100%;
-  padding: var(--space-5) 0;
-  text-align: left;
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: var(--fs-lg);
-  color: var(--text);
-}
-.faq__icon { flex: none; width: 22px; height: 22px; position: relative; }
-.faq__icon::before, .faq__icon::after {
-  content: ""; position: absolute; inset: 50% 0 auto 0;
-  height: 2px; background: var(--lime); border-radius: 2px;
-  transition: transform var(--dur-base) var(--ease-out);
-}
-.faq__icon::after { transform: rotate(90deg); }
-.faq__trigger[aria-expanded="true"] .faq__icon::after { transform: rotate(0); }
-.faq__panel {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows var(--dur-base) var(--ease-out);
-}
-.faq__panel[data-open] { grid-template-rows: 1fr; }
-.faq__panel-inner { overflow: hidden; }
-.faq__answer { padding-bottom: var(--space-5); color: var(--text-dim); max-width: 65ch; }
-
-/* ============================================================
    CUSTOM CURSOR  (desktop, pointer:fine only — JS positions)
    ============================================================ */
 .cursor { display: none; }
@@ -14405,41 +14371,35 @@ html.media-player-open{ overflow:hidden; }
   margin-inline:auto;
 }
 #faq .section__head{
-  display:grid;
-  grid-template-columns:minmax(0,1.28fr) minmax(17rem,.72fr);
-  grid-template-areas:
-    "eyebrow intro"
-    "title intro";
-  align-items:end;
-  column-gap:clamp(2rem,6vw,6rem);
-  row-gap:.55rem;
-  margin:0 0 clamp(1.65rem,3vh,2.4rem)!important;
-  text-align:left;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:1rem;
+  margin:0 auto clamp(2rem,4vh,3.5rem)!important;
+  text-align:center;
+  max-width:42rem;
 }
 #faq .eyebrow{
-  grid-area:eyebrow;
-  justify-content:flex-start;
   margin:0;
-  text-align:left;
+  text-align:center;
+  justify-content:center;
 }
 #faq .section__title{
-  grid-area:title;
   max-width:none!important;
   margin:0!important;
   font-size:clamp(2.7rem,4.6vw,4.8rem)!important;
   line-height:.98;
-  text-align:left!important;
+  text-align:center!important;
   text-wrap:balance;
   opacity:1;
   visibility:visible;
   color:var(--text)!important;
 }
 #faq .faq__intro{
-  grid-area:intro;
-  max-width:31ch;
-  margin:0 0 .25rem auto;
+  max-width:45ch;
+  margin:0 auto;
   color:var(--text-soft);
-  font-size:clamp(.92rem,1.05vw,1.05rem);
+  font-size:clamp(1rem,1.15vw,1.1rem);
   line-height:1.6;
   text-wrap:pretty;
 }

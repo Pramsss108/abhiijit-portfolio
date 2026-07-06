@@ -2115,7 +2115,7 @@
         filmTimer = win.setTimeout(function () {
           filmTimer = null;
           playActiveCard();
-        }, 720);
+        }, 100);
       } else {
         playActiveCard();
       }
