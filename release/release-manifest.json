@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-06T11:29:11.562Z",
-  "files": 83,
-  "bytes": 18357341,
+  "generatedAt": "2026-07-06T14:27:25.967Z",
+  "files": 85,
+  "bytes": 18363577,
   "excludedRoots": [
     "public/_proof",
     "public/madquick-ref",
@@ -19,6 +19,11 @@
       "file": "404.html",
       "bytes": 1352,
       "sha256": "d46d05469d7ac0a84416776bfdb1760d9f10ba6ef5f6b6e29d38eae52ceee87b"
+    },
+    {
+      "file": "CNAME",
+      "bytes": 15,
+      "sha256": "1e5b8a2d3702e0879e6d448bb431ffc2baf9b8ccec54af27fee51d26693ecccc"
     },
     {
       "file": "_headers",
@@ -357,8 +362,8 @@
     },
     {
       "file": "index.html",
-      "bytes": 141825,
-      "sha256": "9f693917ab2f984ec5252c1fcac860d7807fedea088561730bb86bbb713f4d7b"
+      "bytes": 143189,
+      "sha256": "72623fb59f46bbd58ebc21b0eeba6878579d1e2f5a3a6028c2ccf3c18163eddd"
     },
     {
       "file": "privacy.html",
@@ -381,6 +386,11 @@
       "sha256": "74b37ad52eda0bbdc052d366ee09f24749cd746a89a035d0b3bff578c575242c"
     },
     {
+      "file": "v3/chat.js",
+      "bytes": 1799,
+      "sha256": "a114caa28c6030a5b5b70b20f52f0961a62726d867a84bc18360c6c2e43a33b8"
+    },
+    {
       "file": "v3/fonts/fraunces-latin-italic-used.woff2",
       "bytes": 56052,
       "sha256": "7737d2dbcb8cd1c1448c616c1b3c027df3ec46a5ecd6926167964772635c779f"
@@ -392,8 +402,8 @@
     },
     {
       "file": "v3/styles.min.css",
-      "bytes": 242296,
-      "sha256": "4bde7ff2d08b44e1076d73a2e3edbc7f5582e697a44d9f79f224f58f87d16939"
+      "bytes": 245354,
+      "sha256": "2b10ae91924fb92a476ebc365910cb47a041d47ff0781079c85aeac8d996cacb"
     },
     {
       "file": "videos/video-showcase/landscape-01.mp4",

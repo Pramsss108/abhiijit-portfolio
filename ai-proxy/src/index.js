@@ -1,7 +1,8 @@
 import portfolioData from './portfolio_data.json';
 
 const HF_MODEL = "meta-llama/Meta-Llama-3-8B-Instruct";
-const HF_API_URL = `https://api-inference.huggingface.co/models/${HF_MODEL}`;
+// HF retired api-inference.huggingface.co; chat completions now go through the Inference Providers router
+const HF_API_URL = "https://router.huggingface.co/v1/chat/completions";
 
 export default {
   async fetch(request, env, ctx) {
