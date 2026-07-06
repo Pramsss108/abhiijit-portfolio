@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-06T22:44:36.598Z",
+  "generatedAt": "2026-07-06T22:56:50.957Z",
   "files": 87,
-  "bytes": 15542657,
+  "bytes": 15542888,
   "excludedRoots": [
     "public/_proof",
     "public/madquick-ref",
@@ -392,8 +392,8 @@
     },
     {
       "file": "v3/chat.js",
-      "bytes": 2208,
-      "sha256": "3793bd680a3396f58fffd096f97345d527beb656b41677023539137a9ad360ff"
+      "bytes": 2439,
+      "sha256": "442b9f0df4b7e02166c40ca2b24623f3decd7ba760eadd1793fa41d9ada7b1a6"
     },
     {
       "file": "v3/fonts/fraunces-latin-italic-used.woff2",

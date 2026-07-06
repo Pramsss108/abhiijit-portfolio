@@ -17,8 +17,10 @@ const MAX_BODY_BYTES = 16_000;
 const MAX_MESSAGES = 12;
 const MAX_MESSAGE_CHARS = 600;
 
-// Rate limit: keeps any one visitor from burning the whole HF free-tier quota.
-const RATE_LIMIT_MAX = 20;
+// Rate limit: blocks a script from burning the HF free-tier quota, while
+// staying well clear of a real (or owner-testing) conversation. 40 messages
+// per 10 minutes per IP = plenty for a human, cheap protection against a bot.
+const RATE_LIMIT_MAX = 40;
 const RATE_LIMIT_WINDOW_SECONDS = 600; // 10 minutes
 
 function corsHeaders(origin) {
@@ -149,18 +151,34 @@ Rules:
         temperature: 0.6,
       };
 
-      const hfResponse = await fetch(HF_API_URL, {
-        method: "POST",
-        headers: {
-          "Authorization": `Bearer ${env.HUGGINGFACE_API_KEY}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(hfPayload),
-      });
+      // The HF free tier returns transient 5xx/429s (cold model, load). Retry a
+      // couple of times with backoff so a single blip never reaches the visitor.
+      let hfResponse = null;
+      let lastStatus = 0;
+      for (let attempt = 0; attempt < 3; attempt++) {
+        if (attempt > 0) await new Promise((r) => setTimeout(r, 700 * attempt));
+        try {
+          hfResponse = await fetch(HF_API_URL, {
+            method: "POST",
+            headers: {
+              "Authorization": `Bearer ${env.HUGGINGFACE_API_KEY}`,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(hfPayload),
+          });
+        } catch (netErr) {
+          console.error("HF network error (attempt " + attempt + "):", String(netErr));
+          continue; // transient network failure — retry
+        }
+        if (hfResponse.ok) break;
+        lastStatus = hfResponse.status;
+        // 4xx other than 429 won't fix themselves — stop retrying.
+        if (hfResponse.status < 500 && hfResponse.status !== 429) break;
+      }
 
-      if (!hfResponse.ok) {
-        const err = await hfResponse.text();
-        console.error("HF Error:", hfResponse.status, err.slice(0, 500));
+      if (!hfResponse || !hfResponse.ok) {
+        const err = hfResponse ? (await hfResponse.text()) : "no response";
+        console.error("HF Error after retries:", lastStatus, err.slice(0, 500));
         return json({ error: "AI Engine is currently unavailable." }, 502, origin);
       }
 

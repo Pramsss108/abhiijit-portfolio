@@ -57,6 +57,21 @@ document.addEventListener("DOMContentLoaded", () => {
     return el;
   }
 
+  // One fetch attempt; throws on any non-OK status so the caller can retry.
+  async function askWorker() {
+    const res = await fetch(WORKER_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ messages: history }),
+    });
+    if (!res.ok) {
+      const err = new Error("AI Engine unavailable");
+      err.status = res.status;
+      throw err;
+    }
+    return res.json();
+  }
+
   async function submit() {
     const text = input.value.trim();
     if (!text || pending) return;
@@ -69,34 +84,44 @@ document.addEventListener("DOMContentLoaded", () => {
     if (history.length > 12) history.splice(0, history.length - 12);
     const loadingId = "ai-ab-loading-" + Date.now();
     addMessage("", "loading", loadingId);
-    try {
-      const res = await fetch(WORKER_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: history }),
-      });
-      if (!res.ok) throw new Error("AI Engine unavailable");
-      const data = await res.json();
+
+    // Auto-retry transient failures (the free AI tier blips occasionally) so a
+    // single hiccup never shows the visitor an error. Rate-limit (429) is not
+    // retried — that message is intentional.
+    let data = null, lastErr = null;
+    for (let attempt = 0; attempt < 3; attempt++) {
+      if (attempt > 0) await new Promise((r) => setTimeout(r, 900 * attempt));
+      try {
+        data = await askWorker();
+        break;
+      } catch (err) {
+        lastErr = err;
+        if (err.status === 429) break; // "too many requests" — surface it as-is
+      }
+    }
+
+    document.getElementById(loadingId)?.remove();
+    if (data) {
       let reply = "I'm sorry, I couldn't process that.";
       if (data.choices && data.choices[0] && data.choices[0].message) {
         reply = data.choices[0].message.content;
       } else if (data.generated_text) {
         reply = data.generated_text;
       }
-      document.getElementById(loadingId)?.remove();
       addMessage(reply, "ai");
       history.push({ role: "assistant", content: reply });
-    } catch (err) {
-      console.error(err);
-      document.getElementById(loadingId)?.remove();
-      addMessage("Can't reach the AI right now — please try again in a moment.", "error");
+    } else {
+      console.error(lastErr);
+      const msg = lastErr && lastErr.status === 429
+        ? "You're sending messages quickly — please wait a moment and try again."
+        : "Can't reach the AI right now — please try again in a moment.";
+      addMessage(msg, "error");
       history.pop();
       input.value = text; // let the user retry without retyping
-    } finally {
-      pending = false;
-      send.disabled = false;
-      if (finePointer) input.focus();
     }
+    pending = false;
+    send.disabled = false;
+    if (finePointer) input.focus();
   }
 
   send.addEventListener("click", submit);
