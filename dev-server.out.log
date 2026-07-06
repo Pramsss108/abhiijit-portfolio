@@ -1,0 +1,77 @@
+
+> abhijit-portfolio@1.0.0 dev
+> browser-sync start --server public --files "public/**/*" --port 5055 --no-notify --no-open
+
+[Browsersync] Access URLs:
+ --------------------------------------
+       Local: http://localhost:5055
+    External: http://192.168.29.38:5055
+ --------------------------------------
+          UI: http://localhost:3001
+ UI External: http://192.168.29.38:3001
+ --------------------------------------
+[Browsersync] Serving files from: public
+[Browsersync] Watching files...
+[Browsersync] Reloading Browsers...
+[Browsersync] Reloading Browsers...
+[Browsersync] Reloading Browsers... (buffered 2 events)
+[Browsersync] Reloading Browsers...
+[Browsersync] File event [change] : public\v3\styles.min.css
+[Browsersync] Reloading Browsers...
+[Browsersync] Reloading Browsers...
+[Browsersync] Reloading Browsers...
+[Browsersync] Reloading Browsers... (buffered 2 events)
+[Browsersync] Reloading Browsers...
+[Browsersync] File event [change] : public\v3\styles.min.css
+[Browsersync] Reloading Browsers...
+[Browsersync] Reloading Browsers... (buffered 2 events)
+[Browsersync] File event [change] : public\v3\styles.min.css
+[Browsersync] File event [change] : public\images\company-logos\revenue-rushy.png
+[Browsersync] File event [change] : public\images\company-logos\revenue-rushy.png
+[Browsersync] Reloading Browsers... (buffered 2 events)
+[Browsersync] Reloading Browsers...
+[Browsersync] File event [change] : public\v3\styles.min.css
+[Browsersync] Reloading Browsers... (buffered 2 events)
+[Browsersync] File event [change] : public\v3\styles.css
+[Browsersync] File event [change] : public\v3\styles.min.css
+[Browsersync] Reloading Browsers... (buffered 2 events)
+[Browsersync] File event [change] : public\v3\styles.min.css
+[Browsersync] Reloading Browsers... (buffered 2 events)
+[Browsersync] Reloading Browsers...
+[Browsersync] Reloading Browsers... (buffered 2 events)
+[Browsersync] Reloading Browsers... (buffered 2 events)
+[Browsersync] File event [change] : public\v3\styles.min.css
+[Browsersync] Reloading Browsers...
+[Browsersync] Reloading Browsers... (buffered 2 events)
+[Browsersync] Reloading Browsers... (buffered 2 events)
+[Browsersync] Reloading Browsers... (buffered 2 events)
+[Browsersync] File event [change] : public\v3\styles.min.css
+[Browsersync] Reloading Browsers...
+[Browsersync] Reloading Browsers... (buffered 5 events)
+[Browsersync] Reloading Browsers...
+[Browsersync] Reloading Browsers...
+[Browsersync] File event [change] : public\v3\styles.css
+[Browsersync] File event [change] : public\v3\styles.css
+[Browsersync] Reloading Browsers... (buffered 2 events)
+[Browsersync] Reloading Browsers...
+[Browsersync] Reloading Browsers... (buffered 2 events)
+[Browsersync] Reloading Browsers... (buffered 3 events)
+[Browsersync] File event [change] : public\images\abhijit-hero-v7-320.webp
+[Browsersync] Reloading Browsers...
+[Browsersync] Reloading Browsers... (buffered 3 events)
+[Browsersync] Reloading Browsers... (buffered 2 events)
+[Browsersync] Reloading Browsers... (buffered 2 events)
+[Browsersync] Reloading Browsers... (buffered 2 events)
+[Browsersync] Reloading Browsers... (buffered 6 events)
+[Browsersync] Reloading Browsers... (buffered 2 events)
+[Browsersync] Reloading Browsers... (buffered 4 events)
+[Browsersync] Reloading Browsers...
+[Browsersync] Reloading Browsers... (buffered 3 events)
+[Browsersync] Reloading Browsers... (buffered 2 events)
+[Browsersync] Reloading Browsers... (buffered 2 events)
+[Browsersync] Reloading Browsers...
+[Browsersync] Reloading Browsers...
+[Browsersync] Reloading Browsers... (buffered 2 events)
+[Browsersync] Reloading Browsers... (buffered 2 events)
+[Browsersync] Reloading Browsers... (buffered 2 events)
+[Browsersync] Reloading Browsers...

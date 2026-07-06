@@ -1,0 +1,14 @@
+file:///D:/A%20scret%20project/Word%20hacker%20404/madquick-clone/node_modules/puppeteer-core/lib/puppeteer/common/WaitTask.js:46
+            this.#timeoutError = new TimeoutError(`Waiting failed: ${options.timeout}ms exceeded`);
+                                 ^
+
+TimeoutError: Waiting failed: 5000ms exceeded
+    at new WaitTask (file:///D:/A%20scret%20project/Word%20hacker%20404/madquick-clone/node_modules/puppeteer-core/lib/puppeteer/common/WaitTask.js:46:34)
+    at IsolatedWorld.waitForFunction (file:///D:/A%20scret%20project/Word%20hacker%20404/madquick-clone/node_modules/puppeteer-core/lib/puppeteer/api/Realm.js:49:26)
+    at CdpFrame.waitForFunction (file:///D:/A%20scret%20project/Word%20hacker%20404/madquick-clone/node_modules/puppeteer-core/lib/puppeteer/api/Frame.js:580:43)
+    at CdpFrame.<anonymous> (file:///D:/A%20scret%20project/Word%20hacker%20404/madquick-clone/node_modules/puppeteer-core/lib/puppeteer/util/decorators.js:101:27)
+    at CdpPage.waitForFunction (file:///D:/A%20scret%20project/Word%20hacker%20404/madquick-clone/node_modules/puppeteer-core/lib/puppeteer/api/Page.js:1447:37)
+    at inspect (file:///D:/A%20scret%20project/Word%20hacker%20404/madquick-clone/scripts/audit-polish-sections.mjs:68:18)
+    at async file:///D:/A%20scret%20project/Word%20hacker%20404/madquick-clone/scripts/audit-polish-sections.mjs:76:1
+
+Node.js v22.19.0

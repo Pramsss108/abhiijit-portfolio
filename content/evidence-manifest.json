@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "owner": "Abhijit Pramanik",
+  "updated": "2026-07-03",
+  "productionCanonical": {
+    "value": "https://abhijit.works/",
+    "status": "user-confirmed"
+  },
+  "experienceSources": [
+    "../../career-dashboard/data/experience_claims.json",
+    "../../career-dashboard/data/experience_attachment_summaries.json",
+    "../../career-dashboard/data/experience_graph.json",
+    "../../career-dashboard/data/experience_ledger_export.json"
+  ],
+  "videoShowcase": {
+    "claim": "300+ videos edited",
+    "status": "user-confirmed-samples-connected",
+    "sourceDirectory": "../../public/image/enhanced assets/video editing sample/fresh",
+    "slots": [
+      { "id": "reel-01", "title": "Creator Before & After", "format": "portrait", "aspectRatio": "9:16", "duration": "PT38S", "publicFile": "/videos/video-showcase/reel-01.mp4" },
+      { "id": "reel-02", "title": "Social Reel Transformation", "format": "portrait", "aspectRatio": "9:16", "duration": "PT35S", "publicFile": "/videos/video-showcase/reel-02.mp4" },
+      { "id": "reel-03", "title": "Business Story Edit", "format": "portrait", "aspectRatio": "9:16", "duration": "PT17S", "publicFile": "/videos/video-showcase/reel-03.mp4" },
+      { "id": "reel-04", "title": "Podcast Reel Breakdown", "format": "portrait", "aspectRatio": "9:16", "duration": "PT44S", "publicFile": "/videos/video-showcase/reel-04.mp4" },
+      { "id": "landscape-01", "title": "Motion Design Cut", "format": "landscape", "aspectRatio": "wide", "duration": "PT21S", "publicFile": "/videos/video-showcase/landscape-01.mp4" },
+      { "id": "landscape-02", "title": "Editing Timeline Cut", "format": "landscape", "aspectRatio": "wide", "duration": "PT20S", "publicFile": "/videos/video-showcase/landscape-02.mp4" }
+    ]
+  },
+  "publicProfiles": {
+    "linkedin": {
+      "value": "https://www.linkedin.com/in/abhijitsprofile/",
+      "status": "user-confirmed"
+    },
+    "instagramOwnedPage": {
+      "name": "Bongbari",
+      "handle": "@thebongbari",
+      "url": "https://www.instagram.com/thebongbari/",
+      "status": "user-confirmed"
+    }
+  },
+  "claims": [
+    {
+      "id": "AP-SOC-378-90D",
+      "claim": "3.78M views",
+      "exactValue": "3,783,817 views",
+      "source": "Meta Insights",
+      "property": "@thebongbari",
+      "window": "90 days",
+      "displayWindow": "30 Mar-27 Jun; year not shown in retained crop",
+      "startDate": null,
+      "endDate": null,
+      "role": "owner and content operator",
+      "artifact": "/images/evidence/bongbari-insights-589.webp",
+      "permission": "owned data",
+      "publicStatus": "public-artifact",
+      "dateStatus": "partial-dates-visible-year-not-retained"
+    },
+    {
+      "id": "AP-SEO-117-06M",
+      "claim": "+117% organic clicks",
+      "exactValue": "8,480 to 18,400 clicks",
+      "source": "Google Search Console",
+      "property": "bongbari.com",
+      "window": "latest six months vs previous six months",
+      "startDate": null,
+      "endDate": null,
+      "role": "owner and SEO operator",
+      "artifact": null,
+      "permission": "owned data",
+      "publicStatus": "source-artifact-required",
+      "dateStatus": "exact-comparison-dates-not-retained"
+    },
+    {
+      "id": "AP-CONTENT-400",
+      "claim": "400+ articles",
+      "source": "WordPress and publishing trackers",
+      "window": "career aggregate since 2019",
+      "role": "writer, strategist and publisher across direct and team roles",
+      "artifact": null,
+      "permission": "mixed owned and client-sensitive records",
+      "publicStatus": "aggregate-methodology-required",
+      "dateStatus": "career-window-since-2019"
+    },
+    {
+      "id": "AP-WORK-36",
+      "claim": "36+ companies",
+      "source": "resume and project archive",
+      "window": "since 2019",
+      "role": "direct, contract and team-based roles",
+      "artifact": null,
+      "permission": "mixed public and private records",
+      "publicStatus": "relationship-classification-required",
+      "dateStatus": "career-window-since-2019"
+    },
+    {
+      "id": "AP-VIDEO-300",
+      "claim": "300+ videos edited",
+      "source": "user-confirmed career total plus extracted video-editing work records",
+      "window": "career aggregate since 2019",
+      "role": "video editor, motion graphics editor and video content creator",
+      "artifact": null,
+      "permission": "selected samples will be uploaded by the portfolio owner",
+      "publicStatus": "sample-uploads-pending",
+      "dateStatus": "career-window-since-2019"
+    }
+  ]
+}

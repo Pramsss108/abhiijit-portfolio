@@ -1,0 +1,95 @@
+{
+  "report": {
+    "desktop": {
+      "workState": {
+        "ledeBackground": "none",
+        "ledeHeight": 439,
+        "cardBackground": "radial-gradient(544px 288px at 92% 0px, rgba(216, 167, 62, 0.14), rgba(0, 0, 0, 0) 68%), linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.016) 42%, rgba(0, 0, 0, 0.08)), none",
+        "cardBorder": "rgba(241, 196, 90, 0.46)",
+        "streamRail": "0px",
+        "layoutRule": "0px",
+        "narrativeRule": "0px",
+        "additionalRule": "0px",
+        "cardHeaderRule": "0px",
+        "cardDecoration": "none",
+        "ledeClass": "work__lede",
+        "titleClass": "section__title work__title reveal reveal--delay-1 is-visible",
+        "titleOpacity": "1",
+        "titleColor": "rgb(245, 242, 234)",
+        "titleFilter": "none",
+        "itemClass": "work-item reveal is-visible",
+        "itemOpacity": "1",
+        "itemFilter": "none",
+        "sectionOpacity": "1",
+        "sectionFilter": "none",
+        "panelOpacity": "1",
+        "panelFilter": "none",
+        "overflow": 0
+      },
+      "aboutState": {
+        "height": 820,
+        "available": 819,
+        "frame": [
+          384,
+          544
+        ],
+        "image": {
+          "src": "/images/abhijit-about-v2-720.webp",
+          "currentSrc": "http://localhost:5055/images/abhijit-about-v2-720.webp",
+          "complete": true,
+          "natural": [
+            604,
+            1066
+          ],
+          "display": "block",
+          "objectFit": "contain",
+          "objectPosition": "50% 100%",
+          "transform": "none"
+        },
+        "overflow": 0
+      },
+      "faqState": {
+        "height": 820,
+        "available": 819,
+        "title": {
+          "text": "Things people ask me",
+          "display": "block",
+          "opacity": "1",
+          "height": 147
+        },
+        "columns": "538.234px 538.25px",
+        "panelOpen": false,
+        "order": [
+          905.375,
+          2525.390625,
+          3280.734375,
+          9744.890625,
+          11420.203125,
+          12240.203125,
+          13060.203125
+        ],
+        "overflow": 0
+      },
+      "faqOpenState": {
+        "sectionHeight": 820,
+        "openPanels": 1,
+        "expanded": "true",
+        "answerHeight": 63
+      },
+      "requestFailures": []
+    },
+    "mobile": {
+      "work": {
+        "ledeHeight": 354,
+        "visibleNarratives": 1
+      },
+      "overflow": 0,
+      "aboutObjectFit": "contain",
+      "faqHeight": 648,
+      "faqTitleHeight": 93,
+      "faqItems": 6,
+      "requestFailures": []
+    }
+  },
+  "failures": []
+}

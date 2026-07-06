@@ -1,0 +1,133 @@
+{
+  "video-desktop": {
+    "wallHeight": 2008,
+    "reels": 4,
+    "wides": 2,
+    "videos": 6,
+    "unloaded": 6,
+    "firstRowTops": [
+      638,
+      638,
+      638,
+      638
+    ],
+    "wideTops": [
+      1144,
+      1632
+    ],
+    "overflow": 0,
+    "modal": false,
+    "sectionPhoto": "/images/video-showcase/abhijit-video-portrait.webp",
+    "scrollLocked": false,
+    "title": "300+ videos edited",
+    "intro": "A selection of short-form and widescreen edits. Tap any video to play it here, or open it full screen for a closer look."
+  },
+  "inlinePlayback": {
+    "firstPlayback": {
+      "src": "/videos/video-showcase/reel-01.mp4",
+      "controls": true,
+      "expandVisible": true,
+      "active": 1,
+      "locked": false
+    },
+    "exclusivePlayback": {
+      "active": [
+        "Social Reel Transformation"
+      ],
+      "firstPaused": true,
+      "secondSrc": "/videos/video-showcase/reel-02.mp4",
+      "scrollLocked": false
+    }
+  },
+  "video-tablet": {
+    "wallHeight": 2595,
+    "reels": 4,
+    "wides": 2,
+    "videos": 6,
+    "unloaded": 6,
+    "firstRowTops": [
+      608,
+      608,
+      1251,
+      1251
+    ],
+    "wideTops": [
+      1894,
+      2292
+    ],
+    "overflow": 0,
+    "modal": false,
+    "sectionPhoto": "/images/video-showcase/abhijit-video-portrait.webp",
+    "scrollLocked": false,
+    "title": "300+ videos edited",
+    "intro": "A selection of short-form and widescreen edits. Tap any video to play it here, or open it full screen for a closer look."
+  },
+  "video-mobile": {
+    "wallHeight": 1746,
+    "reels": 4,
+    "wides": 2,
+    "videos": 6,
+    "unloaded": 6,
+    "firstRowTops": [
+      613,
+      613,
+      987,
+      987
+    ],
+    "wideTops": [
+      1360,
+      1603
+    ],
+    "overflow": 0,
+    "modal": false,
+    "sectionPhoto": "/images/video-showcase/abhijit-video-portrait.webp",
+    "scrollLocked": false,
+    "title": "300+ videos edited",
+    "intro": "A selection of short-form and widescreen edits. Tap any video to play it here, or open it full screen for a closer look."
+  },
+  "video-small-mobile": {
+    "wallHeight": 1526,
+    "reels": 4,
+    "wides": 2,
+    "videos": 6,
+    "unloaded": 6,
+    "firstRowTops": [
+      570,
+      570,
+      892,
+      892
+    ],
+    "wideTops": [
+      1200,
+      1407
+    ],
+    "overflow": 0,
+    "modal": false,
+    "sectionPhoto": "/images/video-showcase/abhijit-video-portrait.webp",
+    "scrollLocked": false,
+    "title": "300+ videos edited",
+    "intro": "A selection of short-form and widescreen edits. Tap any video to play it here, or open it full screen for a closer look."
+  },
+  "mobilePlayback": {
+    "src": "/videos/video-showcase/landscape-01.mp4",
+    "active": 1,
+    "overflow": 0,
+    "expandTarget": 44
+  },
+  "reducedMotion": {
+    "transition": "0s",
+    "overflow": 0
+  },
+  "schema": {
+    "canonical": "https://abhijit.works/",
+    "count": 6,
+    "names": [
+      "Creator Before & After",
+      "Social Reel Transformation",
+      "Business Story Edit",
+      "Podcast Reel Breakdown",
+      "Motion Design Cut",
+      "Editing Timeline Cut"
+    ]
+  }
+}

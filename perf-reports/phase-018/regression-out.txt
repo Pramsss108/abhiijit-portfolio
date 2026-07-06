@@ -1,0 +1,200 @@
+{
+  "video-desktop": {
+    "wallHeight": 1998,
+    "reels": 4,
+    "wides": 2,
+    "videos": 6,
+    "unloaded": 6,
+    "loadedPosters": 4,
+    "firstRowTops": [
+      646,
+      646,
+      646,
+      646
+    ],
+    "wideTops": [
+      1149,
+      1634
+    ],
+    "overflow": 0,
+    "modal": false,
+    "sectionPhoto": "/images/video-showcase/abhijit-video-portrait.webp",
+    "scrollLocked": false,
+    "title": "300+ videos edited",
+    "intro": "From the first hook to the final sound cue, I edit for attention. Each cut combines platform-aware pacing, video marketing and trend-led audio—giving strong content a better chance to travel.",
+    "cue": "6 selected edits· Choose any frame to watch",
+    "workCredit": "Worked WithMadQuickVideo Editing",
+    "wallBackground": "none",
+    "headBackground": "none",
+    "portraitBacklight": "radial-gradient(at 57% 46%, rgba(241, 196, 90, 0.27), rgba(216, 167, 62, 0.13) 34%, rgba(216, 167, 62, 0.043) 56%, rgba(0, 0, 0, 0) 76%)",
+    "revealed": 4,
+    "wideContentVisibility": [
+      "auto",
+      "auto"
+    ]
+  },
+  "hoverState": {
+    "overlay": "rgba(0, 0, 0, 0)",
+    "overlayTransform": "none",
+    "frameTransform": "none"
+  },
+  "inlinePlayback": {
+    "firstPlayback": {
+      "src": "/videos/video-showcase/reel-01.mp4",
+      "controls": true,
+      "expandVisible": true,
+      "active": 1,
+      "state": "playing",
+      "playLabel": "Pause Creator Before & After",
+      "playTarget": 44,
+      "locked": false
+    },
+    "pausedByControl": {
+      "paused": true,
+      "state": "paused",
+      "label": "Resume Creator Before & After"
+    },
+    "exclusivePlayback": {
+      "active": [
+        "Social Reel Transformation"
+      ],
+      "firstPaused": true,
+      "firstState": "idle",
+      "secondSrc": "/videos/video-showcase/reel-02.mp4",
+      "scrollLocked": false
+    },
+    "pausedState": {
+      "paused": true,
+      "state": "paused",
+      "label": "Resume Social Reel Transformation"
+    }
+  },
+  "video-tablet": {
+    "wallHeight": 2523,
+    "reels": 4,
+    "wides": 2,
+    "videos": 6,
+    "unloaded": 6,
+    "loadedPosters": 2,
+    "firstRowTops": [
+      695,
+      695,
+      1291,
+      1291
+    ],
+    "wideTops": [
+      1879,
+      2245
+    ],
+    "overflow": 0,
+    "modal": false,
+    "sectionPhoto": "/images/video-showcase/abhijit-video-portrait.webp",
+    "scrollLocked": false,
+    "title": "300+ videos edited",
+    "intro": "From the first hook to the final sound cue, I edit for attention. Each cut combines platform-aware pacing, video marketing and trend-led audio—giving strong content a better chance to travel.",
+    "cue": "6 selected edits· Choose any frame to watch",
+    "workCredit": "Worked WithMadQuickVideo Editing",
+    "wallBackground": "none",
+    "headBackground": "none",
+    "portraitBacklight": "radial-gradient(at 57% 46%, rgba(241, 196, 90, 0.27), rgba(216, 167, 62, 0.13) 34%, rgba(216, 167, 62, 0.043) 56%, rgba(0, 0, 0, 0) 76%)",
+    "revealed": 2,
+    "wideContentVisibility": [
+      "auto",
+      "auto"
+    ]
+  },
+  "video-mobile": {
+    "wallHeight": 1752,
+    "reels": 4,
+    "wides": 2,
+    "videos": 6,
+    "unloaded": 6,
+    "loadedPosters": 2,
+    "firstRowTops": [
+      715,
+      715,
+      1057,
+      1057
+    ],
+    "wideTops": [
+      1391,
+      1613
+    ],
+    "overflow": 0,
+    "modal": false,
+    "sectionPhoto": "/images/video-showcase/abhijit-video-portrait.webp",
+    "scrollLocked": false,
+    "title": "300+ videos edited",
+    "intro": "From the first hook to the final sound cue, I edit for attention. Each cut combines platform-aware pacing, video marketing and trend-led audio—giving strong content a better chance to travel.",
+    "cue": "6 selected edits· Choose any frame to watch",
+    "workCredit": "Worked WithMadQuickVideo Editing",
+    "wallBackground": "none",
+    "headBackground": "none",
+    "portraitBacklight": "radial-gradient(at 57% 46%, rgba(241, 196, 90, 0.27), rgba(216, 167, 62, 0.13) 34%, rgba(216, 167, 62, 0.043) 56%, rgba(0, 0, 0, 0) 76%)",
+    "revealed": 2,
+    "wideContentVisibility": [
+      "auto",
+      "auto"
+    ]
+  },
+  "video-small-mobile": {
+    "wallHeight": 1627,
+    "reels": 4,
+    "wides": 2,
+    "videos": 6,
+    "unloaded": 6,
+    "loadedPosters": 0,
+    "firstRowTops": [
+      677,
+      677,
+      966,
+      966
+    ],
+    "wideTops": [
+      1255,
+      1442
+    ],
+    "overflow": 0,
+    "modal": false,
+    "sectionPhoto": "/images/video-showcase/abhijit-video-portrait.webp",
+    "scrollLocked": false,
+    "title": "300+ videos edited",
+    "intro": "From the first hook to the final sound cue, I edit for attention. Each cut combines platform-aware pacing, video marketing and trend-led audio—giving strong content a better chance to travel.",
+    "cue": "6 selected edits· Choose any frame to watch",
+    "workCredit": "Worked WithMadQuickVideo Editing",
+    "wallBackground": "none",
+    "headBackground": "none",
+    "portraitBacklight": "radial-gradient(at 57% 46%, rgba(241, 196, 90, 0.27), rgba(216, 167, 62, 0.13) 34%, rgba(216, 167, 62, 0.043) 56%, rgba(0, 0, 0, 0) 76%)",
+    "revealed": 0,
+    "wideContentVisibility": [
+      "auto",
+      "auto"
+    ]
+  },
+  "mobilePlayback": {
+    "src": "/videos/video-showcase/landscape-01.mp4",
+    "active": 1,
+    "state": "playing",
+    "overflow": 0,
+    "expandTarget": 44,
+    "pauseTarget": 44
+  },
+  "reducedMotion": {
+    "itemOpacity": "1",
+    "itemTransform": "none",
+    "spinnerAnimation": "none",
+    "overflow": 0
+  },
+  "schema": {
+    "canonical": "https://abhijit.works/",
+    "count": 6,
+    "names": [
+      "Creator Before & After",
+      "Social Reel Transformation",
+      "Business Story Edit",
+      "Podcast Reel Breakdown",
+      "Motion Design Cut",
+      "Editing Timeline Cut"
+    ]
+  }
+}

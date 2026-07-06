@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Liquid Glass — technique demo · Abhijit Pramanik</title>
+<style>
+  :root{
+    --bg-0:#050608; --bg-1:#0a0709; --bg-maroon:#1a0d12;
+    --gold:#d8a73e; --gold-bright:#f1c45a; --champagne:#f5e2b8;
+    --text:#f5f2ea; --text-soft:#cdc7b8; --text-dim:#8d8775;
+    --font-display:"Syne","Segoe UI",system-ui,sans-serif;
+    --font-body:"Inter","Segoe UI",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;}
+  html{ -webkit-text-size-adjust:100%; }
+  body{
+    min-height:100vh;
+    font-family:var(--font-body);
+    color:var(--text);
+    background:
+      radial-gradient(circle at 70% 18%, rgba(216,167,62,0.18), transparent 34%),
+      radial-gradient(circle at 14% 22%, rgba(120,90,200,0.10), transparent 38%),
+      radial-gradient(120% 120% at 50% 0%, var(--bg-maroon) 0%, var(--bg-1) 42%, var(--bg-0) 100%);
+    overflow-x:hidden;
+    padding:clamp(1.5rem,4vw,4rem);
+  }
+  /* ---- the colored orbs that bleed through the frost ---- */
+  .stage{ position:relative; max-width:1080px; margin-inline:auto; isolation:isolate; }
+  .orbs{ position:absolute; inset:-8% -4%; z-index:0; pointer-events:none; filter:saturate(125%); }
+  .orb{ position:absolute; border-radius:50%; filter:blur(72px); opacity:.55; will-change:transform; }
+  .orb--gold{ width:360px;height:360px; left:54%; top:-4%; background:radial-gradient(circle,#f1c45a,#a9781f 60%,transparent 72%); animation:drift1 16s ease-in-out infinite; }
+  .orb--mag { width:300px;height:300px; left:6%;  top:30%; background:radial-gradient(circle,#d4537e,#7a2342 60%,transparent 72%); opacity:.42; animation:drift2 19s ease-in-out infinite; }
+  .orb--teal{ width:280px;height:280px; left:38%; top:58%; background:radial-gradient(circle,#1d9e75,#0f5e46 60%,transparent 72%); opacity:.40; animation:drift3 22s ease-in-out infinite; }
+  .orb--vio { width:240px;height:240px; left:78%; top:55%; background:radial-gradient(circle,#7f77dd,#3c3489 60%,transparent 72%); opacity:.40; animation:drift1 24s ease-in-out infinite reverse; }
+  @keyframes drift1{ 0%,100%{transform:translate(0,0)} 50%{transform:translate(-26px,30px)} }
+  @keyframes drift2{ 0%,100%{transform:translate(0,0)} 50%{transform:translate(34px,-22px)} }
+  @keyframes drift3{ 0%,100%{transform:translate(0,0)} 50%{transform:translate(-20px,-28px)} }
+
+  .head{ position:relative; z-index:2; text-align:center; margin-bottom:clamp(1.6rem,4vw,3rem); }
+  .head .eyebrow{ font-size:.78rem; letter-spacing:.28em; text-transform:uppercase; color:var(--gold); font-weight:600; }
+  .head h1{ font-family:var(--font-display); font-weight:800; font-size:clamp(2rem,1.2rem+3vw,3.4rem); line-height:1.05; margin-top:.6rem; letter-spacing:-.01em; }
+  /* the "boxed accent word" trick from the reference */
+  .boxed{ position:relative; color:var(--gold-bright); padding:.02em .26em; }
+  .boxed::before{ content:""; position:absolute; inset:0; border:1.5px solid var(--gold); border-radius:10px; box-shadow:0 0 22px -4px rgba(216,167,62,.6); }
+  .head p{ color:var(--text-soft); max-width:46ch; margin:1rem auto 0; line-height:1.6; }
+
+  /* ---- the LIQUID GLASS card ---- */
+  .grid{ position:relative; z-index:2; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:clamp(1rem,2vw,1.6rem); }
+  .glass{
+    position:relative;
+    border-radius:24px;
+    padding:1.6rem 1.5rem 1.4rem;
+    background:linear-gradient(150deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.035) 46%, rgba(255,255,255,0.06) 100%);
+    -webkit-backdrop-filter:blur(22px) saturate(150%);
+    backdrop-filter:blur(22px) saturate(150%);
+    border:1px solid rgba(255,255,255,0.14);
+    box-shadow:
+      0 24px 60px -22px rgba(0,0,0,0.75),
+      inset 0 1px 0 rgba(255,255,255,0.28),      /* top specular edge */
+      inset 0 0 0 1px rgba(255,255,255,0.02);
+    overflow:hidden;
+    transition:transform .5s cubic-bezier(.22,1,.36,1), border-color .5s, box-shadow .5s;
+    will-change:transform;
+  }
+  /* soft specular sheen, top-left, like light hitting glass */
+  .glass::before{
+    content:""; position:absolute; top:-40%; left:-20%; width:80%; height:120%;
+    background:radial-gradient(circle, rgba(255,255,255,.18), transparent 60%);
+    transform:rotate(8deg); pointer-events:none;
+  }
+  .glass:hover{
+    transform:translateY(-8px);
+    border-color:rgba(216,167,62,0.55);
+    box-shadow:
+      0 36px 80px -26px rgba(0,0,0,0.8),
+      0 0 60px -18px rgba(216,167,62,0.45),
+      inset 0 1px 0 rgba(255,255,255,0.34);
+  }
+  .glass__tag{ display:inline-flex; align-items:center; gap:.4rem; font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; font-weight:600;
+    color:var(--gold-bright); background:rgba(216,167,62,.12); border:1px solid rgba(216,167,62,.30); padding:.32rem .7rem; border-radius:999px; }
+  .glass__num{ font-family:var(--font-display); font-weight:800; font-size:2.4rem; line-height:1; margin:1.1rem 0 .3rem;
+    background:linear-gradient(120deg,var(--text) 20%,var(--gold-bright)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .glass__title{ font-family:var(--font-display); font-weight:700; font-size:1.18rem; margin:.9rem 0 .35rem; }
+  .glass__desc{ color:var(--text-soft); font-size:.92rem; line-height:1.55; }
+  .glass__foot{ display:flex; align-items:center; justify-content:space-between; margin-top:1.3rem; }
+  .glass__meta{ font-size:.8rem; color:var(--text-dim); }
+  .glass__go{ width:42px;height:42px;border-radius:50%; display:grid;place-items:center; color:var(--bg-0);
+    background:linear-gradient(135deg,var(--gold-bright),var(--gold)); box-shadow:0 8px 22px -8px rgba(216,167,62,.7); font-size:1.1rem; text-decoration:none;
+    transition:transform .4s cubic-bezier(.34,1.56,.64,1); }
+  .glass:hover .glass__go{ transform:rotate(-45deg) scale(1.06); }
+
+  .note{ position:relative; z-index:2; text-align:center; margin-top:2.2rem; color:var(--text-dim); font-size:.85rem; }
+
+  @media (prefers-reduced-motion: reduce){ .orb{ animation:none !important; } .glass,.glass__go{ transition:none; } }
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="orbs" aria-hidden="true">
+      <span class="orb orb--gold"></span>
+      <span class="orb orb--mag"></span>
+      <span class="orb orb--teal"></span>
+      <span class="orb orb--vio"></span>
+    </div>
+
+    <header class="head">
+      <p class="eyebrow">Technique demo</p>
+      <h1>Liquid <span class="boxed">Glass</span> on dark</h1>
+      <p>Colored gradient orbs glow behind frosted panels — the blur lets them bleed through. Pure CSS, no images, no tools. Hover a card.</p>
+    </header>
+
+    <div class="grid">
+      <article class="glass">
+        <span class="glass__tag"><span>SEO</span></span>
+        <div class="glass__num">128%</div>
+        <p class="glass__desc">Average organic-traffic lift across managed SEO accounts.</p>
+        <div class="glass__title">SEO Growth Engine</div>
+        <p class="glass__desc">Technical fixes, content clusters, and intent-mapped keywords that compound.</p>
+        <div class="glass__foot">
+          <span class="glass__meta">36+ companies</span>
+          <a class="glass__go" href="#" aria-label="View case">&#8599;</a>
+        </div>
+      </article>
+
+      <article class="glass">
+        <span class="glass__tag"><span>Content</span></span>
+        <div class="glass__num">400+</div>
+        <p class="glass__desc">SEO articles published that actually rank and convert.</p>
+        <div class="glass__title">Content That Ranks</div>
+        <p class="glass__desc">Research-backed, human-sounding, AI-assisted — built to win the SERP.</p>
+        <div class="glass__foot">
+          <span class="glass__meta">India · Dubai · USA</span>
+          <a class="glass__go" href="#" aria-label="View case">&#8599;</a>
+        </div>
+      </article>
+
+      <article class="glass">
+        <span class="glass__tag"><span>Build</span></span>
+        <div class="glass__num">40+</div>
+        <p class="glass__desc">WordPress &amp; no-code sites shipped end-to-end.</p>
+        <div class="glass__title">WordPress &amp; Web</div>
+        <p class="glass__desc">Fast, clean, conversion-first builds — design through launch.</p>
+        <div class="glass__foot">
+          <span class="glass__meta">Proof projects</span>
+          <a class="glass__go" href="#" aria-label="View case">&#8599;</a>
+        </div>
+      </article>
+    </div>
+
+    <p class="note">This is live CSS — <code>backdrop-filter: blur()</code> over animated colored orbs + a specular inset edge. Resize / hover to feel it.</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AP full code-tag display logo">
+  <defs>
+    <linearGradient id="base" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#1b1c20"/><stop offset=".55" stop-color="#101216"/><stop offset="1" stop-color="#090b0f"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f5e2b8"/><stop offset=".46" stop-color="#f1c45a"/><stop offset="1" stop-color="#b77f25"/></linearGradient>
+    <linearGradient id="rim" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f5e2b8"/><stop offset=".52" stop-color="#d8a73e"/><stop offset="1" stop-color="#8a6418"/></linearGradient>
+    <radialGradient id="glow" cx=".5" cy=".38" r=".65"><stop stop-color="#f1c45a" stop-opacity=".25"/><stop offset=".58" stop-color="#d8a73e" stop-opacity=".07"/><stop offset="1" stop-color="#d8a73e" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect x="14" y="14" width="172" height="172" rx="46" fill="url(#glow)"/><rect x="22" y="22" width="156" height="156" rx="38" fill="url(#base)"/><rect x="22" y="22" width="156" height="156" rx="38" fill="url(#glow)"/>
+  <rect x="23.5" y="23.5" width="153" height="153" rx="36.5" fill="none" stroke="url(#rim)" stroke-width="3"/><rect x="26" y="26" width="148" height="148" rx="34" fill="none" stroke="#fff4d6" stroke-opacity=".16" stroke-width="1"/>
+  <g fill="none" stroke="url(#gold)" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"><path d="M45 67L29 100L45 133"/><path d="M160 67L176 100L160 133"/><path d="M146 61L137 139"/></g>
+  <path d="M51 140L68 59H82L99 140H86L83 120H67L63 140ZM71 105H80L75.5 81Z" fill="#f7f3e9"/>
+  <path d="M96 59H114C128 59 135 68 135 83C135 98 127 107 113 107H109V140H96ZM109 72V95H113C119 95 122 91 122 83C122 76 119 72 113 72Z" fill="url(#gold)"/>
+</svg>

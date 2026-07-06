@@ -1,0 +1,402 @@
+{
+  "mode": "after-motion-faq",
+  "base": "http://localhost:5055",
+  "viewports": {
+    "desktop": {
+      "errors": [],
+      "sections": {
+        "hero": {
+          "box": {
+            "x": 0,
+            "y": 81,
+            "width": 1440,
+            "height": 824
+          },
+          "revealCount": 8,
+          "hiddenAfterSettle": [
+            "hero__statsbar reveal reveal--delay-3"
+          ],
+          "scrollOverflow": 0,
+          "pageOverflow": 0
+        },
+        "proof": {
+          "box": {
+            "x": 0,
+            "y": 85,
+            "width": 1440,
+            "height": 1620
+          },
+          "revealCount": 12,
+          "hiddenAfterSettle": [
+            "proof-evidence__head reveal",
+            "evidence-desk reveal reveal--delay-1 is-enhanced is-desktop",
+            "evidence-policy reveal",
+            "proof__subhead reveal",
+            "card proof-case reveal rv-left rv-stagger",
+            "card proof-case reveal reveal--delay-1 rv-right rv-stagger",
+            "card proof-case reveal reveal--delay-2 rv-left rv-stagger"
+          ],
+          "scrollOverflow": 0,
+          "pageOverflow": 0
+        },
+        "evidence": {
+          "box": {
+            "x": 0,
+            "y": 85,
+            "width": 1440,
+            "height": 820
+          },
+          "revealCount": 3,
+          "hiddenAfterSettle": [],
+          "scrollOverflow": 0,
+          "pageOverflow": 0
+        },
+        "skills": {
+          "box": {
+            "x": 0,
+            "y": 85,
+            "width": 1440,
+            "height": 755
+          },
+          "revealCount": 2,
+          "hiddenAfterSettle": [],
+          "scrollOverflow": 0,
+          "pageOverflow": 0
+        },
+        "video": {
+          "box": {
+            "x": 144,
+            "y": 59,
+            "width": 1152,
+            "height": 1998
+          },
+          "revealCount": 0,
+          "hiddenAfterSettle": [],
+          "scrollOverflow": 0,
+          "pageOverflow": 0
+        },
+        "work": {
+          "box": {
+            "x": 0,
+            "y": 85,
+            "width": 1440,
+            "height": 6464
+          },
+          "revealCount": 13,
+          "hiddenAfterSettle": [
+            "eyebrow reveal",
+            "showcase-title",
+            "work__narr reveal reveal--delay-2",
+            "work__additional reveal reveal--delay-2",
+            "work__meta reveal reveal--delay-3",
+            "work__cta reveal reveal--delay-3",
+            "work-1",
+            "work-2",
+            "work-3",
+            "work-4",
+            "work-5",
+            "work-6"
+          ],
+          "scrollOverflow": 0,
+          "pageOverflow": 0
+        },
+        "process": {
+          "box": {
+            "x": 0,
+            "y": 85,
+            "width": 1440,
+            "height": 1675
+          },
+          "revealCount": 8,
+          "hiddenAfterSettle": [
+            "process__step reveal",
+            "process__step reveal",
+            "process__step reveal",
+            "process__step reveal"
+          ],
+          "scrollOverflow": 0,
+          "pageOverflow": 0
+        },
+        "about": {
+          "box": {
+            "x": 0,
+            "y": 85,
+            "width": 1440,
+            "height": 820
+          },
+          "revealCount": 6,
+          "hiddenAfterSettle": [
+            "about-title"
+          ],
+          "scrollOverflow": 0,
+          "pageOverflow": 0
+        },
+        "faq": {
+          "box": {
+            "x": 0,
+            "y": 85,
+            "width": 1440,
+            "height": 820
+          },
+          "revealCount": 8,
+          "hiddenAfterSettle": [],
+          "scrollOverflow": 0,
+          "pageOverflow": 0
+        },
+        "contact": {
+          "box": {
+            "x": 0,
+            "y": 85,
+            "width": 1440,
+            "height": 848
+          },
+          "revealCount": 7,
+          "hiddenAfterSettle": [],
+          "scrollOverflow": 0,
+          "pageOverflow": 0
+        },
+        "footer": {
+          "box": {
+            "x": 0,
+            "y": 407,
+            "width": 1440,
+            "height": 493
+          },
+          "revealCount": 0,
+          "hiddenAfterSettle": [],
+          "scrollOverflow": 0,
+          "pageOverflow": 0
+        }
+      },
+      "faq": {
+        "sectionHeight": 820,
+        "columns": "538.234px 538.25px",
+        "gap": "11.52px",
+        "headWidth": 760,
+        "itemCount": 6,
+        "openCount": 0
+      },
+      "faqAfterOpen": {
+        "openCount": 1,
+        "openPanelHeight": 63,
+        "pageOverflow": 0
+      },
+      "availability": {
+        "text": "Available for work",
+        "color": "rgb(57, 229, 140)",
+        "shadow": "rgba(57, 229, 140, 0.12) 0px 0px 0px 3px, rgba(57, 229, 140, 0.72) 0px 0px 13px 0px",
+        "animation": "none"
+      }
+    },
+    "mobile": {
+      "errors": [],
+      "sections": {
+        "hero": {
+          "box": {
+            "x": 0,
+            "y": 73,
+            "width": 390,
+            "height": 1525
+          },
+          "revealCount": 8,
+          "hiddenAfterSettle": [
+            "hero__statsbar reveal reveal--delay-3"
+          ],
+          "scrollOverflow": 0,
+          "pageOverflow": 0
+        },
+        "proof": {
+          "box": {
+            "x": 0,
+            "y": 77,
+            "width": 390,
+            "height": 2796
+          },
+          "revealCount": 12,
+          "hiddenAfterSettle": [
+            "proof-evidence__head reveal",
+            "evidence-desk reveal reveal--delay-1 is-enhanced",
+            "evidence-policy reveal",
+            "proof__subhead reveal",
+            "card proof-case reveal rv-left rv-stagger",
+            "card proof-case reveal reveal--delay-1 rv-right rv-stagger",
+            "card proof-case reveal reveal--delay-2 rv-left rv-stagger"
+          ],
+          "scrollOverflow": 204,
+          "pageOverflow": 0
+        },
+        "evidence": {
+          "box": {
+            "x": 0,
+            "y": 77,
+            "width": 390,
+            "height": 1541
+          },
+          "revealCount": 3,
+          "hiddenAfterSettle": [
+            "evidence-policy reveal"
+          ],
+          "scrollOverflow": 0,
+          "pageOverflow": 0
+        },
+        "skills": {
+          "box": {
+            "x": 0,
+            "y": 77,
+            "width": 390,
+            "height": 619
+          },
+          "revealCount": 2,
+          "hiddenAfterSettle": [],
+          "scrollOverflow": 0,
+          "pageOverflow": 0
+        },
+        "video": {
+          "box": {
+            "x": 10,
+            "y": 51,
+            "width": 370,
+            "height": 1752
+          },
+          "revealCount": 0,
+          "hiddenAfterSettle": [],
+          "scrollOverflow": 0,
+          "pageOverflow": 0
+        },
+        "work": {
+          "box": {
+            "x": 0,
+            "y": 77,
+            "width": 390,
+            "height": 5628
+          },
+          "revealCount": 13,
+          "hiddenAfterSettle": [
+            "eyebrow reveal",
+            "showcase-title",
+            "work__narr reveal reveal--delay-2",
+            "work__additional reveal reveal--delay-2",
+            "work__meta reveal reveal--delay-3",
+            "work__cta reveal reveal--delay-3",
+            "work-1",
+            "work-2",
+            "work-3",
+            "work-4",
+            "work-5",
+            "work-6"
+          ],
+          "scrollOverflow": 0,
+          "pageOverflow": 0
+        },
+        "process": {
+          "box": {
+            "x": 0,
+            "y": 77,
+            "width": 390,
+            "height": 1297
+          },
+          "revealCount": 8,
+          "hiddenAfterSettle": [
+            "process__step reveal",
+            "process__step reveal",
+            "process__step reveal"
+          ],
+          "scrollOverflow": 0,
+          "pageOverflow": 0
+        },
+        "about": {
+          "box": {
+            "x": 0,
+            "y": 77,
+            "width": 390,
+            "height": 1305
+          },
+          "revealCount": 6,
+          "hiddenAfterSettle": [
+            "about-title",
+            "about__copy reveal reveal--delay-2",
+            "about__chips chip-row reveal reveal--delay-3",
+            "about__actions reveal reveal--delay-4"
+          ],
+          "scrollOverflow": 0,
+          "pageOverflow": 0
+        },
+        "faq": {
+          "box": {
+            "x": 0,
+            "y": 77,
+            "width": 390,
+            "height": 648
+          },
+          "revealCount": 8,
+          "hiddenAfterSettle": [],
+          "scrollOverflow": 0,
+          "pageOverflow": 0
+        },
+        "contact": {
+          "box": {
+            "x": 0,
+            "y": 77,
+            "width": 390,
+            "height": 851
+          },
+          "revealCount": 7,
+          "hiddenAfterSettle": [],
+          "scrollOverflow": 0,
+          "pageOverflow": 0
+        },
+        "footer": {
+          "box": {
+            "x": 0,
+            "y": 77,
+            "width": 390,
+            "height": 961
+          },
+          "revealCount": 0,
+          "hiddenAfterSettle": [],
+          "scrollOverflow": 0,
+          "pageOverflow": 0
+        }
+      },
+      "faq": {
+        "sectionHeight": 648,
+        "columns": "351.312px",
+        "gap": "7.68px",
+        "headWidth": 351,
+        "itemCount": 6,
+        "openCount": 0
+      },
+      "faqAfterOpen": {
+        "openCount": 1,
+        "openPanelHeight": 53,
+        "pageOverflow": 0
+      },
+      "availability": {
+        "text": "Available for work",
+        "color": "rgb(57, 229, 140)",
+        "shadow": "rgba(57, 229, 140, 0.12) 0px 0px 0px 3px, rgba(57, 229, 140, 0.72) 0px 0px 13px 0px",
+        "animation": "none"
+      }
+    }
+  },
+  "reducedMotion": {
+    "desktop": {
+      "hidden": 0,
+      "overflow": 0
+    },
+    "mobile": {
+      "hidden": 0,
+      "overflow": 0
+    }
+  },
+  "noJavaScript": {
+    "desktop": {
+      "hidden": 0,
+      "overflow": 0
+    },
+    "mobile": {
+      "hidden": 0,
+      "overflow": 0
+    }
+  }
+}

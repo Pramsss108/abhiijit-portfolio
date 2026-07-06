@@ -1,0 +1,517 @@
+{
+  "report": {
+    "desktop": {
+      "video-head": {
+        "initial": {
+          "opacity": 0,
+          "transform": "matrix(1, 0, 0, 1, 0, 18)",
+          "className": "showreel__head scene-enter"
+        },
+        "entering": {
+          "opacity": 0,
+          "transform": "matrix(1, 0, 0, 1, 0, 18)",
+          "className": "showreel__head scene-enter"
+        },
+        "settled": {
+          "opacity": 1,
+          "transform": "none",
+          "className": "showreel__head scene-enter is-scene-visible",
+          "inlineStyle": "--scene-i: 0;",
+          "animationName": "none",
+          "animationTimeline": "auto",
+          "transitionProperty": "opacity, transform",
+          "animations": [],
+          "top": 72,
+          "bottom": 590,
+          "overflow": 0
+        }
+      },
+      "skills-title": {
+        "initial": {
+          "opacity": 0,
+          "transform": "matrix(1, 0, 0, 1, 0, 18)",
+          "className": "section__title scene-enter"
+        },
+        "entering": {
+          "opacity": 0,
+          "transform": "matrix(1, 0, 0, 1, 0, 18)",
+          "className": "section__title scene-enter is-scene-visible is-visible"
+        },
+        "settled": {
+          "opacity": 1,
+          "transform": "none",
+          "className": "section__title scene-enter is-scene-visible is-visible",
+          "inlineStyle": "--scene-i: 1;",
+          "animationName": "none",
+          "animationTimeline": "auto",
+          "transitionProperty": "opacity, transform",
+          "animations": [],
+          "top": 430,
+          "bottom": 484,
+          "overflow": 0
+        }
+      },
+      "video-card": {
+        "initial": {
+          "opacity": 0,
+          "transform": "matrix(1, 0, 0, 1, 0, 14)",
+          "className": "showreel__item showreel__item--portrait scene-enter"
+        },
+        "entering": {
+          "opacity": 0.380167,
+          "transform": "matrix(1, 0, 0, 1, 0, 14)",
+          "className": "showreel__item showreel__item--portrait scene-enter is-ready is-scene-visible"
+        },
+        "settled": {
+          "opacity": 1,
+          "transform": "none",
+          "className": "showreel__item showreel__item--portrait scene-enter is-ready is-scene-visible",
+          "inlineStyle": "--scene-i: 1;",
+          "animationName": "none",
+          "animationTimeline": "auto",
+          "transitionProperty": "opacity, transform",
+          "animations": [],
+          "top": 257,
+          "bottom": 739,
+          "overflow": 0
+        }
+      },
+      "case-card": {
+        "initial": {
+          "opacity": 0,
+          "transform": "matrix(1, 0, 0, 1, 0, 26)",
+          "className": "work-item reveal"
+        },
+        "entering": {
+          "opacity": 0.866537,
+          "transform": "matrix(1, 0, 0, 1, 0, 3.47004)",
+          "className": "work-item reveal is-visible"
+        },
+        "settled": {
+          "opacity": 1,
+          "transform": "none",
+          "className": "work-item reveal is-visible",
+          "inlineStyle": "",
+          "animationName": "none",
+          "animationTimeline": "auto",
+          "transitionProperty": "opacity, transform",
+          "animations": [],
+          "top": 271,
+          "bottom": 911,
+          "overflow": 0
+        }
+      },
+      "process-step": {
+        "initial": {
+          "opacity": 0,
+          "transform": "matrix(1, 0, 0, 1, 0, 26)",
+          "className": "process__step reveal"
+        },
+        "entering": {
+          "opacity": 0.716201,
+          "transform": "matrix(1, 0, 0, 1, 0, 7.37877)",
+          "className": "process__step reveal is-visible"
+        },
+        "settled": {
+          "opacity": 1,
+          "transform": "none",
+          "className": "process__step reveal is-visible",
+          "inlineStyle": "",
+          "animationName": "none",
+          "animationTimeline": "auto",
+          "transitionProperty": "opacity, transform",
+          "animations": [],
+          "top": 271,
+          "bottom": 451,
+          "overflow": 0
+        }
+      },
+      "about-copy": {
+        "initial": {
+          "opacity": 0,
+          "transform": "matrix(1, 0, 0, 1, 0, 26)",
+          "className": "about__copy reveal reveal--delay-2 is-visible"
+        },
+        "entering": {
+          "opacity": 0.362217,
+          "transform": "matrix(1, 0, 0, 1, 0, 16.5824)",
+          "className": "about__copy reveal reveal--delay-2 is-visible"
+        },
+        "settled": {
+          "opacity": 1,
+          "transform": "none",
+          "className": "about__copy reveal reveal--delay-2 is-visible",
+          "inlineStyle": "transition-delay: 180ms;",
+          "animationName": "none",
+          "animationTimeline": "auto",
+          "transitionProperty": "opacity, transform",
+          "animations": [],
+          "top": 271,
+          "bottom": 458,
+          "overflow": 0
+        }
+      },
+      "faq-head": {
+        "initial": {
+          "opacity": 0,
+          "transform": "matrix(1, 0, 0, 1, 0, 44.2)",
+          "className": "section__head section__head--center reveal rv-up-lg"
+        },
+        "entering": {
+          "opacity": 0.764241,
+          "transform": "matrix(1, 0, 0, 1, 0, 10.4205)",
+          "className": "section__head section__head--center reveal rv-up-lg is-visible"
+        },
+        "settled": {
+          "opacity": 1,
+          "transform": "none",
+          "className": "section__head section__head--center reveal rv-up-lg is-visible",
+          "inlineStyle": "",
+          "animationName": "none",
+          "animationTimeline": "auto",
+          "transitionProperty": "opacity, transform",
+          "animations": [],
+          "top": 253,
+          "bottom": 431,
+          "overflow": 0
+        }
+      },
+      "faq-item": {
+        "initial": {
+          "opacity": 0,
+          "transform": "none",
+          "className": "faq__item card reveal"
+        },
+        "entering": {
+          "opacity": 0.5239,
+          "transform": "none",
+          "className": "faq__item card reveal is-visible"
+        },
+        "settled": {
+          "opacity": 1,
+          "transform": "none",
+          "className": "faq__item card reveal is-visible",
+          "inlineStyle": "",
+          "animationName": "none",
+          "animationTimeline": "auto",
+          "transitionProperty": "opacity, border-color, background-color",
+          "animations": [],
+          "top": 297,
+          "bottom": 374,
+          "overflow": 0
+        }
+      },
+      "contact-panel": {
+        "initial": {
+          "opacity": 0,
+          "transform": "matrix(1, 0, 0, 1, 0, 26)",
+          "className": "contact__panel card reveal"
+        },
+        "entering": {
+          "opacity": 1,
+          "transform": "matrix(1, 0, 0, 1, 0, 0.722506)",
+          "className": "contact__panel card reveal is-visible"
+        },
+        "settled": {
+          "opacity": 1,
+          "transform": "none",
+          "className": "contact__panel card reveal is-visible",
+          "inlineStyle": "",
+          "animationName": "none",
+          "animationTimeline": "auto",
+          "transitionProperty": "transform, border-color, box-shadow",
+          "animations": [],
+          "top": 271,
+          "bottom": 1020,
+          "overflow": 0
+        }
+      },
+      "footer-brand": {
+        "initial": {
+          "opacity": 0,
+          "transform": "matrix(1, 0, 0, 1, 0, 18)",
+          "className": "site-footer__brand scene-enter is-scene-visible"
+        },
+        "entering": {
+          "opacity": 0.947294,
+          "transform": "matrix(1, 0, 0, 1, 0, 1.44189)",
+          "className": "site-footer__brand scene-enter is-scene-visible"
+        },
+        "settled": {
+          "opacity": 1,
+          "transform": "none",
+          "className": "site-footer__brand scene-enter is-scene-visible",
+          "inlineStyle": "--scene-i: 0;",
+          "animationName": "none",
+          "animationTimeline": "auto",
+          "transitionProperty": "opacity, transform",
+          "animations": [],
+          "top": 488,
+          "bottom": 722,
+          "overflow": 0
+        }
+      },
+      "reduced": {
+        "hidden": 0,
+        "overflow": 0
+      }
+    },
+    "mobile": {
+      "video-head": {
+        "initial": {
+          "opacity": 0,
+          "transform": "matrix(1, 0, 0, 1, 0, 18)",
+          "className": "showreel__head scene-enter is-scene-visible"
+        },
+        "entering": {
+          "opacity": 0.918509,
+          "transform": "matrix(1, 0, 0, 1, 0, 2.08216)",
+          "className": "showreel__head scene-enter is-scene-visible"
+        },
+        "settled": {
+          "opacity": 1,
+          "transform": "none",
+          "className": "showreel__head scene-enter is-scene-visible",
+          "inlineStyle": "--scene-i: 0;",
+          "animationName": "none",
+          "animationTimeline": "auto",
+          "transitionProperty": "opacity, transform",
+          "animations": [],
+          "top": 231,
+          "bottom": 871,
+          "overflow": 0
+        }
+      },
+      "skills-title": {
+        "initial": {
+          "opacity": 0,
+          "transform": "matrix(1, 0, 0, 1, 0, 18)",
+          "className": "section__title scene-enter"
+        },
+        "entering": {
+          "opacity": 0.7159,
+          "transform": "matrix(1, 0, 0, 1, 0, 6.08042)",
+          "className": "section__title scene-enter is-visible is-scene-visible"
+        },
+        "settled": {
+          "opacity": 1,
+          "transform": "none",
+          "className": "section__title scene-enter is-visible is-scene-visible",
+          "inlineStyle": "--scene-i: 1;",
+          "animationName": "none",
+          "animationTimeline": "auto",
+          "transitionProperty": "opacity, transform",
+          "animations": [],
+          "top": 372,
+          "bottom": 410,
+          "overflow": 0
+        }
+      },
+      "video-card": {
+        "initial": {
+          "opacity": 0,
+          "transform": "matrix(1, 0, 0, 1, 0, 14)",
+          "className": "showreel__item showreel__item--portrait scene-enter is-scene-visible"
+        },
+        "entering": {
+          "opacity": 0.893262,
+          "transform": "matrix(1, 0, 0, 1, 0, 2.03831)",
+          "className": "showreel__item showreel__item--portrait scene-enter is-scene-visible is-ready"
+        },
+        "settled": {
+          "opacity": 1,
+          "transform": "none",
+          "className": "showreel__item showreel__item--portrait scene-enter is-scene-visible is-ready",
+          "inlineStyle": "--scene-i: 1;",
+          "animationName": "none",
+          "animationTimeline": "auto",
+          "transitionProperty": "opacity, transform",
+          "animations": [],
+          "top": 239,
+          "bottom": 557,
+          "overflow": 0
+        }
+      },
+      "case-card": {
+        "initial": {
+          "opacity": 0,
+          "transform": "matrix(1, 0, 0, 1, 0, 26)",
+          "className": "work-item reveal"
+        },
+        "entering": {
+          "opacity": 0.894692,
+          "transform": "matrix(1, 0, 0, 1, 0, 2.738)",
+          "className": "work-item reveal is-visible"
+        },
+        "settled": {
+          "opacity": 1,
+          "transform": "none",
+          "className": "work-item reveal is-visible",
+          "inlineStyle": "",
+          "animationName": "none",
+          "animationTimeline": "auto",
+          "transitionProperty": "opacity, transform",
+          "animations": [],
+          "top": 250,
+          "bottom": 780,
+          "overflow": 0
+        }
+      },
+      "process-step": {
+        "initial": {
+          "opacity": 0,
+          "transform": "matrix(1, 0, 0, 1, 0, 26)",
+          "className": "process__step reveal"
+        },
+        "entering": {
+          "opacity": 0.804884,
+          "transform": "matrix(1, 0, 0, 1, 0, 5.07303)",
+          "className": "process__step reveal is-visible"
+        },
+        "settled": {
+          "opacity": 1,
+          "transform": "none",
+          "className": "process__step reveal is-visible",
+          "inlineStyle": "",
+          "animationName": "none",
+          "animationTimeline": "auto",
+          "transitionProperty": "opacity, transform",
+          "animations": [],
+          "top": 249,
+          "bottom": 372,
+          "overflow": 0
+        }
+      },
+      "about-copy": {
+        "initial": {
+          "opacity": 0,
+          "transform": "matrix(1, 0, 0, 1, 0, 26)",
+          "className": "about__copy reveal reveal--delay-2 is-visible"
+        },
+        "entering": {
+          "opacity": 0.456209,
+          "transform": "matrix(1, 0, 0, 1, 0, 14.1386)",
+          "className": "about__copy reveal reveal--delay-2 is-visible"
+        },
+        "settled": {
+          "opacity": 1,
+          "transform": "none",
+          "className": "about__copy reveal reveal--delay-2 is-visible",
+          "inlineStyle": "transition-delay: 180ms;",
+          "animationName": "none",
+          "animationTimeline": "auto",
+          "transitionProperty": "opacity, transform",
+          "animations": [],
+          "top": 250,
+          "bottom": 654,
+          "overflow": 0
+        }
+      },
+      "faq-head": {
+        "initial": {
+          "opacity": 0.122731,
+          "transform": "matrix(1, 0, 0, 1, 0, 38.7753)",
+          "className": "section__head section__head--center reveal rv-up-lg is-visible"
+        },
+        "entering": {
+          "opacity": 0.940338,
+          "transform": "matrix(1, 0, 0, 1, 0, 2.63704)",
+          "className": "section__head section__head--center reveal rv-up-lg is-visible"
+        },
+        "settled": {
+          "opacity": 1,
+          "transform": "none",
+          "className": "section__head section__head--center reveal rv-up-lg is-visible",
+          "inlineStyle": "",
+          "animationName": "none",
+          "animationTimeline": "auto",
+          "transitionProperty": "opacity, transform",
+          "animations": [],
+          "top": 237,
+          "bottom": 416,
+          "overflow": 0
+        }
+      },
+      "faq-item": {
+        "initial": {
+          "opacity": 0,
+          "transform": "none",
+          "className": "faq__item card reveal"
+        },
+        "entering": {
+          "opacity": 0.879106,
+          "transform": "none",
+          "className": "faq__item card reveal is-visible"
+        },
+        "settled": {
+          "opacity": 1,
+          "transform": "none",
+          "className": "faq__item card reveal is-visible",
+          "inlineStyle": "",
+          "animationName": "none",
+          "animationTimeline": "auto",
+          "transitionProperty": "opacity, border-color, background-color",
+          "animations": [],
+          "top": 275,
+          "bottom": 337,
+          "overflow": 0
+        }
+      },
+      "contact-panel": {
+        "initial": {
+          "opacity": 1,
+          "transform": "matrix(1, 0, 0, 1, 0, 26)",
+          "className": "contact__panel card reveal is-visible"
+        },
+        "entering": {
+          "opacity": 1,
+          "transform": "matrix(1, 0, 0, 1, 0, 0.0988373)",
+          "className": "contact__panel card reveal is-visible"
+        },
+        "settled": {
+          "opacity": 1,
+          "transform": "none",
+          "className": "contact__panel card reveal is-visible",
+          "inlineStyle": "",
+          "animationName": "none",
+          "animationTimeline": "auto",
+          "transitionProperty": "transform, border-color, box-shadow",
+          "animations": [],
+          "top": 255,
+          "bottom": 1047,
+          "overflow": 0
+        }
+      },
+      "footer-brand": {
+        "initial": {
+          "opacity": 0.12665,
+          "transform": "matrix(1, 0, 0, 1, 0, 15.9888)",
+          "className": "site-footer__brand scene-enter is-scene-visible"
+        },
+        "entering": {
+          "opacity": 0.918547,
+          "transform": "matrix(1, 0, 0, 1, 0, 2.08134)",
+          "className": "site-footer__brand scene-enter is-scene-visible"
+        },
+        "settled": {
+          "opacity": 1,
+          "transform": "none",
+          "className": "site-footer__brand scene-enter is-scene-visible",
+          "inlineStyle": "--scene-i: 0;",
+          "animationName": "none",
+          "animationTimeline": "auto",
+          "transitionProperty": "opacity, transform",
+          "animations": [],
+          "top": 259,
+          "bottom": 459,
+          "overflow": 0
+        }
+      },
+      "reduced": {
+        "hidden": 0,
+        "overflow": 0
+      }
+    }
+  },
+  "failures": []
+}

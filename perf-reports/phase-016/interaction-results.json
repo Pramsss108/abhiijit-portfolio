@@ -1,0 +1,154 @@
+{
+  "video-desktop": {
+    "wallHeight": 2008,
+    "reels": 4,
+    "wides": 2,
+    "videos": 6,
+    "unloaded": 6,
+    "firstRowTops": [
+      638,
+      638,
+      638,
+      638
+    ],
+    "wideTops": [
+      1144,
+      1633
+    ],
+    "overflow": 0,
+    "modal": false,
+    "sectionPhoto": "/images/video-showcase/abhijit-video-portrait.webp",
+    "scrollLocked": false,
+    "title": "300+ videos edited",
+    "intro": "Video marketing is more than clean editing. I shape hooks, pacing and trend-aware audio so each cut fits the platform, holds attention and gives strong ideas a better chance to travel.",
+    "workCredit": "Worked WithMadQuickVideo Editing",
+    "wallBackground": "none",
+    "headBackground": "none",
+    "portraitBacklight": "radial-gradient(at 57% 48%, rgba(241, 196, 90, 0.13), rgba(216, 167, 62, 0.055) 42%, rgba(0, 0, 0, 0) 72%)"
+  },
+  "hoverState": {
+    "overlay": "rgba(0, 0, 0, 0)",
+    "overlayTransform": "none",
+    "frameTransform": "none"
+  },
+  "inlinePlayback": {
+    "firstPlayback": {
+      "src": "/videos/video-showcase/reel-01.mp4",
+      "controls": true,
+      "expandVisible": true,
+      "active": 1,
+      "locked": false
+    },
+    "exclusivePlayback": {
+      "active": [
+        "Social Reel Transformation"
+      ],
+      "firstPaused": true,
+      "secondSrc": "/videos/video-showcase/reel-02.mp4",
+      "scrollLocked": false
+    }
+  },
+  "video-tablet": {
+    "wallHeight": 2595,
+    "reels": 4,
+    "wides": 2,
+    "videos": 6,
+    "unloaded": 6,
+    "firstRowTops": [
+      615,
+      615,
+      1259,
+      1259
+    ],
+    "wideTops": [
+      1902,
+      2299
+    ],
+    "overflow": 0,
+    "modal": false,
+    "sectionPhoto": "/images/video-showcase/abhijit-video-portrait.webp",
+    "scrollLocked": false,
+    "title": "300+ videos edited",
+    "intro": "Video marketing is more than clean editing. I shape hooks, pacing and trend-aware audio so each cut fits the platform, holds attention and gives strong ideas a better chance to travel.",
+    "workCredit": "Worked WithMadQuickVideo Editing",
+    "wallBackground": "none",
+    "headBackground": "none",
+    "portraitBacklight": "radial-gradient(at 57% 48%, rgba(241, 196, 90, 0.13), rgba(216, 167, 62, 0.055) 42%, rgba(0, 0, 0, 0) 72%)"
+  },
+  "video-mobile": {
+    "wallHeight": 1746,
+    "reels": 4,
+    "wides": 2,
+    "videos": 6,
+    "unloaded": 6,
+    "firstRowTops": [
+      607,
+      607,
+      980,
+      980
+    ],
+    "wideTops": [
+      1354,
+      1597
+    ],
+    "overflow": 0,
+    "modal": false,
+    "sectionPhoto": "/images/video-showcase/abhijit-video-portrait.webp",
+    "scrollLocked": false,
+    "title": "300+ videos edited",
+    "intro": "Video marketing is more than clean editing. I shape hooks, pacing and trend-aware audio so each cut fits the platform, holds attention and gives strong ideas a better chance to travel.",
+    "workCredit": "Worked WithMadQuickVideo Editing",
+    "wallBackground": "none",
+    "headBackground": "none",
+    "portraitBacklight": "radial-gradient(at 57% 48%, rgba(241, 196, 90, 0.13), rgba(216, 167, 62, 0.055) 42%, rgba(0, 0, 0, 0) 72%)"
+  },
+  "video-small-mobile": {
+    "wallHeight": 1526,
+    "reels": 4,
+    "wides": 2,
+    "videos": 6,
+    "unloaded": 6,
+    "firstRowTops": [
+      570,
+      570,
+      892,
+      892
+    ],
+    "wideTops": [
+      1200,
+      1407
+    ],
+    "overflow": 0,
+    "modal": false,
+    "sectionPhoto": "/images/video-showcase/abhijit-video-portrait.webp",
+    "scrollLocked": false,
+    "title": "300+ videos edited",
+    "intro": "Video marketing is more than clean editing. I shape hooks, pacing and trend-aware audio so each cut fits the platform, holds attention and gives strong ideas a better chance to travel.",
+    "workCredit": "Worked WithMadQuickVideo Editing",
+    "wallBackground": "none",
+    "headBackground": "none",
+    "portraitBacklight": "radial-gradient(at 57% 48%, rgba(241, 196, 90, 0.13), rgba(216, 167, 62, 0.055) 42%, rgba(0, 0, 0, 0) 72%)"
+  },
+  "mobilePlayback": {
+    "src": "/videos/video-showcase/landscape-01.mp4",
+    "active": 1,
+    "overflow": 0,
+    "expandTarget": 44
+  },
+  "reducedMotion": {
+    "transition": "0s",
+    "overflow": 0
+  },
+  "schema": {
+    "canonical": "https://abhijit.works/",
+    "count": 6,
+    "names": [
+      "Creator Before & After",
+      "Social Reel Transformation",
+      "Business Story Edit",
+      "Podcast Reel Breakdown",
+      "Motion Design Cut",
+      "Editing Timeline Cut"
+    ]
+  }
+}

@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Charset + responsive viewport (notch-safe) -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+<!-- Primary SEO -->
+<title>Abhijit Pramanik — I Build Proof | Proof-Backed SEO, Content, WordPress &amp; AI Workflows</title>
+<meta name="description" content="Abhijit Pramanik turns SEO, content, WordPress, social media, and AI workflows into real, verifiable digital growth — backed by hands-on proof across 36+ companies in India, Dubai, and the USA." />
+<meta name="keywords" content="Abhijit Pramanik, SEO, content writing, content marketing, social media, WordPress, AI workflows, video editing, analytics, portfolio, India, Dubai, USA" />
+<meta name="author" content="Abhijit Pramanik" />
+<meta name="theme-color" content="#07090d" />
+<meta name="color-scheme" content="dark" />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://abhijit.works/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Abhijit Pramanik" />
+<meta property="og:title" content="Abhijit Pramanik — I Build Proof" />
+<meta property="og:description" content="Proof-Backed SEO, Content, WordPress &amp; AI Workflow Portfolio. Real, verifiable digital growth across 36+ companies in India, Dubai, and the USA." />
+<meta property="og:url" content="https://abhijit.works/" />
+<meta property="og:image" content="/images/abhijit-hero-v6.png" />
+<meta property="og:image:alt" content="Abhijit Pramanik — proof-backed SEO & content portfolio" />
+<meta property="og:locale" content="en_US" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Abhijit Pramanik — I Build Proof" />
+<meta name="twitter:description" content="Proof-Backed SEO, Content, WordPress &amp; AI Workflow Portfolio." />
+<meta name="twitter:image" content="/images/abhijit-hero-v6.png" />
+
+<!-- Icons -->
+<link rel="icon" type="image/svg+xml" href="/images/brand/ap-favicon.svg" />
+<link rel="apple-touch-icon" href="/images/brand/ap-favicon.svg" />
+
+<!-- Fonts: Syne (display) + Inter (body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" />
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&display=swap" /></noscript>
+<!-- Signature script (Mr Dafoe) -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap" />
+
+<!-- LCP: preload the hero image (webp) so it is ready when the curtain lifts -->
+<link rel="preload" as="image" href="/images/abhijit-hero-v6.webp" type="image/webp" fetchpriority="high" />
+
+<!-- Progressive-enhancement flag: scopes the reveal-hide rule to html.js so the
+     page is NEVER permanently blank if JS is disabled or fails to load. -->
+<script>document.documentElement.classList.add('js');</script>
+
+<!-- Page-load intro: critical CSS so the curtain is opaque from the FIRST paint (no FOUC) -->
+<style>
+  .intro{position:fixed;inset:0;z-index:9999;background:#07090d;}
+  .intro-skip .intro,.intro-skip .intro *{animation:none!important;}
+  .intro-skip .intro__draw{stroke-dashoffset:0!important;}
+  .intro-skip .intro__glyph,.intro-skip .intro__wordmark{opacity:1!important;transform:none!important;}
+</style>
+
+<!-- Design system -->
+<link rel="stylesheet" href="styles.css" />
+
+<!-- Structured data: Person -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Abhijit Pramanik",
+  "jobTitle": "SEO, Content & WordPress Specialist",
+  "url": "https://abhijit.works/",
+  "email": "growabhijit@gmail.com",
+  "image": "/images/abhijit-hero-v6.png",
+  "description": "Proof-backed SEO, content, WordPress, social media and AI workflow specialist with hands-on experience across 36+ companies in India, Dubai and the USA.",
+  "knowsAbout": ["SEO", "Content Writing", "Content Marketing", "Social Media", "WordPress", "AI Workflows", "Video Editing", "Analytics", "Branding"],
+  "sameAs": ["https://wa.me/918777849865"]
+}
+</script>
+</head>
+<body>
+
+<!-- ============================================================
+     PAGE-LOAD INTRO — logo reveal + curtain wipe (first paint).
+     ============================================================ -->
+<script>
+(function () {
+  var d = document, root = d.documentElement;
+  var SEEN = "ap_intro_seen_v1";
+  var reduce = false;
+  try { reduce = matchMedia("(prefers-reduced-motion: reduce)").matches; } catch (e) {}
+  var seen = false;
+  try { seen = sessionStorage.getItem(SEEN) === "1"; } catch (e) {}
+  try { sessionStorage.setItem(SEEN, "1"); } catch (e) {}
+  /* play the FULL intro on every load (no seen-skip) — animation then reveal */
+  if (!reduce) root.classList.add("intro-active");   /* hold hero reveals hidden until the intro ends */
+  function teardown() {
+    root.classList.remove("intro-active");           /* -> hero animates IN as the intro clears */
+    var el = d.querySelector("[data-intro]");
+    if (!el) return;
+    el.setAttribute("hidden", "");
+    el.parentNode && el.parentNode.removeChild(el);
+  }
+  var done = reduce ? 720 : 2120;
+  function schedule() { setTimeout(teardown, done); }
+  if (d.readyState === "loading") {
+    d.addEventListener("DOMContentLoaded", schedule, { once: true });
+  } else { schedule(); }
+  addEventListener("load", function () { setTimeout(teardown, 2300); }, { once: true });
+})();
+</script>
+<div class="intro" data-intro aria-hidden="true">
+  <div class="intro__stage">
+    <span class="intro__glow" aria-hidden="true"></span>
+    <svg class="intro__logo" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <g class="intro__strokes" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+        <polyline class="intro__draw" points="58,72 37,100 58,128"/>
+        <polyline class="intro__draw" points="146,72 167,100 146,128"/>
+        <line class="intro__draw intro__draw--slash" x1="131" y1="68" x2="116" y2="132"/>
+      </g>
+      <g class="intro__glyphs" fill="currentColor">
+        <path class="intro__glyph" d="M72 130 L85 70 L93 70 L106 130 L96.5 130 L93.6 116 L84.4 116 L81.5 130 Z M86.1 104 L91.9 104 L89 89.8 Z"/>
+        <path class="intro__glyph" d="M107 70 L122 70 C133 70 139.5 77.5 139.5 88 C139.5 98.5 133 106 122 106 L116 106 L116 130 L107 130 Z M116 78.2 L116 97.8 L121 97.8 C126.6 97.8 130 94 130 88 C130 82 126.6 78.2 121 78.2 Z"/>
+      </g>
+    </svg>
+    <span class="intro__wordmark" aria-hidden="true">ABHIJIT&nbsp;PRAMANIK</span>
+    <span class="intro__hairline" aria-hidden="true"></span>
+    <p class="intro__welcome" aria-hidden="true">Welcome to my <em>world</em>.</p>
+  </div>
+</div>
+
+<!-- ============================================================
+     ANIMATED BACKGROUND LAYER
+     <canvas> is painted by the JS engine (drifting violet + lime
+     aurora blooms over a deep-indigo base). It sits behind ALL
+     content. A STATIC gradient fallback is painted by CSS on the
+     same element's parent so the page is gorgeous even before /
+     without JS, on mobile, and under prefers-reduced-motion.
+     ============================================================ -->
+<div class="bg" aria-hidden="true">
+  <canvas id="bg-canvas" class="bg__canvas"></canvas>
+  <div class="bg__grain"></div>
+  <div class="bg__vignette"></div>
+</div>
+
+<!-- Custom cursor (desktop / pointer:fine only — JS positions it) -->
+<div class="cursor" data-cursor aria-hidden="true">
+  <span class="cursor__dot"></span>
+  <span class="cursor__ring"></span>
+</div>
+
+<!-- Scroll progress bar (JS sets --scroll 0..1) -->
+<div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ============================================================
+     STICKY HEADER
+     ============================================================ -->
+<header class="site-header" id="top" data-header>
+  <div class="container site-header__inner">
+    <a class="brand" href="#top" aria-label="Abhijit Pramanik — home">
+      <img class="brand__mark" src="/images/brand/ap-logo-primary.svg" alt="" width="40" height="40" decoding="async" />
+      <span class="brand__name">Abhijit&nbsp;Pramanik</span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <ul class="nav__list" data-nav-list>
+        <li><a class="nav__link" href="#top">Home</a></li>
+        <li><a class="nav__link" href="#about">About&nbsp;Me</a></li>
+        <li class="nav__item--mega" data-mega-item>
+          <button class="nav__link nav__trigger" type="button" data-mega-trigger aria-expanded="false" aria-haspopup="true" aria-controls="mega-expertise">
+            Expertise
+            <svg class="nav__trigger-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="mega" id="mega-expertise" data-mega-panel role="region" aria-label="Expertise — capabilities and tools">
+            <div class="mega__grid">
+              <a class="mega__col" href="#skills">
+                <span class="mega__col-head">
+                  <span class="mega__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M8.5 11.5 11 14l4-4.5"/></svg></span>
+                  <span class="mega__col-title">Search &amp; Content</span>
+                </span>
+                <span class="mega__col-meta">SEO <strong>+ GEO</strong> (AI search visibility) — keyword &amp; intent mapping, content strategy. 400+ articles shipped.</span>
+                <ul class="mega__tools" aria-label="Tools"><li class="mega__tool mega__tool--accent">GEO / AI Search</li><li class="mega__tool">SEMrush</li><li class="mega__tool">RankMath</li></ul>
+              </a>
+              <a class="mega__col" href="#skills">
+                <span class="mega__col-head">
+                  <span class="mega__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M7 6.5h.01M10 6.5h.01"/><path d="M8 14.5 10.5 17 16 11"/></svg></span>
+                  <span class="mega__col-title">Build &amp; Publish</span>
+                </span>
+                <span class="mega__col-meta">WordPress builds, internal linking &amp; site structure, SEO-ready CMS workflows.</span>
+                <ul class="mega__tools" aria-label="Tools"><li class="mega__tool">WordPress</li><li class="mega__tool">Wix</li></ul>
+              </a>
+              <a class="mega__col" href="#skills">
+                <span class="mega__col-head">
+                  <span class="mega__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 8 22 4v16l-7-4"/><rect x="2" y="6" width="13" height="12" rx="2"/></svg></span>
+                  <span class="mega__col-title">Video, Virals &amp; Social</span>
+                </span>
+                <span class="mega__col-meta">Short-form editing, distribution &amp; viral concepts — my page Bongbari at 3M+ views.</span>
+                <ul class="mega__tools" aria-label="Tools"><li class="mega__tool">CapCut</li><li class="mega__tool">Canva</li><li class="mega__tool">Meta Business Suite</li></ul>
+              </a>
+              <a class="mega__col" href="#skills">
+                <span class="mega__col-head">
+                  <span class="mega__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4"/><path d="M4 20h16"/><rect x="7.5" y="12" width="3" height="5"/><rect x="13.5" y="8" width="3" height="9"/><path d="m8 9 4-3 3 2 3-4"/></svg></span>
+                  <span class="mega__col-title">Measure &amp; Automate</span>
+                </span>
+                <span class="mega__col-meta">Analytics dashboards, performance tracking, AI workflows &amp; no-code automation.</span>
+                <ul class="mega__tools" aria-label="Tools"><li class="mega__tool">Google Analytics</li><li class="mega__tool">AI Workflows</li><li class="mega__tool">No-Code</li></ul>
+              </a>
+            </div>
+            <div class="mega__foot">
+              <span class="mega__foot-note">The exact stack I ship with — find it, build it, share it, prove it.</span>
+              <a class="mega__foot-link" href="#skills">See full expertise
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li><a class="nav__link" href="#work">Work</a></li>
+        <li><a class="nav__link" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="site-header__cta">
+      <a class="btn btn--primary btn--sm" href="https://wa.me/918777849865" data-magnetic target="_blank" rel="noopener">
+        <span>Let's Talk</span>
+      </a>
+    </div>
+
+    <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+  </div>
+
+  <!-- Mobile menu panel (JS toggles [data-open]) -->
+  <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
+    <nav class="mobile-menu__nav" aria-label="Mobile">
+      <a class="mobile-menu__link" href="#top">Home</a>
+      <a class="mobile-menu__link" href="#about">About Me</a>
+      <a class="mobile-menu__link" href="#skills">Expertise</a>
+      <a class="mobile-menu__link" href="#work">Work</a>
+      <a class="mobile-menu__link" href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn--primary mobile-menu__cta" href="https://wa.me/918777849865" target="_blank" rel="noopener">Let's Talk on WhatsApp</a>
+    <p class="mobile-menu__meta">growabhijit@gmail.com</p>
+  </div>
+</header>
+
+<!-- ============================================================
+     MAIN — section agents inject their markup at the marker below.
+     ============================================================ -->
+<main id="main" class="main">
+<section id="home" class="section hero hero--editorial" aria-label="Introduction">
+  <span class="hero__halo" aria-hidden="true"></span>
+  <span class="hero__corehalo" aria-hidden="true"></span>
+  <span class="hero__grain" aria-hidden="true"></span>
+  <div class="container hero__inner hero__inner--editorial">
+
+    <div class="hero__copy hero__copy--editorial">
+      <span class="hero__rule" aria-hidden="true"></span>
+      <p class="eyebrow hero__eyebrow--ed reveal" data-cursor-skip>SOLO EXPERT &mdash; REAL RESULTS</p>
+
+      <h1 class="hero__title hero__title--editorial reveal reveal--delay-1">
+        <span class="hero__line">I Build Brands.</span>
+        <span class="hero__line hero__line--soft">Drive Traffic.</span>
+        <span class="hero__line">Grow <span class="hero__gold">Revenue.</span></span>
+      </h1>
+
+      <p class="hero__rotator reveal reveal--delay-2">
+        <span class="hero__rotator-label">Specialising in</span>
+        <span class="hero__rotator-rail" data-rotator aria-live="polite">
+          <span class="hero__rword is-active">SEO &amp; Content</span>
+          <span class="hero__rword">GEO &middot; AI Search</span>
+          <span class="hero__rword">Viral Video Editing</span>
+          <span class="hero__rword">WordPress Builds</span>
+          <span class="hero__rword">Analytics &amp; Automation</span>
+          <span class="hero__rword">Social &amp; Brand</span>
+        </span>
+      </p>
+
+      <p class="hero__lead hero__lead--editorial reveal reveal--delay-3">
+        Digital marketing strategist, SEO &amp; content expert helping brands grow
+        online with strategies that actually work &mdash; backed by hands-on proof
+        across 36+ companies in India, Dubai &amp; the USA.
+      </p>
+
+      <div class="hero__cta hero__cta--editorial reveal reveal--delay-3">
+        <a class="btn btn--gold btn--lg" href="#work" data-magnetic>View My Work</a>
+        <a class="btn btn--gold-ghost btn--lg" href="#contact" data-magnetic>Let&rsquo;s Talk</a>
+      </div>
+
+      <img class="hero__signature-img reveal reveal--delay-4" src="/images/abhijit-signature.png" alt="Abhijit Pramanik signature" width="300" height="72" decoding="async" />
+      <p class="hero__signature-sr" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Abhijit Pramanik</p>
+    </div>
+
+    <div class="hero__visual hero__visual--editorial reveal reveal--delay-2">
+      <span class="hero__ghost" aria-hidden="true">PROOF</span>
+      <div class="hero__pic">
+        <img class="hero__photo--glow" src="/images/abhijit-hero-v6.png" alt="" aria-hidden="true" decoding="async" />
+        <picture class="hero__picinner">
+          <source srcset="/images/abhijit-hero-v7.webp" type="image/webp" />
+          <img class="hero__photo hero__photo--editorial"
+               src="/images/abhijit-hero-v7.png"
+               alt="Abhijit Pramanik, digital marketing strategist and SEO expert"
+               width="801" height="1300" loading="eager" fetchpriority="high" decoding="async" />
+        </picture>
+      </div>
+      <span class="hero__bottomfade" aria-hidden="true"></span>
+
+      <!-- floating analytics cards (real numbers) -->
+      <div class="hero__metric hero__metric--a" aria-hidden="true">
+        <span class="hero__metric-top">
+          <span class="hero__metric-num">3M+</span>
+          <svg class="hero__metric-spark" viewBox="0 0 40 16" width="40" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13 L12 9 L20 11 L30 4 L38 2"/><path d="M33 2 L38 2 L38 7"/></svg>
+        </span>
+        <span class="hero__metric-lbl">Content Views · Bongbari</span>
+      </div>
+      <div class="hero__metric hero__metric--b" aria-hidden="true">
+        <span class="hero__metric-top">
+          <span class="hero__metric-num">400+</span>
+          <svg class="hero__metric-spark" viewBox="0 0 40 16" width="40" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12 L11 10 L19 12 L28 6 L38 3"/><path d="M33 3 L38 3 L38 8"/></svg>
+        </span>
+        <span class="hero__metric-lbl">SEO Articles</span>
+      </div>
+      <div class="hero__metric hero__metric--c" aria-hidden="true">
+        <span class="hero__metric-top">
+          <span class="hero__metric-num">36+</span>
+          <svg class="hero__metric-spark" viewBox="0 0 40 16" width="40" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 13 L13 8 L22 10 L31 5 L38 2"/><path d="M33 2 L38 2 L38 7"/></svg>
+        </span>
+        <span class="hero__metric-lbl">Companies Served</span>
+      </div>
+    </div>
+
+  </div>
+
+  <ul class="hero__statsbar reveal reveal--delay-3" role="list" aria-label="Proof in numbers">
+    <li class="hero__stat"><span class="hero__stat-num">36+</span><span class="hero__stat-lbl">Companies Served</span></li>
+    <li class="hero__stat"><span class="hero__stat-num">400+</span><span class="hero__stat-lbl">SEO Articles Published</span></li>
+    <li class="hero__stat"><span class="hero__stat-num">40+</span><span class="hero__stat-lbl">Proof Projects Delivered</span></li>
+    <li class="hero__stat"><span class="hero__stat-num">3M+</span><span class="hero__stat-lbl">Views · my page Bongbari</span></li>
+  </ul>
+</section>
+
+<!-- content panel: scrolls UP over the pinned hero, covering it (Madquick-style) -->
+<div class="content-panel">
+<section id="proof-numbers" class="section section--tint stats-marquees" aria-labelledby="stats-marquees-title">
+  <div class="container">
+    <header class="section__head section__head--center reveal">
+      <p class="eyebrow eyebrow--center">PROOF IN NUMBERS</p>
+      <h2 id="stats-marquees-title" class="section__title" data-split="words">
+        Years of work, <span class="text-grad">measured</span>
+      </h2>
+      <p class="section__lead">Real output across real markets — not slideware. The skills below, powered by the tools below them.</p>
+    </header>
+
+    <ul class="stats-bar reveal" role="list">
+      <li class="stat stats-bar__item">
+        <span class="stats-bar__glow" aria-hidden="true"></span>
+        <span class="stat__num" data-count="36" data-suffix="+">36+</span>
+        <span class="stat__label">Companies</span>
+      </li>
+      <li class="stat stats-bar__item">
+        <span class="stats-bar__glow" aria-hidden="true"></span>
+        <span class="stat__num" data-count="400" data-suffix="+">400+</span>
+        <span class="stat__label">SEO Articles</span>
+      </li>
+      <li class="stat stats-bar__item">
+        <span class="stats-bar__glow" aria-hidden="true"></span>
+        <span class="stat__num" data-count="3">3</span>
+        <span class="stat__label">Countries</span>
+      </li>
+      <li class="stat stats-bar__item">
+        <span class="stats-bar__glow" aria-hidden="true"></span>
+        <span class="stat__num" data-count="5" data-suffix="+">5+</span>
+        <span class="stat__label">Years of Proof</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="marquees reveal reveal--delay-2" aria-hidden="true">
+    <div class="marquee marquee--skills" data-label="Disciplines" style="--marquee-dur:38s">
+      <div class="marquee__track">
+        <span class="marquee__item">SEO Strategy</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">Content Writing</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">Content Marketing</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">Social Media</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">WordPress</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">AI Workflows</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">Video Editing</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">Analytics</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">No-Code Builds</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">Canva Design</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">Copywriting</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">SEO Strategy</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">Content Writing</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">Content Marketing</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">Social Media</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">WordPress</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">AI Workflows</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">Video Editing</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">Analytics</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">No-Code Builds</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">Canva Design</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">Copywriting</span><span class="marquee__sep">&bull;</span>
+      </div>
+    </div>
+
+    <div class="marquee marquee--reverse marquee--lime marquee--tools" data-label="Tools I ship with" style="--marquee-dur:30s">
+      <div class="marquee__track">
+        <span class="marquee__item">SEMrush</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">RankMath</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">Google Analytics</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">Meta Business Suite</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">Canva</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">CapCut</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">WordPress</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">Ubersuggest</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">Wix</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">SEMrush</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">RankMath</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">Google Analytics</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">Meta Business Suite</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">Canva</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">CapCut</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">WordPress</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">Ubersuggest</span><span class="marquee__sep">&bull;</span>
+        <span class="marquee__item">Wix</span><span class="marquee__sep">&bull;</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint services" id="services" aria-labelledby="services-title">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="eyebrow">What I Do</p>
+      <h2 class="section__title" id="services-title" data-split="words">
+        Services <span class="text-grad">built on proof</span>
+      </h2>
+      <p class="section__lead">
+        Nine disciplines, one operating system: every engagement is wired for verifiable
+        digital growth — documented, measured, and repeatable across 36+ companies.
+      </p>
+    </header>
+
+    <ul class="services__grid" role="list">
+      <li class="card service-card reveal" data-tilt>
+        <div class="service-card__glow" aria-hidden="true"></div>
+        <div class="service-card__inner">
+          <span class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M8.5 11.5 11 14l4-4.5"/></svg>
+          </span>
+          <h3 class="service-card__title">SEO Strategy</h3>
+          <p class="service-card__desc">Technical audits, keyword maps, and rank tracking that turn search into a documented growth channel.</p>
+        </div>
+      </li>
+
+      <li class="card service-card reveal reveal--delay-1" data-tilt>
+        <div class="service-card__glow" aria-hidden="true"></div>
+        <div class="service-card__inner">
+          <span class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+          </span>
+          <h3 class="service-card__title">Content Writing (SEO)</h3>
+          <p class="service-card__desc">400+ articles that read like a human and rank like a machine — structured for intent and conversion.</p>
+        </div>
+      </li>
+
+      <li class="card service-card reveal reveal--delay-2" data-tilt>
+        <div class="service-card__glow" aria-hidden="true"></div>
+        <div class="service-card__inner">
+          <span class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 0 0 1 1h3l4 4V6l-4 4H4a1 1 0 0 0-1 1Z"/><path d="M16 8.5a4 4 0 0 1 0 7"/><path d="M19 6a8 8 0 0 1 0 12"/></svg>
+          </span>
+          <h3 class="service-card__title">Content Marketing</h3>
+          <p class="service-card__desc">Editorial systems and distribution plans that compound — every asset earns its place in the funnel.</p>
+        </div>
+      </li>
+
+      <li class="card service-card reveal" data-tilt>
+        <div class="service-card__glow" aria-hidden="true"></div>
+        <div class="service-card__inner">
+          <span class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/><path d="m8.3 10.7 7.4-4.4M8.3 13.3l7.4 4.4"/></svg>
+          </span>
+          <h3 class="service-card__title">Social Media</h3>
+          <p class="service-card__desc">Always-on content calendars across Meta and beyond — built to grow reach, not just post for posting's sake.</p>
+        </div>
+      </li>
+
+      <li class="card service-card reveal reveal--delay-1" data-tilt>
+        <div class="service-card__glow" aria-hidden="true"></div>
+        <div class="service-card__inner">
+          <span class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M7 6.5h.01M10 6.5h.01"/><path d="M8 14.5 10.5 17 16 11"/></svg>
+          </span>
+          <h3 class="service-card__title">WordPress Publishing</h3>
+          <p class="service-card__desc">Clean, fast, SEO-ready builds and publishing pipelines — the CMS I've shipped on for years.</p>
+        </div>
+      </li>
+
+      <li class="card service-card reveal reveal--delay-2" data-tilt>
+        <div class="service-card__glow" aria-hidden="true"></div>
+        <div class="service-card__inner">
+          <span class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3.2"/></svg>
+          </span>
+          <h3 class="service-card__title">AI &amp; No-Code</h3>
+          <p class="service-card__desc">AI workflows and no-code stacks that automate the busywork and ship real output faster.</p>
+        </div>
+      </li>
+
+      <li class="card service-card reveal" data-tilt>
+        <div class="service-card__glow" aria-hidden="true"></div>
+        <div class="service-card__inner">
+          <span class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3Z"/></svg>
+          </span>
+          <h3 class="service-card__title">Video Editing</h3>
+          <p class="service-card__desc">CapCut-driven short-form and brand video — edited for retention, captions, and platform-native pacing.</p>
+        </div>
+      </li>
+
+      <li class="card service-card reveal reveal--delay-1" data-tilt>
+        <div class="service-card__glow" aria-hidden="true"></div>
+        <div class="service-card__inner">
+          <span class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4"/><path d="M4 20h16"/><rect x="7.5" y="12" width="3" height="5"/><rect x="13.5" y="8" width="3" height="9"/><path d="m8 9 4-3 3 2 3-4"/></svg>
+          </span>
+          <h3 class="service-card__title">Analytics &amp; Reporting</h3>
+          <p class="service-card__desc">Google Analytics and Meta Suite dashboards that translate numbers into the next decision.</p>
+        </div>
+      </li>
+
+      <li class="card service-card reveal reveal--delay-2" data-tilt>
+        <div class="service-card__glow" aria-hidden="true"></div>
+        <div class="service-card__inner">
+          <span class="service-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5 12 3l7.5 13.5a1 1 0 0 1-.9 1.5H5.4a1 1 0 0 1-.9-1.5Z"/><path d="M12 8v5M12 16h.01"/></svg>
+          </span>
+          <h3 class="service-card__title">Canva Design</h3>
+          <p class="service-card__desc">On-brand graphics, carousels, and thumbnails in Canva — consistent visuals that carry the message.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section section--tint expertise" id="skills" aria-labelledby="expertise-title">
+  <div class="container">
+    <header class="section__head section__head--center reveal">
+      <p class="eyebrow eyebrow--center">Capabilities &amp; Tools</p>
+      <h2 class="section__title" id="expertise-title" data-split="words">
+        The stack I <span class="text-grad">work in</span>
+      </h2>
+      <p class="section__lead">
+        Not a wishlist — the disciplines I actually run and the exact tools I ship with,
+        grouped the way a real engagement moves: find it, build it, share it, prove it.
+      </p>
+    </header>
+
+    <ul class="expertise__grid" role="list">
+
+      <li class="card expertise-card expertise-card--feature reveal" data-tilt>
+        <div class="expertise-card__glow" aria-hidden="true"></div>
+        <div class="expertise-card__inner">
+          <span class="expertise-card__badge">New &middot; 2026</span>
+          <span class="expertise-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v2"/><path d="M12 19v2"/><path d="M5 12H3"/><path d="M21 12h-2"/><path d="m6.3 6.3-1.4-1.4"/><path d="m19.1 19.1-1.4-1.4"/><path d="m6.3 17.7-1.4 1.4"/><path d="m19.1 4.9-1.4 1.4"/><circle cx="12" cy="12" r="3.4"/></svg>
+          </span>
+          <h3 class="expertise-card__title">Generative Engine Optimization (GEO)</h3>
+          <p class="expertise-card__desc">
+            Structuring content so AI engines &mdash; <strong>Google AI Overviews, ChatGPT, Gemini &amp; Perplexity</strong> &mdash;
+            cite and recommend your brand. The evolution of search: from ranking blue links to earning
+            <em>AI visibility</em>, conversational framing &amp; authoritative citations.
+          </p>
+          <ul class="chip-row expertise-card__chips" aria-label="GEO focus">
+            <li class="chip chip--lime">AI Overviews</li>
+            <li class="chip">ChatGPT &amp; Gemini</li>
+            <li class="chip">Perplexity</li>
+            <li class="chip">Entity &amp; Citations</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="card expertise-card reveal" data-tilt>
+        <div class="expertise-card__glow" aria-hidden="true"></div>
+        <div class="expertise-card__inner">
+          <span class="expertise-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M8.5 11.5 11 14l4-4.5"/></svg>
+          </span>
+          <h3 class="expertise-card__title">Search &amp; Content</h3>
+          <ul class="expertise-card__list" role="list">
+            <li>Technical SEO audits &amp; on-page</li>
+            <li>Keyword research &amp; intent mapping</li>
+            <li>SEO content writing (400+ articles)</li>
+            <li>Content strategy &amp; copywriting</li>
+          </ul>
+          <ul class="chip-row expertise-card__chips" aria-label="Tools">
+            <li class="chip">SEMrush</li>
+            <li class="chip">RankMath</li>
+            <li class="chip">Ubersuggest</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="card expertise-card reveal reveal--delay-1" data-tilt>
+        <div class="expertise-card__glow" aria-hidden="true"></div>
+        <div class="expertise-card__inner">
+          <span class="expertise-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M7 6.5h.01M10 6.5h.01"/><path d="M8 14.5 10.5 17 16 11"/></svg>
+          </span>
+          <h3 class="expertise-card__title">Build &amp; Publish</h3>
+          <ul class="expertise-card__list" role="list">
+            <li>WordPress builds &amp; publishing</li>
+            <li>Internal linking &amp; site structure</li>
+            <li>Responsive, mobile-first pages</li>
+            <li>SEO-ready CMS workflows</li>
+          </ul>
+          <ul class="chip-row expertise-card__chips" aria-label="Tools">
+            <li class="chip">WordPress</li>
+            <li class="chip">Wix</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="card expertise-card reveal reveal--delay-2" data-tilt>
+        <div class="expertise-card__glow" aria-hidden="true"></div>
+        <div class="expertise-card__inner">
+          <span class="expertise-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 8 22 4v16l-7-4"/><rect x="2" y="6" width="13" height="12" rx="2"/></svg>
+          </span>
+          <h3 class="expertise-card__title">Video, Virals &amp; Social</h3>
+          <ul class="expertise-card__list" role="list">
+            <li>Short-form &amp; brand video editing</li>
+            <li>Video marketing &amp; distribution</li>
+            <li>Viral scripts &amp; concepts — decoded, not luck</li>
+            <li>My own page <strong>Bongbari — 3M+ views</strong></li>
+          </ul>
+          <ul class="chip-row expertise-card__chips" aria-label="Tools &amp; proof">
+            <li class="chip">CapCut</li>
+            <li class="chip">Canva</li>
+            <li class="chip">Meta Business Suite</li>
+            <li class="chip chip--gold"><a href="https://www.instagram.com/bongbari" target="_blank" rel="noopener" aria-label="Bongbari — my Instagram, 3M+ views">Bongbari · 3M+&nbsp;&#8599;</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="card expertise-card reveal reveal--delay-3" data-tilt>
+        <div class="expertise-card__glow" aria-hidden="true"></div>
+        <div class="expertise-card__inner">
+          <span class="expertise-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4"/><path d="M4 20h16"/><rect x="7.5" y="12" width="3" height="5"/><rect x="13.5" y="8" width="3" height="9"/><path d="m8 9 4-3 3 2 3-4"/></svg>
+          </span>
+          <h3 class="expertise-card__title">Measure &amp; Automate</h3>
+          <ul class="expertise-card__list" role="list">
+            <li>Analytics &amp; reporting dashboards</li>
+            <li>Performance tracking &amp; insights</li>
+            <li>AI workflows for content &amp; research</li>
+            <li>No-code automation of busywork</li>
+          </ul>
+          <ul class="chip-row expertise-card__chips" aria-label="Tools">
+            <li class="chip">Google Analytics</li>
+            <li class="chip">AI Workflows</li>
+            <li class="chip">No-Code</li>
+          </ul>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<!-- ============================================================
+     WORK — signature PINNED-SCROLL architecture.
+     Desktop (>=1024px): the left .work__lede pins (position:sticky)
+     while the right .work__stream scrolls past. A lightweight IO
+     (initWorkPin in app.js) flips data-active on the lede + each
+     item so the narrative copy + index update per item in view.
+     Mobile / no-JS / reduced-motion: it is a plain stacked section
+     (sticky neutralised) — fully readable, zero pinning, no jank.
+     Real screenshots drop straight into .screen__shot img later.
+     ============================================================ -->
+<section class="section showcase work" id="work" data-work aria-labelledby="showcase-title">
+  <div class="container work__layout">
+
+    <!-- LEFT: sticky narrative — pins on desktop, leads the section -->
+    <div class="work__lede" data-work-lede>
+      <p class="eyebrow reveal">Selected Work</p>
+      <h2 class="section__title work__title reveal reveal--delay-1" id="showcase-title" data-split="words">
+        Proof-Backed <span class="text-grad">Work</span>
+      </h2>
+
+      <!-- Per-item narrative: only the [data-active] panel is shown.
+           initWorkPin swaps active as each .work-item enters view. -->
+      <div class="work__narr reveal reveal--delay-2" aria-live="polite">
+        <p class="work__narr-panel is-active" data-narr="0">
+          Real engagements, not mockups — SEO growth across <strong>36+ companies</strong> in
+          India, Dubai & the USA, with <strong>400+ articles</strong> published and rankings
+          I can point to. Scroll to walk the work.
+        </p>
+        <p class="work__narr-panel" data-narr="1">
+          <strong>400+ SEO articles</strong> structured for intent and conversion, published clean
+          on WordPress & Wix — internal linking, on-page, and a CMS workflow built to scale.
+        </p>
+        <p class="work__narr-panel" data-narr="2">
+          <strong>Bongbari</strong> — my own Instagram page, <strong>3M+ views</strong>. Virality
+          decoded, not luck: short-form editing, hooks, and a repeatable content system.
+        </p>
+        <p class="work__narr-panel" data-narr="3">
+          Analytics, AI & no-code workflows that turn the busywork into output — GA4 + Meta Suite
+          reporting that translates numbers into the next decision.
+        </p>
+      </div>
+
+      <!-- Live progress: which item of N is in view -->
+      <div class="work__meta reveal reveal--delay-3" aria-hidden="true">
+        <span class="work__count"><span data-work-current>01</span> · <span data-work-total>04</span></span>
+        <span class="work__progress"><span class="work__progress-fill" data-work-progress></span></span>
+      </div>
+
+      <div class="work__cta reveal reveal--delay-3">
+        <a class="btn btn--gold-ghost" href="#contact" data-magnetic>Start a project</a>
+        <a class="btn btn--gold-ghost work__cta-ig" href="https://www.instagram.com/bongbari" target="_blank" rel="noopener" data-magnetic>
+          Bongbari · 3M+ ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT: the scrolling stream of real work items -->
+    <ol class="work__stream" data-work-stream role="list">
+
+      <!-- Item 01 — SEO -->
+      <li class="work-item reveal" id="work-1" data-work-item data-narr-target="0">
+        <article class="card work-item__card" data-tilt>
+          <div class="work-item__head">
+            <span class="work-item__idx" aria-hidden="true">01</span>
+            <div class="work-item__heading">
+              <h3 class="work-item__title">SEO Growth & Rank Tracking</h3>
+              <p class="work-item__kicker">Across 36+ companies · India · Dubai · USA</p>
+            </div>
+          </div>
+          <div class="screen work-item__screen">
+            <div class="screen__frame">
+              <span class="screen__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <div class="screen__shot">
+                <img src="/images/hero_seo_3d.jpg" alt="SEO rank-tracking dashboard with keyword positions trending upward" loading="lazy" decoding="async" width="900" height="600">
+              </div>
+              <div class="screen__glow" aria-hidden="true"></div>
+            </div>
+          </div>
+          <p class="work-item__desc">Technical audits, keyword maps and rank tracking that turn search into a documented growth channel — measured in SEMrush & RankMath, not promised.</p>
+          <ul class="chip-row work-item__chips" role="list">
+            <li class="chip chip--lime">SEMrush</li>
+            <li class="chip">RankMath</li>
+            <li class="chip">Keyword Strategy</li>
+          </ul>
+        </article>
+      </li>
+
+      <!-- Item 02 — Content / WordPress -->
+      <li class="work-item reveal" id="work-2" data-work-item data-narr-target="1">
+        <article class="card work-item__card" data-tilt>
+          <div class="work-item__head">
+            <span class="work-item__idx" aria-hidden="true">02</span>
+            <div class="work-item__heading">
+              <h3 class="work-item__title">Content System & WordPress</h3>
+              <p class="work-item__kicker">400+ articles published · WordPress & Wix</p>
+            </div>
+          </div>
+          <div class="screen work-item__screen">
+            <div class="screen__frame">
+              <span class="screen__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <div class="screen__shot">
+                <img src="/images/hero_wordpress_3d.jpg" alt="WordPress content publishing workspace with structured posts and pages" loading="lazy" decoding="async" width="900" height="600">
+              </div>
+              <div class="screen__glow" aria-hidden="true"></div>
+            </div>
+          </div>
+          <p class="work-item__desc">SEO content that reads like a human and ranks like a machine — briefed, structured and published clean on WordPress with internal linking that compounds.</p>
+          <ul class="chip-row work-item__chips" role="list">
+            <li class="chip chip--violet">WordPress</li>
+            <li class="chip">SEO Copy</li>
+            <li class="chip">CMS Workflow</li>
+          </ul>
+        </article>
+      </li>
+
+      <!-- Item 03 — Bongbari / Social / Video (the proof piece, linked) -->
+      <li class="work-item reveal" id="work-3" data-work-item data-narr-target="2">
+        <article class="card work-item__card work-item__card--feature" data-tilt>
+          <span class="work-item__ribbon" aria-hidden="true">My own page</span>
+          <div class="work-item__head">
+            <span class="work-item__idx" aria-hidden="true">03</span>
+            <div class="work-item__heading">
+              <h3 class="work-item__title">Bongbari — 3M+ Views</h3>
+              <p class="work-item__kicker">Instagram · short-form · virality decoded</p>
+            </div>
+          </div>
+          <div class="screen work-item__screen">
+            <div class="screen__frame">
+              <span class="screen__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <div class="screen__shot">
+                <img class="screen__shot-img--proof" src="/images/bongbari-proof.jpg" alt="Bongbari Instagram Views insights: 3,783,817 views and 2.53M accounts reached (+436.5%) in 90 days" loading="lazy" decoding="async" width="589" height="717">
+              </div>
+              <div class="screen__glow" aria-hidden="true"></div>
+            </div>
+          </div>
+          <p class="work-item__desc">My own Instagram page, grown past <strong>3M+ views</strong> — proof I can decode virality, not chase it: hooks, short-form editing and a repeatable content engine.</p>
+          <ul class="chip-row work-item__chips" role="list">
+            <li class="chip">CapCut</li>
+            <li class="chip">Canva</li>
+            <li class="chip">Meta Suite</li>
+            <li class="chip chip--gold"><a href="https://www.instagram.com/bongbari" target="_blank" rel="noopener" aria-label="Bongbari — my Instagram, 3M+ views">View Bongbari ↗</a></li>
+          </ul>
+        </article>
+      </li>
+
+      <!-- Item 04 — Analytics / AI -->
+      <li class="work-item reveal" id="work-4" data-work-item data-narr-target="3">
+        <article class="card work-item__card" data-tilt>
+          <div class="work-item__head">
+            <span class="work-item__idx" aria-hidden="true">04</span>
+            <div class="work-item__heading">
+              <h3 class="work-item__title">Analytics & AI Workflows</h3>
+              <p class="work-item__kicker">GA4 · Meta Suite · no-code automation</p>
+            </div>
+          </div>
+          <div class="screen work-item__screen">
+            <div class="screen__frame">
+              <span class="screen__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <div class="screen__shot">
+                <img src="/images/hero_content_3d.jpg" alt="Analytics and reporting dashboard with traffic and engagement charts" loading="lazy" decoding="async" width="900" height="600">
+              </div>
+              <div class="screen__glow" aria-hidden="true"></div>
+            </div>
+          </div>
+          <p class="work-item__desc">Reporting dashboards that translate numbers into the next move, plus AI & no-code workflows that automate research and busywork so real output ships faster.</p>
+          <ul class="chip-row work-item__chips" role="list">
+            <li class="chip chip--lime">GA4</li>
+            <li class="chip">AI Workflows</li>
+            <li class="chip">No-Code</li>
+          </ul>
+        </article>
+      </li>
+
+    </ol>
+  </div>
+</section>
+
+<!-- ============================================================
+     SELECTED CLIENTS / PROOF — real companies + real case studies
+     ============================================================ -->
+<section class="section section--tint proof" id="clients" aria-labelledby="clients-title">
+  <div class="container">
+
+    <div class="proof__head">
+      <p class="eyebrow reveal">Selected Clients</p>
+      <h2 class="section__title reveal reveal--delay-1" id="clients-title" data-split="words">
+        Real companies. <span class="text-grad">Real briefs.</span>
+      </h2>
+      <p class="proof__lead reveal reveal--delay-2">
+        SEO, content and social work delivered for brands across India, Dubai and beyond —
+        from B2B SaaS to entertainment publishing. Every name below is a real engagement.
+      </p>
+    </div>
+
+    <!-- (1) CLIENTS NAME GRID -->
+    <div class="proof__subhead reveal">
+      <h3 class="proof__subtitle">Clients I've worked with</h3>
+      <span class="proof__subnote">Linked names open the live site ↗</span>
+    </div>
+
+    <ul class="proof__clients reveal reveal--delay-1" role="list">
+      <li>
+        <a class="proof-client" href="https://www.pursueit.ae/" target="_blank" rel="noopener">
+          <span class="proof-client__name">Pursueit Dubai <span class="proof-client__arrow" aria-hidden="true">↗</span></span>
+          <span class="proof-client__role">Advanced SEO Content Strategist & Social Media Manager</span>
+        </a>
+      </li>
+      <li>
+        <div class="proof-client">
+          <span class="proof-client__name">Betterzila</span>
+          <span class="proof-client__role">Advanced Content Strategist & SEO Specialist (B2B SaaS)</span>
+        </div>
+      </li>
+      <li>
+        <a class="proof-client" href="https://reachhub.co/" target="_blank" rel="noopener">
+          <span class="proof-client__name">ReachHub <span class="proof-client__arrow" aria-hidden="true">↗</span></span>
+          <span class="proof-client__role">Digital Marketing Strategist</span>
+        </a>
+      </li>
+      <li>
+        <a class="proof-client" href="https://ymedia.io/" target="_blank" rel="noopener">
+          <span class="proof-client__name">Ymedia <span class="proof-client__arrow" aria-hidden="true">↗</span></span>
+          <span class="proof-client__role">Advanced SEO Content Specialist</span>
+        </a>
+      </li>
+      <li>
+        <a class="proof-client" href="https://balihans.com/" target="_blank" rel="noopener">
+          <span class="proof-client__name">Balihans <span class="proof-client__arrow" aria-hidden="true">↗</span></span>
+          <span class="proof-client__role">Associate Marketing Analyst</span>
+        </a>
+      </li>
+      <li>
+        <a class="proof-client" href="https://billex.in/" target="_blank" rel="noopener">
+          <span class="proof-client__name">Bilex <span class="proof-client__arrow" aria-hidden="true">↗</span></span>
+          <span class="proof-client__role">Advanced Content Strategist & SEO Specialist</span>
+        </a>
+      </li>
+      <li>
+        <a class="proof-client" href="https://greenverz.com/" target="_blank" rel="noopener">
+          <span class="proof-client__name">Greenverze <span class="proof-client__arrow" aria-hidden="true">↗</span></span>
+          <span class="proof-client__role">SEO Content Specialist & Digital Marketer</span>
+        </a>
+      </li>
+      <li>
+        <a class="proof-client" href="https://otakukart.com/" target="_blank" rel="noopener">
+          <span class="proof-client__name">OTAKUKART <span class="proof-client__arrow" aria-hidden="true">↗</span></span>
+          <span class="proof-client__role">SEO Content Specialist</span>
+        </a>
+      </li>
+      <li>
+        <div class="proof-client">
+          <span class="proof-client__name">RuDe Labs</span>
+          <span class="proof-client__role">YouTube SEO & SEM Specialist</span>
+        </div>
+      </li>
+      <li>
+        <div class="proof-client">
+          <span class="proof-client__name">Kutum Bari</span>
+          <span class="proof-client__role">Online & Offline Marketing Associate</span>
+        </div>
+      </li>
+      <li>
+        <a class="proof-client" href="https://madquick.in/" target="_blank" rel="noopener">
+          <span class="proof-client__name">Madquick <span class="proof-client__arrow" aria-hidden="true">↗</span></span>
+          <span class="proof-client__role">Sound Production Specialist</span>
+        </a>
+      </li>
+      <li>
+        <a class="proof-client" href="https://pregamate.com/" target="_blank" rel="noopener">
+          <span class="proof-client__name">Pregamate <span class="proof-client__arrow" aria-hidden="true">↗</span></span>
+          <span class="proof-client__role">Audio Visual Production Specialist</span>
+        </a>
+      </li>
+      <li>
+        <a class="proof-client" href="https://x1racing.in/" target="_blank" rel="noopener">
+          <span class="proof-client__name">X1RACE <span class="proof-client__arrow" aria-hidden="true">↗</span></span>
+          <span class="proof-client__role">Audio Engineer & Sound Designer</span>
+        </a>
+      </li>
+      <li>
+        <div class="proof-client">
+          <span class="proof-client__name">Google · Powwow</span>
+          <span class="proof-client__role">AI Research & Customer Verification Specialist (via Appen)</span>
+        </div>
+      </li>
+      <li>
+        <a class="proof-client" href="https://www.indikaai.com/" target="_blank" rel="noopener">
+          <span class="proof-client__name">Indika AI <span class="proof-client__arrow" aria-hidden="true">↗</span></span>
+          <span class="proof-client__role">English Transcriber</span>
+        </a>
+      </li>
+      <li>
+        <a class="proof-client" href="https://kaboodle.co.uk/" target="_blank" rel="noopener">
+          <span class="proof-client__name">Kaboodle <span class="proof-client__arrow" aria-hidden="true">↗</span></span>
+          <span class="proof-client__role">Audio Enhancement Specialist</span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- (2) CASE STUDIES -->
+    <div class="proof__subhead reveal">
+      <h3 class="proof__subtitle">Case studies</h3>
+      <span class="proof__subnote">Concrete scope & output — no rounding up</span>
+    </div>
+
+    <ol class="proof__cases" role="list">
+
+      <li class="card proof-case reveal" data-tilt>
+        <div class="proof-case__top">
+          <h4 class="proof-case__client">Ymedia
+            <span class="proof-case__role">Advanced SEO Content Specialist</span>
+          </h4>
+          <span class="proof-case__num" aria-hidden="true">01</span>
+        </div>
+        <div class="proof-case__metric">
+          <span class="proof-case__metric-value">33 articles · 30 days</span>
+          <span class="proof-case__metric-label">SEO-optimized articles for 10+ clients</span>
+        </div>
+        <p class="proof-case__desc">
+          Researched keywords by search volume and competition, then wrote and published 33
+          SEO articles in a single month — keyword-density optimization, strategic backlinking,
+          meta tagging and clean WordPress delivery, with non-copyright imagery sourced correctly
+          and content audited for ranking lift.
+        </p>
+        <div class="proof-case__tools">
+          <span class="proof-case__tools-label">Tools & methods</span>
+          <ul class="chip-row" role="list">
+            <li class="chip chip--lime">WordPress</li>
+            <li class="chip">Keyword Research</li>
+            <li class="chip">Backlinking</li>
+            <li class="chip">Meta Tags</li>
+          </ul>
+        </div>
+        <a class="proof-case__link" href="https://ymedia.io/" target="_blank" rel="noopener">
+          Visit Ymedia <span aria-hidden="true">↗</span>
+        </a>
+      </li>
+
+      <li class="card proof-case reveal reveal--delay-1" data-tilt>
+        <div class="proof-case__top">
+          <h4 class="proof-case__client">RuDe Labs
+            <span class="proof-case__role">YouTube SEO & SEM Specialist</span>
+          </h4>
+          <span class="proof-case__num" aria-hidden="true">02</span>
+        </div>
+        <div class="proof-case__metric">
+          <span class="proof-case__metric-value">100+ videos optimized</span>
+          <span class="proof-case__metric-label">YouTube SEO across the catalogue</span>
+        </div>
+        <p class="proof-case__desc">
+          Optimized 100+ YouTube videos for reach — keyword-driven titles, descriptions, tags
+          and metadata tuned to the platform's algorithm — and ran targeted Google Ads (SEM)
+          on select videos to push visibility and engagement further.
+        </p>
+        <div class="proof-case__tools">
+          <span class="proof-case__tools-label">Tools & methods</span>
+          <ul class="chip-row" role="list">
+            <li class="chip chip--violet">YouTube SEO</li>
+            <li class="chip">Google Ads</li>
+            <li class="chip">Metadata & Tags</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="card proof-case reveal reveal--delay-2" data-tilt>
+        <div class="proof-case__top">
+          <h4 class="proof-case__client">Pursueit Dubai
+            <span class="proof-case__role">Advanced SEO Content Strategist & Social Media Manager</span>
+          </h4>
+          <span class="proof-case__num" aria-hidden="true">03</span>
+        </div>
+        <div class="proof-case__metric">
+          <span class="proof-case__metric-value">International SEO + Social</span>
+          <span class="proof-case__metric-label">Dubai brand · content, Instagram & team lead</span>
+        </div>
+        <p class="proof-case__desc">
+          End-to-end on a Dubai activity-booking platform: SEMrush-driven topic and long-tail
+          keyword research, on-page & off-page SEO and blog strategy (LSI, PAA, SERP analysis)
+          published on WordPress, plus Instagram posts, visuals and captions. Scope grew into
+          Meta Business Suite management, project management and team leadership.
+        </p>
+        <div class="proof-case__tools">
+          <span class="proof-case__tools-label">Tools & methods</span>
+          <ul class="chip-row" role="list">
+            <li class="chip chip--lime">SEMrush</li>
+            <li class="chip">WordPress</li>
+            <li class="chip">Meta Business Suite</li>
+            <li class="chip">On/Off-Page SEO</li>
+          </ul>
+        </div>
+        <a class="proof-case__link" href="https://www.pursueit.ae/" target="_blank" rel="noopener">
+          Visit Pursueit <span aria-hidden="true">↗</span>
+        </a>
+      </li>
+
+    </ol>
+
+  </div>
+</section>
+
+<section class="section section--tint about" id="about" aria-labelledby="about-title">
+  <div class="container">
+    <div class="about__grid">
+
+      <!-- PORTRAIT -->
+      <div class="about__media reveal" data-parallax="0.12">
+        <div class="about__frame">
+          <div class="about__placeholder" aria-hidden="true">
+            <span class="about__placeholder-mono">AP</span>
+            <span class="about__placeholder-label">Abhijit Pramanik</span>
+          </div>
+          <img
+            class="about__photo"
+            src="/images/abhijit-hero-v6.png"
+            alt="Portrait of Abhijit Pramanik, proof-backed SEO and content specialist"
+            loading="lazy"
+            decoding="async"
+            onerror="this.style.display='none';this.closest('.about__frame')?.classList.add('about__frame--no-photo');"
+          />
+          <span class="about__frame-glow" aria-hidden="true"></span>
+          <span class="about__badge">
+            <span class="about__badge-dot" aria-hidden="true"></span>
+            Available for work
+          </span>
+        </div>
+        <div class="about__media-tag" aria-hidden="true">
+          <span class="text-lime">25</span> · Based in India · Working worldwide
+        </div>
+      </div>
+
+      <!-- BIO -->
+      <div class="about__body">
+        <p class="eyebrow reveal">About Me</p>
+        <h2 class="section__title about__title reveal reveal--delay-1" id="about-title" data-split="words">
+          Real work. <span class="text-grad">Real proof.</span>
+        </h2>
+
+        <div class="about__copy reveal reveal--delay-2">
+          <p class="section__lead">
+            I'm Abhijit — an SEO, content, WordPress and AI-workflow specialist who builds
+            digital growth you can actually verify.
+          </p>
+          <p>
+            Over <strong>5+ years</strong> I've shipped documented work for
+            <strong>36+ companies</strong> across India, Dubai and the USA — turning keyword
+            research, content systems and no-code automation into measurable results. I work
+            solo and end-to-end, so you always deal directly with the person doing the work.
+          </p>
+          <p>
+            No fake testimonials, no vanity metrics. Just <span class="text-violet">proof</span>:
+            real dashboards, real articles, real client outcomes.
+          </p>
+        </div>
+
+        <ul class="about__chips chip-row reveal reveal--delay-3" aria-label="Credibility highlights">
+          <li class="chip chip--lime">5+ Years</li>
+          <li class="chip">3 Countries</li>
+          <li class="chip chip--violet">36+ Companies</li>
+          <li class="chip">Dubai &rarr; USA</li>
+        </ul>
+
+        <div class="about__actions reveal reveal--delay-4">
+          <a class="btn btn--gold" href="/abhijit-pramanik-resume.pdf" download="Abhijit-Pramanik-Resume.pdf" data-magnetic>
+            <svg class="about__dl-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/>
+            </svg>
+            Download Résumé
+          </a>
+          <a class="btn btn--ghost" href="https://wa.me/918777849865" target="_blank" rel="noopener" data-magnetic>
+            Let's Talk
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint proof" id="proof" aria-labelledby="proof-title">
+  <div class="container">
+    <header class="section__head section__head--center reveal">
+      <p class="eyebrow eyebrow--center">Receipts, not promises</p>
+      <h2 class="section__title" id="proof-title" data-split="words">
+        Real work for <span class="text-grad">real companies</span>
+      </h2>
+      <p class="section__lead">
+        Documented SEO, content and WordPress projects across India, Dubai and the USA &mdash;
+        named clients, real roles, real timelines.
+      </p>
+    </header>
+
+    <div class="proof-marquee reveal reveal--delay-1" aria-label="Selected clients">
+      <div class="marquee" style="--marquee-dur: 42s;">
+        <div class="marquee__track">
+          <ul class="marquee__group proof-clients" role="list">
+            <li class="marquee__item proof-client">
+              <span class="proof-client__name">Pursueit</span>
+              <span class="proof-client__meta">SEO &amp; Content &middot; Dubai &middot; Apr 2021&ndash;Aug 2022</span>
+            </li>
+            <li class="marquee__item proof-client">
+              <span class="proof-client__name">ReachHub</span>
+              <span class="proof-client__meta">Influencer &amp; WordPress &middot; Feb 2019&ndash;Apr 2020</span>
+            </li>
+            <li class="marquee__item proof-client">
+              <span class="proof-client__name">Balihans</span>
+              <span class="proof-client__meta">SEO &amp; CRM &middot; Bengaluru &middot; Nov 2019&ndash;Oct 2020</span>
+            </li>
+            <li class="marquee__item proof-client">
+              <span class="proof-client__name">Revenue Rushy Inc.</span>
+              <span class="proof-client__meta">SEO &amp; Content &middot; Aug 2020&ndash;Sep 2021</span>
+            </li>
+            <li class="marquee__item proof-client">
+              <span class="proof-client__name">Aura Love Yourself</span>
+              <span class="proof-client__meta">Content &amp; CapCut &middot; USA &middot; Oct 2023&ndash;Jan 2025</span>
+            </li>
+            <li class="marquee__item proof-client">
+              <span class="proof-client__name">Rabin&rsquo;s Photography</span>
+              <span class="proof-client__meta">Creative &middot; 2021&ndash;2022</span>
+            </li>
+          </ul>
+          <ul class="marquee__group proof-clients" role="list" aria-hidden="true">
+            <li class="marquee__item proof-client">
+              <span class="proof-client__name">Pursueit</span>
+              <span class="proof-client__meta">SEO &amp; Content &middot; Dubai &middot; Apr 2021&ndash;Aug 2022</span>
+            </li>
+            <li class="marquee__item proof-client">
+              <span class="proof-client__name">ReachHub</span>
+              <span class="proof-client__meta">Influencer &amp; WordPress &middot; Feb 2019&ndash;Apr 2020</span>
+            </li>
+            <li class="marquee__item proof-client">
+              <span class="proof-client__name">Balihans</span>
+              <span class="proof-client__meta">SEO &amp; CRM &middot; Bengaluru &middot; Nov 2019&ndash;Oct 2020</span>
+            </li>
+            <li class="marquee__item proof-client">
+              <span class="proof-client__name">Revenue Rushy Inc.</span>
+              <span class="proof-client__meta">SEO &amp; Content &middot; Aug 2020&ndash;Sep 2021</span>
+            </li>
+            <li class="marquee__item proof-client">
+              <span class="proof-client__name">Aura Love Yourself</span>
+              <span class="proof-client__meta">Content &amp; CapCut &middot; USA &middot; Oct 2023&ndash;Jan 2025</span>
+            </li>
+            <li class="marquee__item proof-client">
+              <span class="proof-client__name">Rabin&rsquo;s Photography</span>
+              <span class="proof-client__meta">Creative &middot; 2021&ndash;2022</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <ul class="proof-grid" role="list">
+      <li class="card proof-card reveal reveal--delay-1">
+        <span class="proof-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 6 9 17l-5-5"/>
+          </svg>
+        </span>
+        <h3 class="proof-card__title">SEO &amp; Content Proof</h3>
+        <p class="proof-card__text">
+          Documented SEO and content work delivered across India, Dubai and the USA &mdash;
+          400+ articles and rankings I can point to, not paraphrase.
+        </p>
+        <div class="chip-row proof-card__chips">
+          <span class="chip chip--violet">SEO</span>
+          <span class="chip chip--violet">Content</span>
+          <span class="chip chip--violet">WordPress</span>
+        </div>
+      </li>
+
+      <li class="card proof-card proof-card--feature reveal reveal--delay-2">
+        <span class="proof-card__icon proof-card__icon--lime" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m12 3 2.7 5.5 6 .9-4.35 4.2 1 6L12 17.8 6.65 19.6l1-6L3.3 9.4l6-.9z"/>
+          </svg>
+        </span>
+        <h3 class="proof-card__title">Tools &amp; Workflow Proof</h3>
+        <p class="proof-card__text">
+          Hands-on with the stack that ships results &mdash; SEMrush, Canva, CapCut,
+          Google Analytics, Meta Business Suite, WordPress and no-code / AI workflows.
+        </p>
+        <div class="chip-row proof-card__chips">
+          <span class="chip chip--lime">SEMrush</span>
+          <span class="chip chip--lime">Analytics</span>
+          <span class="chip chip--lime">AI Workflows</span>
+        </div>
+      </li>
+
+      <li class="card proof-card reveal reveal--delay-3">
+        <span class="proof-card__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 3v18h18"/><path d="m7 14 3-4 3 3 5-7"/>
+          </svg>
+        </span>
+        <h3 class="proof-card__title">Proof-Based Impact</h3>
+        <p class="proof-card__text">
+          I lead with proof cards, not fake testimonials &mdash; verifiable outcomes from
+          36+ companies over 5+ years, so you judge the work on evidence.
+        </p>
+        <div class="chip-row proof-card__chips">
+          <span class="chip chip--violet">36+ Companies</span>
+          <span class="chip chip--violet">5+ Years</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="section process-faq" id="process" aria-labelledby="process-title">
+  <div class="container">
+
+    <div class="process" data-pin>
+      <div class="section__head section__head--center reveal">
+        <p class="eyebrow eyebrow--center">How I work</p>
+        <h2 class="section__title" id="process-title">A <span class="text-grad">proof-driven</span> process</h2>
+        <p class="section__lead">Every engagement runs through the same six steps — so the result is never a guess. It is documented, measured, and verifiable.</p>
+      </div>
+
+      <div class="process__grid">
+        <div class="process__rail" aria-hidden="true">
+          <div class="progress-line">
+            <div class="progress-line__fill"></div>
+          </div>
+        </div>
+
+        <ol class="process__steps">
+          <li class="process__step reveal" data-step="1">
+            <span class="process__node"><span class="process__num">01</span></span>
+            <div class="process__body card process__card">
+              <h3 class="process__title">Understand the target</h3>
+              <p class="process__desc">I learn the business, the audience, and what "growth" actually means for you before touching a keyword.</p>
+            </div>
+          </li>
+          <li class="process__step reveal" data-step="2">
+            <span class="process__node"><span class="process__num">02</span></span>
+            <div class="process__body card process__card">
+              <h3 class="process__title">Research keywords &amp; proof</h3>
+              <p class="process__desc">SEMrush, Ubersuggest and RankMath map the real opportunities — and the evidence to back them.</p>
+            </div>
+          </li>
+          <li class="process__step reveal" data-step="3">
+            <span class="process__node"><span class="process__num">03</span></span>
+            <div class="process__body card process__card">
+              <h3 class="process__title">Build the content system</h3>
+              <p class="process__desc">Briefs, structure, and SEO-ready content built to scale — not one-off posts that fade.</p>
+            </div>
+          </li>
+          <li class="process__step reveal" data-step="4">
+            <span class="process__node"><span class="process__num">04</span></span>
+            <div class="process__body card process__card">
+              <h3 class="process__title">Publish &amp; organize</h3>
+              <p class="process__desc">Clean WordPress publishing, internal linking, and a structure that stays maintainable.</p>
+            </div>
+          </li>
+          <li class="process__step reveal" data-step="5">
+            <span class="process__node"><span class="process__num">05</span></span>
+            <div class="process__body card process__card">
+              <h3 class="process__title">Measure &amp; improve</h3>
+              <p class="process__desc">Google Analytics and Meta Business Suite track what works, so the next move is informed.</p>
+            </div>
+          </li>
+          <li class="process__step reveal" data-step="6">
+            <span class="process__node"><span class="process__num">06</span></span>
+            <div class="process__body card process__card">
+              <h3 class="process__title">Document the proof</h3>
+              <p class="process__desc">Results become proof cards — verifiable records, never invented testimonials.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="faq">
+      <div class="section__head section__head--center reveal">
+        <p class="eyebrow eyebrow--center">Questions</p>
+        <h2 class="section__title">Things people <span class="text-lime">ask me</span></h2>
+      </div>
+
+      <div class="faq__list">
+        <div class="faq__item card reveal">
+          <h3 class="faq__heading">
+            <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="faq-panel-1">
+              <span class="faq__q">How long have you been doing this work?</span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq__panel" id="faq-panel-1">
+            <div class="faq__panel-inner">
+              <p class="faq__answer">Over three years of hands-on client work, starting in 2019.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq__item card reveal reveal--delay-1">
+          <h3 class="faq__heading">
+            <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="faq-panel-2">
+              <span class="faq__q">Do you work solo or with a team?</span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq__panel" id="faq-panel-2">
+            <div class="faq__panel-inner">
+              <p class="faq__answer">Solo — I personally handle every project end to end, so you always deal directly with the person doing the work.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq__item card reveal reveal--delay-2">
+          <h3 class="faq__heading">
+            <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="faq-panel-3">
+              <span class="faq__q">What tools and platforms do you use?</span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq__panel" id="faq-panel-3">
+            <div class="faq__panel-inner">
+              <p class="faq__answer">Mainly WordPress, plus Wix and no-code/AI tools, with SEMrush, RankMath, Google Analytics, Meta Business Suite, Canva and CapCut.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq__item card reveal reveal--delay-1">
+          <h3 class="faq__heading">
+            <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="faq-panel-4">
+              <span class="faq__q">Can we discuss my project or role first?</span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq__panel" id="faq-panel-4">
+            <div class="faq__panel-inner">
+              <p class="faq__answer">Yes — happy to discuss how my SEO, content, WordPress, social media and AI workflow skills fit your goals.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq__item card reveal reveal--delay-2">
+          <h3 class="faq__heading">
+            <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="faq-panel-5">
+              <span class="faq__q">Will my website be mobile-friendly and SEO-ready?</span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq__panel" id="faq-panel-5">
+            <div class="faq__panel-inner">
+              <p class="faq__answer">Yes — every build is responsive, mobile-first, and structured for SEO.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="faq__item card reveal reveal--delay-3">
+          <h3 class="faq__heading">
+            <button class="faq__trigger" type="button" aria-expanded="false" aria-controls="faq-panel-6">
+              <span class="faq__q">Can you handle SEO, content, and social together?</span>
+              <span class="faq__icon" aria-hidden="true"></span>
+            </button>
+          </h3>
+          <div class="faq__panel" id="faq-panel-6">
+            <div class="faq__panel-inner">
+              <p class="faq__answer">Yes — that combined workflow is exactly what I do.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section section--tint contact" id="contact" aria-labelledby="contact-title">
+  <div class="container">
+    <div class="contact__panel card reveal" data-tilt>
+      <div class="contact__glow" aria-hidden="true"></div>
+      <div class="contact__noise" aria-hidden="true"></div>
+
+      <div class="contact__inner">
+        <p class="eyebrow eyebrow--center reveal">Let's build proof together</p>
+
+        <h2 class="section__title contact__title reveal reveal--delay-1" id="contact-title" data-split="words">
+          Need <span class="text-grad">SEO, content, WordPress, social&nbsp;media,</span> or AI workflow support?
+        </h2>
+
+        <p class="section__lead contact__lead reveal reveal--delay-2">
+          Tell me about your goals. I personally handle every project end to end — no agency middle layer, just proof-backed work delivered directly.
+        </p>
+
+        <div class="contact__actions reveal reveal--delay-3">
+          <a class="btn btn--primary btn--lg contact__cta" href="https://wa.me/918777849865" target="_blank" rel="noopener noreferrer" data-magnetic>
+            <svg class="contact__icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+              <path fill="currentColor" d="M12.04 2.4c-5.3 0-9.6 4.3-9.6 9.6 0 1.7.45 3.35 1.3 4.82L2.4 21.6l4.9-1.28a9.55 9.55 0 0 0 4.74 1.24h.01c5.3 0 9.6-4.3 9.6-9.6s-4.31-9.56-9.61-9.56Zm0 17.45h-.01a7.94 7.94 0 0 1-4.04-1.1l-.29-.17-2.9.76.77-2.83-.19-.3a7.92 7.92 0 0 1-1.22-4.22c0-4.39 3.58-7.96 7.97-7.96 2.13 0 4.12.83 5.63 2.34a7.9 7.9 0 0 1 2.33 5.63c0 4.39-3.57 7.97-7.96 7.97Zm4.37-5.96c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.93-1.19-.71-.64-1.19-1.42-1.33-1.66-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41l-.46-.01c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.69 2.58 4.1 3.62.57.25 1.02.39 1.37.5.57.18 1.1.16 1.51.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"/>
+            </svg>
+            <span>Chat on WhatsApp</span>
+          </a>
+
+          <a class="btn btn--ghost btn--lg contact__cta" href="mailto:growabhijit@gmail.com" data-magnetic>
+            <svg class="contact__icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+              <path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M3.5 6.5h17v11h-17z"/>
+              <path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="m4 7 8 6 8-6"/>
+            </svg>
+            <span>Contact Me</span>
+          </a>
+        </div>
+
+        <p class="contact__email reveal reveal--delay-4">
+          Prefer email?
+          <a class="contact__email-link" href="mailto:growabhijit@gmail.com">growabhijit@gmail.com</a>
+        </p>
+
+        <ul class="contact__assurances reveal reveal--delay-4" aria-label="What to expect">
+          <li class="contact__assurance"><span class="contact__dot" aria-hidden="true"></span>Reply within 24 hours</li>
+          <li class="contact__assurance"><span class="contact__dot" aria-hidden="true"></span>Work directly with me</li>
+          <li class="contact__assurance"><span class="contact__dot" aria-hidden="true"></span>Proof-backed, not promises</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+</div><!-- /.content-panel -->
+</main>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site-footer" id="footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__brand">
+      <a class="brand" href="#top" aria-label="Abhijit Pramanik — home">
+        <img class="brand__mark" src="/images/brand/ap-logo-primary.svg" alt="" width="36" height="36" decoding="async" />
+        <span class="brand__name">Abhijit&nbsp;Pramanik</span>
+      </a>
+      <p class="site-footer__tagline">Proof-backed SEO, content, WordPress &amp; AI workflows — across 36+ companies in India, Dubai &amp; the USA.</p>
+      <a class="footer-social" href="https://www.linkedin.com/in/abhijitsprofile/" target="_blank" rel="noopener" aria-label="Connect with Abhijit Pramanik on LinkedIn">
+        <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+        <span>Connect on LinkedIn</span>
+      </a>
+    </div>
+
+    <nav class="site-footer__nav" aria-label="Footer">
+      <h2 class="site-footer__heading">Explore</h2>
+      <ul>
+        <li><a href="#top">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#skills">Expertise</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="site-footer__contact">
+      <h2 class="site-footer__heading">Contact</h2>
+      <ul>
+        <li><a href="mailto:growabhijit@gmail.com">growabhijit@gmail.com</a></li>
+        <li><a href="https://wa.me/918777849865" target="_blank" rel="noopener">WhatsApp: +91 87778 49865</a></li>
+        <li><a href="https://abhijit.works" target="_blank" rel="noopener">abhijit.works</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container site-footer__bar">
+    <p>© 2026 Abhijit Pramanik. Proof-backed personal portfolio.</p>
+    <a class="site-footer__top" href="#top" aria-label="Back to top">Back to top ↑</a>
+  </div>
+</footer>
+<script src="app.js" defer></script>
+
+<!-- TEMP hero editor: open localhost:5055/v3/?edit -> tune photo + DRAG cards + toggle Behind/Front -> Copy -> paste to Claude -->
+<script>
+(function(){
+  if(!/[?&]edit/.test(location.search)) return;
+  function init(){
+    var photo=document.querySelector('.hero__photo--editorial'), halo=document.querySelector('.hero__halo');
+    var core=document.querySelector('.hero__corehalo'), visual=document.querySelector('.hero__visual--editorial');
+    var picEl=document.querySelector('.hero__pic');
+    if(!photo||!visual) return;
+    /* edit-mode: let pointer events reach cards even when they sit BEHIND the portrait */
+    if(picEl) picEl.style.setProperty('pointer-events','none','important');
+    /* keep Front/Behind tags hidden until a card is hovered (clean view) */
+    var sEl=document.createElement('style'); sEl.textContent='.hero__metric [data-zbtn]{opacity:0;transition:opacity .15s} .hero__metric:hover [data-zbtn],.hero__metric:focus-within [data-zbtn]{opacity:1}'; document.head.appendChild(sEl);
+
+    /* base = the baked rim + grounding shadows, so live preview matches production */
+    var base='drop-shadow(0 0 13px rgba(255,198,88,0.42)) drop-shadow(0 0 30px rgba(245,176,62,0.26)) drop-shadow(0 34px 64px rgba(0,0,0,0.82))';
+    /* sliders DEFAULT to the current baked NATURAL grade */
+    var st={brightness:1.02,contrast:1.71,saturate:0.31,sepia:0.83,hue:0,glow:1,haloW:52};
+    function applyPhoto(){
+      photo.style.setProperty('filter','brightness('+st.brightness+') contrast('+st.contrast+') saturate('+st.saturate+') sepia('+st.sepia+') hue-rotate('+st.hue+'deg) '+base,'important');
+      /* glow is now a full-cover layer — tune opacity only (size is fixed, edge-free) */
+      if(halo){ halo.style.setProperty('opacity',st.glow,'important'); }
+    }
+    var rows=[['brightness','Brightness',0.4,1.8,0.01],['contrast','Contrast',0.5,2,0.01],['saturate','Saturate',0,2,0.01],['sepia','Warmth',0,1,0.01],['hue','Hue',-30,30,1],['glow','Glow opacity',0,1.3,0.01],['haloW','Glow size',30,90,1]];
+
+    /* ---- card drag (POINTER events: mouse + touch + pen) + Behind/Front toggle ---- */
+    var cards=[].slice.call(document.querySelectorAll('.hero__metric'));
+    var cstate={};
+    cards.forEach(function(card){
+      var key=(card.className.match(/--(\w)/)||[,'?'])[1];
+      var num=(card.querySelector('.hero__metric-num')||{}).textContent||key;
+      cstate[key]={behind:false,num:num.trim()};
+      card.style.setProperty('animation','none','important');     /* freeze idle float while editing */
+      card.style.setProperty('pointer-events','auto','important');
+      card.style.cursor='grab'; card.style.userSelect='none'; card.style.touchAction='none';
+      /* z-toggle tag (large enough to tap) */
+      var zb=document.createElement('button');
+      zb.textContent='Front'; zb.setAttribute('data-zbtn','1');
+      zb.style.cssText='position:absolute;top:-13px;left:-13px;z-index:99999;font:10px/1 system-ui,sans-serif;background:#d8a73e;color:#07090d;border:0;border-radius:7px;padding:5px 9px;cursor:pointer;font-weight:700;touch-action:manipulation;box-shadow:0 4px 12px rgba(0,0,0,.5)';
+      zb.addEventListener('pointerdown',function(e){e.stopPropagation();});
+      zb.addEventListener('click',function(e){e.stopPropagation(); e.preventDefault();
+        cstate[key].behind=!cstate[key].behind;
+        card.style.setProperty('z-index',cstate[key].behind?'2':'6','important');
+        card.style.setProperty('outline',cstate[key].behind?'1px dashed rgba(245,186,74,.7)':'none','important');
+        card.style.setProperty('outline-offset','3px','important');
+        zb.textContent=cstate[key].behind?'Behind':'Front';
+        zb.style.background=cstate[key].behind?'#566':'#d8a73e'; zb.style.color=cstate[key].behind?'#fff':'#07090d';
+        updateOut();
+      });
+      card.appendChild(zb);
+      /* drag */
+      card.addEventListener('pointerdown',function(e){
+        if(e.target&&e.target.getAttribute&&e.target.getAttribute('data-zbtn'))return;
+        e.preventDefault();
+        var cr=card.getBoundingClientRect();
+        var offX=e.clientX-cr.left, offY=e.clientY-cr.top;
+        try{card.setPointerCapture(e.pointerId);}catch(_){}
+        card.style.cursor='grabbing';
+        function mv(ev){
+          var vr=visual.getBoundingClientRect(); /* recompute each move = robust to scroll/parallax */
+          card.style.setProperty('left',Math.round(ev.clientX-vr.left-offX)+'px','important');
+          card.style.setProperty('top',Math.round(ev.clientY-vr.top-offY)+'px','important');
+          card.style.setProperty('right','auto','important');
+          card.style.setProperty('bottom','auto','important');
+          updateOut();
+        }
+        function up(){ try{card.releasePointerCapture(e.pointerId);}catch(_){}
+          card.removeEventListener('pointermove',mv); card.removeEventListener('pointerup',up); card.removeEventListener('pointercancel',up); card.style.cursor='grab'; }
+        card.addEventListener('pointermove',mv); card.addEventListener('pointerup',up); card.addEventListener('pointercancel',up);
+      });
+    });
+
+    /* ---- panel (draggable by header, collapsible) ---- */
+    var p=document.createElement('div');
+    p.style.cssText='position:fixed;right:14px;bottom:14px;z-index:100000;width:256px;max-height:92vh;overflow:auto;background:rgba(10,12,16,.97);border:1px solid rgba(216,167,62,.45);border-radius:14px;padding:0 14px 14px;font:12px/1.5 system-ui,sans-serif;color:#f5f2ea;box-shadow:0 22px 54px rgba(0,0,0,.7)';
+    var h='<div id="hdr" style="display:flex;align-items:center;justify-content:space-between;margin:0 -14px 8px;padding:10px 12px;cursor:move;background:rgba(216,167,62,.1);border-bottom:1px solid rgba(216,167,62,.25);border-radius:14px 14px 0 0;touch-action:none">'+
+      '<span style="font-weight:700;color:#f1c45a">⠿ Hero Editor</span><button id="min" style="background:transparent;border:0;color:#f1c45a;font-size:16px;cursor:pointer;line-height:1">–</button></div>'+
+      '<div id="body"><div style="color:#8d8775;margin-bottom:8px;font-size:11px">Drag header to move me. DRAG cards anywhere · tap a card’s <b style="color:#d8a73e">Front/Behind</b> tag · Copy → paste to Claude.</div>';
+    rows.forEach(function(r){h+='<label style="display:block;margin:6px 0">'+r[1]+': <b id="v_'+r[0]+'">'+st[r[0]]+'</b><input type="range" id="s_'+r[0]+'" min="'+r[2]+'" max="'+r[3]+'" step="'+r[4]+'" value="'+st[r[0]]+'" style="width:100%;accent-color:#d8a73e"></label>';});
+    h+='<button id="cp" style="width:100%;margin-top:8px;padding:9px;background:#d8a73e;color:#07090d;border:0;border-radius:8px;font-weight:700;cursor:pointer">Copy everything</button>';
+    h+='<button id="rs" style="width:100%;margin-top:6px;padding:6px;background:transparent;color:#cdc7b8;border:1px solid rgba(255,255,255,.2);border-radius:8px;cursor:pointer">Reset photo</button>';
+    h+='<div id="out" style="margin-top:8px;font:10px/1.4 monospace;color:#a89a78;word-break:break-all;white-space:pre-wrap"></div></div>';
+    p.innerHTML=h; document.body.appendChild(p);
+    rows.forEach(function(r){var s=p.querySelector('#s_'+r[0]),v=p.querySelector('#v_'+r[0]);s.addEventListener('input',function(){st[r[0]]=parseFloat(s.value);v.textContent=s.value;applyPhoto();updateOut();});});
+
+    /* panel drag */
+    var hdr=p.querySelector('#hdr');
+    hdr.addEventListener('pointerdown',function(e){ if(e.target.id==='min')return; e.preventDefault();
+      var pr=p.getBoundingClientRect(); var offX=e.clientX-pr.left, offY=e.clientY-pr.top;
+      try{hdr.setPointerCapture(e.pointerId);}catch(_){}
+      function mv(ev){ p.style.left=Math.round(ev.clientX-offX)+'px'; p.style.top=Math.round(ev.clientY-offY)+'px'; p.style.right='auto'; p.style.bottom='auto'; }
+      function up(){ try{hdr.releasePointerCapture(e.pointerId);}catch(_){} hdr.removeEventListener('pointermove',mv); hdr.removeEventListener('pointerup',up); }
+      hdr.addEventListener('pointermove',mv); hdr.addEventListener('pointerup',up);
+    });
+    /* collapse */
+    var collapsed=false, bodyEl=p.querySelector('#body');
+    p.querySelector('#min').addEventListener('click',function(e){e.stopPropagation(); collapsed=!collapsed; bodyEl.style.display=collapsed?'none':'block'; this.textContent=collapsed?'+':'–';});
+
+    function cardLine(card){
+      var key=(card.className.match(/--(\w)/)||[,'?'])[1];
+      var vr=visual.getBoundingClientRect(), cr=card.getBoundingClientRect();
+      var lx=cr.left-vr.left, ty=cr.top-vr.top;
+      return 'CARD '+key+' ('+cstate[key].num+'): left '+(lx/vr.width*100).toFixed(1)+'% top '+(ty/vr.height*100).toFixed(1)+'%  ['+Math.round(lx)+'px,'+Math.round(ty)+'px]  '+(cstate[key].behind?'BEHIND':'FRONT');
+    }
+    function txt(){
+      var t='PHOTO: brightness('+st.brightness+') contrast('+st.contrast+') saturate('+st.saturate+') sepia('+st.sepia+') hue-rotate('+st.hue+'deg)\nGLOW: opacity '+st.glow+' | size '+st.haloW+'vw\n';
+      cards.forEach(function(c){t+=cardLine(c)+'\n';});
+      return t;
+    }
+    function updateOut(){ p.querySelector('#out').textContent=txt(); }
+    p.querySelector('#cp').addEventListener('click',function(){var t=txt();p.querySelector('#out').textContent=t;try{navigator.clipboard.writeText(t);}catch(e){}this.textContent='Copied ✓ send to Claude';var b=this;setTimeout(function(){b.textContent='Copy everything';},2500);});
+    p.querySelector('#rs').addEventListener('click',function(){st={brightness:1.02,contrast:1.71,saturate:0.31,sepia:0.83,hue:0,glow:1,haloW:52};rows.forEach(function(r){p.querySelector('#s_'+r[0]).value=st[r[0]];p.querySelector('#v_'+r[0]).textContent=st[r[0]];});applyPhoto();updateOut();});
+
+    applyPhoto(); updateOut();
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+})();
+</script>
+
+<!-- Mega-menu: keyboard / Escape / outside-click (hover + focus-within are pure CSS) -->
+<script>
+(function () {
+  "use strict";
+  var item = document.querySelector("[data-mega-item]");
+  if (!item) return;
+  var trigger = item.querySelector("[data-mega-trigger]");
+  var panel = item.querySelector("[data-mega-panel]");
+  if (!trigger || !panel) return;
+  var mqFine = window.matchMedia ? window.matchMedia("(pointer: fine)") : null;
+  function isTouch() { return !(mqFine && mqFine.matches); }
+  function open() { panel.setAttribute("data-open", ""); trigger.setAttribute("aria-expanded", "true"); }
+  function close() { panel.removeAttribute("data-open"); trigger.setAttribute("aria-expanded", "false"); }
+  function isOpen() { return trigger.getAttribute("aria-expanded") === "true"; }
+  trigger.addEventListener("click", function () {
+    if (isTouch()) { if (!isOpen()) { open(); return; } window.location.hash = "skills"; close(); return; }
+    window.location.hash = "skills";
+  });
+  trigger.addEventListener("keydown", function (e) {
+    if (e.key === "ArrowDown") { e.preventDefault(); open(); var first = panel.querySelector("a"); if (first) first.focus(); }
+  });
+  item.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && isOpen()) { e.stopPropagation(); close(); trigger.focus(); }
+  });
+  document.addEventListener("click", function (e) { if (isOpen() && !item.contains(e.target)) close(); });
+  item.addEventListener("focusout", function () {
+    window.setTimeout(function () { if (!item.contains(document.activeElement)) close(); }, 0);
+  });
+})();
+</script>
+
+<!-- Hero rotating-skills pop-up + intro keyboard typewriter -->
+<script>
+(function(){
+  var rm=false; try{ rm=matchMedia('(prefers-reduced-motion:reduce)').matches; }catch(e){}
+  /* 1 · rotating "Specialising in [skill]" */
+  var rail=document.querySelector('[data-rotator]');
+  if(rail){
+    var words=[].slice.call(rail.querySelectorAll('.hero__rword'));
+    if(words.length>1 && !rm){
+      var idx=0;
+      setInterval(function(){
+        var cur=words[idx]; cur.classList.remove('is-active'); cur.classList.add('is-out');
+        setTimeout(function(){ cur.classList.remove('is-out'); }, 520);
+        idx=(idx+1)%words.length;
+        words[idx].classList.add('is-active');
+      }, 2200);
+    }
+  }
+  /* 2 · intro welcome line typed like a keyboard */
+  var w=document.querySelector('.intro__welcome');
+  if(w){
+    var full='Welcome to my world.';
+    if(rm){ /* leave the static italic line */ }
+    else {
+      w.textContent=''; w.classList.add('intro__welcome--type');
+      var i=0;
+      setTimeout(function tick(){
+        if(i<=full.length){ w.textContent=full.slice(0,i); i++; setTimeout(tick, 42); }
+        else { w.innerHTML='Welcome to my <em>world</em>.'; w.classList.add('intro__welcome--done'); }
+      }, 820);
+    }
+  }
+})();
+</script>
+
+<!-- Services horizontal carousel: drag-to-scroll + arrows -->
+<script>
+(function(){
+  var grid=document.querySelector('.services__grid'); if(!grid) return;
+  var wrap=grid.closest('.container') || grid.parentElement; wrap.style.position='relative';
+  var down=false,startX=0,startScroll=0,moved=false;
+  grid.addEventListener('pointerdown',function(e){ down=true; moved=false; startX=e.clientX; startScroll=grid.scrollLeft; try{grid.setPointerCapture(e.pointerId);}catch(_){} });
+  grid.addEventListener('pointermove',function(e){ if(!down)return; var dx=e.clientX-startX; if(Math.abs(dx)>4){moved=true; grid.classList.add('is-dragging');} grid.scrollLeft=startScroll-dx; });
+  function end(){ down=false; grid.classList.remove('is-dragging'); }
+  grid.addEventListener('pointerup',end); grid.addEventListener('pointercancel',end);
+  grid.addEventListener('click',function(e){ if(moved){ e.preventDefault(); e.stopPropagation(); } }, true);
+  var IL='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>';
+  var IR='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>';
+  function mk(cls,label,icon){ var b=document.createElement('button'); b.type='button'; b.className='svc-arrow '+cls; b.setAttribute('aria-label',label); b.innerHTML=icon; wrap.appendChild(b); return b; }
+  var prev=mk('svc-arrow--prev','Previous services',IL), next=mk('svc-arrow--next','Next services',IR);
+  function step(){ return Math.min(grid.clientWidth*0.85, 350); }
+  prev.addEventListener('click',function(){ grid.scrollBy({left:-step(),behavior:'smooth'}); });
+  next.addEventListener('click',function(){ grid.scrollBy({left:step(),behavior:'smooth'}); });
+  function upd(){ prev.disabled=grid.scrollLeft<=2; next.disabled=grid.scrollLeft>=grid.scrollWidth-grid.clientWidth-2; }
+  grid.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',upd); setTimeout(upd,100);
+})();
+</script>
+
+<!-- Custom cursor: gold dot + lagging ring (fine-pointer + motion-allowed only) -->
+<script>
+(function(){
+  try{
+    if(!matchMedia('(pointer:fine)').matches || matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  }catch(e){ return; }
+  var root=document.documentElement;
+  var dot=document.createElement('span'); dot.className='ap-cursor__dot'; dot.setAttribute('aria-hidden','true');
+  var ring=document.createElement('span'); ring.className='ap-cursor__ring'; ring.setAttribute('aria-hidden','true');
+  document.body.appendChild(dot); document.body.appendChild(ring);
+  root.classList.add('ap-cursor-on');
+  var mx=innerWidth/2, my=innerHeight/2, rx=mx, ry=my;
+  addEventListener('mousemove',function(e){ mx=e.clientX; my=e.clientY; dot.style.left=mx+'px'; dot.style.top=my+'px'; },{passive:true});
+  (function loop(){ rx+=(mx-rx)*0.18; ry+=(my-ry)*0.18; ring.style.left=rx+'px'; ring.style.top=ry+'px'; requestAnimationFrame(loop); })();
+  var HOVER='a,button,[data-magnetic],[data-mega-trigger],.card,.service-card,.expertise-card,.proof-client,.svc-arrow,input,textarea,select,[role="button"],label';
+  addEventListener('mouseover',function(e){ if(e.target.closest&&e.target.closest(HOVER)) root.classList.add('ap-cursor-hover'); },{passive:true});
+  addEventListener('mouseout',function(e){ if(e.target.closest&&e.target.closest(HOVER)) root.classList.remove('ap-cursor-hover'); },{passive:true});
+  addEventListener('mousedown',function(){ root.classList.add('ap-cursor-down'); },{passive:true});
+  addEventListener('mouseup',function(){ root.classList.remove('ap-cursor-down'); },{passive:true});
+  document.addEventListener('mouseleave',function(){ dot.style.opacity='0'; ring.style.opacity='0'; });
+  document.addEventListener('mouseenter',function(){ dot.style.opacity=''; ring.style.opacity=''; });
+})();
+</script>
+</body>
+</html>

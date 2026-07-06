@@ -1,0 +1,29 @@
+{
+  "name": "abhijit-portfolio",
+  "version": "1.0.0",
+  "description": "Abhijit Pramanik — Proof-Backed Digital Portfolio",
+  "main": "index.js",
+  "scripts": {
+    "dev": "browser-sync start --server public --files \"public/**/*\" --port 5055 --no-notify --no-open",
+    "dev:open": "browser-sync start --server public --files \"public/**/*\" --port 5055 --no-notify",
+    "build:v3": "node scripts/build-v3.mjs",
+    "validate:evidence": "node scripts/validate-evidence.mjs",
+    "test:v3": "node scripts/test-v3-inline.mjs",
+    "serve": "python -m http.server 5055 -d public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Abhijit Pramanik <growabhijit@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "website-scraper": "^6.0.0",
+    "website-scraper-puppeteer": "^2.0.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "csso": "^5.0.5",
+    "esbuild": "^0.25.5",
+    "purgecss": "^7.0.2",
+    "terser": "^5.43.1"
+  }
+}
