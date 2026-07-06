@@ -35,8 +35,18 @@ Everything is ALREADY set up and deployed! You do NOT need to ask the user to si
 - **Widget classes are `ai-ab-*`** (adblocker bypass) — do not rename back to `chat-*`.
 - **Brain data:** `ai-proxy/src/portfolio_data.json`, injected as the system prompt.
 
-## Optional Next Steps
+## Late-session update (2026-07-06 evening #2)
 
-1. Refine `portfolio_data.json` if the model hallucinates (then `npx wrangler deploy`).
-2. Consider locking `Access-Control-Allow-Origin` to `https://abhiijit.works` in the worker.
-3. Add a tiny rate limit / abuse guard on the worker if traffic grows.
+A 21-agent audit ran end-to-end (96 findings). See `SITE_AUDIT_AND_ROADMAP.md` (phased plan, statuses current) and `AUDIT_FINDINGS_FULL.md` (all evidence). Shipped and deployed the same night:
+
+- **Scroll perf:** aurora canvas skips painting while scrolling; header blur 16→10px; ALL backdrop-filters disabled on touch devices; hero LCP un-gated from JS; hero glow 104KB→19KB; process stepper ignores mobile URL-bar resizes (+100svh stage).
+- **Mobile:** hero rebuilt at ≤820px via `display:contents` ordering — portrait now sits right under the H1, in the first viewport; chat input 16px (no iOS zoom) + safe-area insets + 44px targets; mobile menu scrolls; caption legibility floor.
+- **AI brain:** `ai-proxy/src/portfolio_data.json` rebuilt from `D:\A scret project\Word hacker 404\career-dashboard\data\experience_claims.json` (259 safe claims, 32 companies, **13 video-editing clients** — never present MadQuick as the only one). Worker hardened: CORS locked to abhiijit.works (+localhost dev ports), 16KB body / 12 msgs / 600 chars caps, injection guards on input AND output, max_tokens 380, natural voice.
+- **SEO/GEO:** sitemap/robots/privacy canonical fixed to the real double-i domain; llms.txt live; FAQPage JSON-LD; VideoObject uploadDate; title 52 chars; copy corrections (3.78M unified, MadQuick/ZestMoney casing, +115% math, placeholder removed).
+- **Repo hygiene:** .gitignore added, node_modules untracked (a wrangler account-id file briefly hit the public repo — history force-pushed clean the same minute).
+
+## Remaining for user / next agent
+
+1. **USER:** rotate the HF key (pasted in chat) → `npx wrangler secret put HUGGINGFACE_API_KEY` in `ai-proxy/`.
+2. **USER:** add DNS CNAME `www` → `pramsss108.github.io` so https://www.abhiijit.works stops 404ing.
+3. Open ⬜ roadmap items: reel-04 re-encode, Chart.js self-host, PNG fallback purge, marquee pause control, video captions, Service schema, analytics (see roadmap Phases 2/5/7/8).
