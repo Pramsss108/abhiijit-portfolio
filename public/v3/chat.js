@@ -1,7 +1,7 @@
 // chat.js
 
 // Replace this with your actual Cloudflare Worker URL after deployment
-const WORKER_URL = "https://abhijit-portfolio-ai.YOUR_CLOUDFLARE_USERNAME.workers.dev/";
+const WORKER_URL = "https://abhijit-portfolio-ai.guitarguitarabhijit.workers.dev/";
 
 document.addEventListener('DOMContentLoaded', () => {
   const toggleBtn = document.getElementById('chat-toggle');
