@@ -5349,7 +5349,8 @@ html:not(.js) .work__narr{ min-height: 0; }
 /* ============================================================
    3 · #services — premium glass cards, gold restraint, tilt + glow
    ============================================================ */
-#services { padding-block: var(--section-y); }
+#services { padding-top: var(--section-y); padding-bottom: calc(var(--section-y) * 0.5); }
+#work { padding-top: calc(var(--section-y) * 0.5); }
 
 #services .services__grid {
   margin-top: clamp(2.6rem, 1.8rem + 3vw, 4rem);
@@ -14611,5 +14612,6 @@ html.media-player-open{ overflow:hidden; }
     content-visibility:visible;
   }
 }
+
 
 
