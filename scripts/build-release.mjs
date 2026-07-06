@@ -13,10 +13,10 @@ await mkdir(release, { recursive: true });
 const required = [
   "index.html", "privacy.html", "404.html", "robots.txt", "sitemap.xml",
   "abhijit-pramanik-resume.pdf", ".htaccess", "_headers", "_redirects",
-  "v3/styles.min.css", "v3/app.min.js",
+  "v3/styles.min.css", "v3/app.min.js", "v3/chat.js",
 ];
 
-const textFiles = ["index.html", "privacy.html", "404.html", "v3/styles.min.css", "v3/app.min.js"];
+const textFiles = ["index.html", "privacy.html", "404.html", "v3/styles.min.css", "v3/app.min.js", "v3/chat.js"];
 const texts = await Promise.all(textFiles.map(async (file) => [file, await readFile(resolve(source, file), "utf8")]));
 const discovered = new Set(required);
 

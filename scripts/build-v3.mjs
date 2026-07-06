@@ -11,9 +11,10 @@ const jsSource = resolve(pageDir, "app.js");
 const htmlSource = resolve(pageDir, "index.html");
 const canonicalHtml = resolve(root, "public", "index.html");
 
-const [css, js, html] = await Promise.all([
+const [css, js, chatJs, html] = await Promise.all([
   readFile(cssSource, "utf8"),
   readFile(jsSource, "utf8"),
+  readFile(resolve(pageDir, "chat.js"), "utf8"),
   readFile(htmlSource, "utf8"),
 ]);
 
@@ -21,6 +22,7 @@ const purgeResult = await new PurgeCSS().purge({
   content: [
     { raw: html, extension: "html" },
     { raw: js, extension: "js" },
+    { raw: chatJs, extension: "js" },
   ],
   css: [{ raw: css }],
   safelist: {
@@ -71,9 +73,16 @@ if (!optimizedJs.code) {
   throw new Error("Terser did not return JavaScript");
 }
 
+const optimizedChatJs = await minifyJs(chatJs, {
+  compress: { passes: 2 },
+  mangle: true,
+  format: { comments: false },
+});
+
 await Promise.all([
   writeFile(resolve(pageDir, "styles.min.css"), optimizedCss),
   writeFile(resolve(pageDir, "app.min.js"), optimizedJs.code),
+  writeFile(resolve(pageDir, "chat.js"), optimizedChatJs.code),
   // The v3 file remains the editable source; production root serves the same
   // canonical document. All v3 assets use root-absolute URLs, so the markup is
   // valid at both / and the local /v3/ preview path.
