@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-05T08:13:27.268Z",
+  "generatedAt": "2026-07-06T11:29:11.562Z",
   "files": 83,
-  "bytes": 18357836,
+  "bytes": 18357341,
   "excludedRoots": [
     "public/_proof",
     "public/madquick-ref",
@@ -12,23 +12,23 @@
   "assets": [
     {
       "file": ".htaccess",
-      "bytes": 939,
-      "sha256": "158ab28fbcbb8f48bf96ef12db6b9580841c71291fc1487693efd4903bfb5996"
+      "bytes": 965,
+      "sha256": "a6ea3ad969e011597b93901a9dddf9752e26f5113b7cd48a3bf1c530353c5b24"
     },
     {
       "file": "404.html",
-      "bytes": 1340,
-      "sha256": "37001745d3d0814c3cc9a8be5a424e50124ffa3f99228c701e675eee7ada986a"
+      "bytes": 1352,
+      "sha256": "d46d05469d7ac0a84416776bfdb1760d9f10ba6ef5f6b6e29d38eae52ceee87b"
     },
     {
       "file": "_headers",
-      "bytes": 654,
-      "sha256": "31b77221fdea9981d57afbfd1652666f17d1d7b85565f9125ab6aca0238baf96"
+      "bytes": 679,
+      "sha256": "d15acb34842499cafa7aa1a491ea9c609f284e87d9f2826f51ce26ca5b158e75"
     },
     {
       "file": "_redirects",
-      "bytes": 86,
-      "sha256": "1869053fe7d6a7932f84d635b1bc37f1baf6c3c901f5ff1cdd96ca0472755ae9"
+      "bytes": 89,
+      "sha256": "001d355359669e6c3645b24e7b72a3445635b5a3fa2f38196bbd8e48aac17900"
     },
     {
       "file": "abhijit-pramanik-resume.pdf",
@@ -122,13 +122,13 @@
     },
     {
       "file": "images/brand/ap-favicon.svg",
-      "bytes": 835,
-      "sha256": "8c2fcede8a37323021ba42e4909f5e699a4396e1325418696a3b83e51602f8af"
+      "bytes": 841,
+      "sha256": "2c190eaf2544931dc59c28b46a54ee7cc30356386a7df9aea201cfd7bad3ce89"
     },
     {
       "file": "images/brand/ap-logo-primary.svg",
-      "bytes": 2071,
-      "sha256": "4bf1cb028778795fc0a6babffb6602d07c2527d3464e5390a54a2cd3c2d77891"
+      "bytes": 2091,
+      "sha256": "4dfdd8e33d230b2babe3ae4e1f077d7eab6df1e83c3206771654681543931b20"
     },
     {
       "file": "images/company-logos/balihans.png",
@@ -357,28 +357,28 @@
     },
     {
       "file": "index.html",
-      "bytes": 141781,
-      "sha256": "1c09642dd27805d558a67f06fbcd2e14cea122bea2de1048967d2cf92df1710f"
+      "bytes": 141825,
+      "sha256": "9f693917ab2f984ec5252c1fcac860d7807fedea088561730bb86bbb713f4d7b"
     },
     {
       "file": "privacy.html",
-      "bytes": 4827,
-      "sha256": "b302855a38b1c3f695bcf7588a1815afacee56999d9fe8fdd72a50b314f31a31"
+      "bytes": 4868,
+      "sha256": "d825ea841da5e79c06e1df405ec037f5d48837648d7e494e378e81155756693a"
     },
     {
       "file": "robots.txt",
-      "bytes": 67,
-      "sha256": "441cf5b6e86552df93f53cecc400702c40fd9a954b4dab69a6894b2b2ba14d55"
+      "bytes": 71,
+      "sha256": "094bc0aca25c2debd35d686132f9bb8715e6b23074b51f1e269735f248a090f1"
     },
     {
       "file": "sitemap.xml",
-      "bytes": 431,
-      "sha256": "80aee436afcdfd47fea49679f0f56f52bc56c6c19c90fa042725ef1030f319b1"
+      "bytes": 446,
+      "sha256": "ecc76ebe0770bee4f184de90cbb280245ef8141cbf9b6eae7edbb6bdd9e374f2"
     },
     {
       "file": "v3/app.min.js",
       "bytes": 36950,
-      "sha256": "2f814a3fc2d92ad0d2cb40b748715674f964afbb8738e96ed41c21c2f2cf2966"
+      "sha256": "74b37ad52eda0bbdc052d366ee09f24749cd746a89a035d0b3bff578c575242c"
     },
     {
       "file": "v3/fonts/fraunces-latin-italic-used.woff2",
@@ -392,8 +392,8 @@
     },
     {
       "file": "v3/styles.min.css",
-      "bytes": 242987,
-      "sha256": "f68d54fc52d1d8085eeb6647fe8c71a02ca1540ef97ca38b133d9dfbd5afe721"
+      "bytes": 242296,
+      "sha256": "4bde7ff2d08b44e1076d73a2e3edbc7f5582e697a44d9f79f224f58f87d16939"
     },
     {
       "file": "videos/video-showcase/landscape-01.mp4",
