@@ -1,0 +1,47 @@
+{
+  "name": "Abhijit Pramanik",
+  "role": "I Build Proof | Proof-Backed SEO, Content, WordPress & AI Workflows",
+  "experience": {
+    "video_editing": {
+      "metrics": "300+ videos edited",
+      "focus": "From the first hook to the final sound cue, I edit for attention. Each cut combines platform-aware pacing, video marketing and trend-led audio.",
+      "client": "MadQuick",
+      "impact": "Delivered 300+ videos worldwide"
+    },
+    "expertise": [
+      {
+        "name": "Content Writing (SEO + GEO)",
+        "description": "SEO helps people find the work in search; GEO helps AI answers cite it now that people search there too."
+      },
+      {
+        "name": "Growth Strategy",
+        "description": "A plan, publish and review social content so the next post is informed by the last one."
+      },
+      {
+        "name": "Canva Design",
+        "description": "I create polished Canva assets that teams can edit and reuse themselves."
+      }
+    ],
+    "process": [
+      {
+        "step": 1,
+        "title": "Discovery",
+        "description": "Understanding the core goals and current bottlenecks."
+      },
+      {
+        "step": 2,
+        "title": "Strategy",
+        "description": "Formulating a content and SEO plan."
+      },
+      {
+        "step": 3,
+        "title": "Execution",
+        "description": "Building the proof through content, video, and design."
+      }
+    ]
+  },
+  "contact": {
+    "availability": "Open for new projects",
+    "email": "contact@abhiijit.works"
+  }
+}

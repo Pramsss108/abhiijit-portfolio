@@ -1,0 +1,10 @@
+name = "abhijit-portfolio-ai"
+main = "src/index.js"
+compatibility_date = "2024-03-20"
+
+[observability]
+enabled = true
+
+[vars]
+# You will need to set this via wrangler secret put HUGGINGFACE_API_KEY
+# Do NOT commit your API key here.
