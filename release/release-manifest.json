@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-07T06:46:49.985Z",
+  "generatedAt": "2026-07-07T07:27:08.180Z",
   "files": 87,
-  "bytes": 15543986,
+  "bytes": 15545426,
   "excludedRoots": [
     "public/_proof",
     "public/madquick-ref",
@@ -358,7 +358,7 @@
     {
       "file": "index.html",
       "bytes": 117717,
-      "sha256": "88e71e772803d091db7590ffe74fa98c8e31440bb8e11dee3e4bdf85e747b6ba"
+      "sha256": "e285435aa1977268ea28ff7d72ca61d3b82706aef01bbe570b92805ff15e6794"
     },
     {
       "file": "llms.txt",
@@ -387,8 +387,8 @@
     },
     {
       "file": "v3/app.min.js",
-      "bytes": 37721,
-      "sha256": "59b25d5be290be468606a377614165726d62f94fe210321ed10417e6cda505b7"
+      "bytes": 38411,
+      "sha256": "60a687743636adb09dce4369c5cdb127c29585a69eee9649f70caae9325f5770"
     },
     {
       "file": "v3/chat.js",
@@ -407,8 +407,8 @@
     },
     {
       "file": "v3/styles.min.css",
-      "bytes": 251390,
-      "sha256": "b85ec382ea0bdaa9a5640f96a8032cd7047af1d90d25822cbe59a02091d7ecd4"
+      "bytes": 252140,
+      "sha256": "46d5578d9f438824b1d8010e1f675490d899808606cacbdbc702531ee222c7b8"
     },
     {
       "file": "v3/vendor/chart.umd.min.js",

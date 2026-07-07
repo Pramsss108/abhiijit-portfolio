@@ -4,28 +4,31 @@ const HF_MODEL = "meta-llama/Meta-Llama-3-8B-Instruct";
 // HF retired api-inference.huggingface.co; chat completions now go through the Inference Providers router
 const HF_API_URL = "https://router.huggingface.co/v1/chat/completions";
 
-// Only the portfolio site may call this worker from a browser.
+// Only the portfolio site (or any local dev origin) may call this from a browser.
 const ALLOWED_ORIGINS = new Set([
   "https://abhiijit.works",
   "https://www.abhiijit.works",
-  "http://localhost:5055",
-  "http://localhost:5057",
 ]);
+// Any localhost / 127.0.0.1 origin on any port is treated as dev.
+function isAllowedOrigin(origin) {
+  if (ALLOWED_ORIGINS.has(origin)) return true;
+  return /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
+}
 
 // Abuse caps: keep any single request cheap.
 const MAX_BODY_BYTES = 16_000;
 const MAX_MESSAGES = 12;
 const MAX_MESSAGE_CHARS = 600;
 
-// Rate limit: blocks a script from burning the HF free-tier quota, while
-// staying well clear of a real (or owner-testing) conversation. 40 messages
-// per 10 minutes per IP = plenty for a human, cheap protection against a bot.
-const RATE_LIMIT_MAX = 40;
+// Rate limit is a RUNAWAY-SCRIPT backstop only, never a real-use gate. 120
+// messages / 10 min = 12/min sustained — no human (or owner testing) ever hits
+// it, but a bot hammering thousands still gets stopped before it burns the quota.
+const RATE_LIMIT_MAX = 120;
 const RATE_LIMIT_WINDOW_SECONDS = 600; // 10 minutes
 
 function corsHeaders(origin) {
   return {
-    "Access-Control-Allow-Origin": ALLOWED_ORIGINS.has(origin) ? origin : "https://abhiijit.works",
+    "Access-Control-Allow-Origin": isAllowedOrigin(origin) ? origin : "https://abhiijit.works",
     "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
     "Access-Control-Allow-Headers": "Content-Type",
     "Vary": "Origin",

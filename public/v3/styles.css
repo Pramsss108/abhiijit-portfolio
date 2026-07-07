@@ -151,7 +151,10 @@
 * { margin: 0; }
 html {
   -webkit-text-size-adjust: 100%;
-  scroll-behavior: smooth;
+  /* JS drives smooth anchor scrolling via rAF (scrollToTarget). CSS smooth
+     here would fight it — each programmatic scrollTo restarts a browser
+     animation and the scroll never settles on the target. */
+  scroll-behavior: auto;
   scroll-padding-top: calc(var(--header-h) + 12px);
 }
 body {
@@ -15028,3 +15031,55 @@ html.media-player-open{ overflow:hidden; }
   outline: 2px solid var(--gold-bright, #f1c45a); outline-offset: 3px;
 }
 .site-footer{ padding-bottom: clamp(1.5rem, 3vw, 2.5rem); }      /* was 0 — breathing room */
+
+/* ============================================================
+   FIXES 2026-07-07b — chat placement, uniform section rhythm
+   ============================================================ */
+
+/* --- Chat: FAB pinned bottom-right; panel floats ABOVE it, out of flow.
+   Previously the closed panel kept display:flex and occupied ~540px in the
+   flex column, shoving the toggle to mid-screen. position:absolute removes it
+   from flow so the button stays anchored and the panel opens upward. --- */
+.ai-ab-panel{
+  position: absolute;
+  bottom: calc(100% + 0.85rem);
+  right: 0;
+  margin: 0 !important;
+  transform-origin: bottom right;
+}
+.ai-ab-panel[hidden]{ transform: translateY(12px) scale(.98); }
+
+/* --- Uniform section rhythm: every standard content section breathes the
+   same. Drops the FAQ's full-viewport centering that made its gap read
+   inconsistent ("kache kache" vs "gaye gaye"). Pinned scenes (#work,
+   #process) keep their scroll-driven spacing by design. --- */
+#evidence,
+#services.section,
+#about.section,
+.faq-section,
+#contact.section{ padding-block: var(--sec-pad) !important; }
+
+@media (min-width: 821px){
+  #faq{
+    min-height: 0 !important;
+    padding-block: var(--sec-pad) !important;
+    align-items: start !important;
+  }
+}
+
+/* --- Anchor navigation reliability: content-visibility:auto on the major
+   sections made nav-link jumps land short — off-screen sections render at
+   their estimated intrinsic size, then expand to real height as you scroll
+   past, pushing the target down mid-scroll. The page is small and already
+   fast, so eager rendering costs nothing and navigation becomes exact. --- */
+@supports (content-visibility:auto){
+  #proof-numbers, .proof-evidence, #services, #work, #process,
+  #about, #faq, #contact, .site-footer,
+  #proof-numbers.motion-render-ready, .proof-evidence.motion-render-ready,
+  #services.motion-render-ready, #work.motion-render-ready,
+  #process.motion-render-ready, #about.motion-render-ready,
+  #faq.motion-render-ready, #contact.motion-render-ready,
+  .site-footer.motion-render-ready{
+    content-visibility: visible !important;
+  }
+}

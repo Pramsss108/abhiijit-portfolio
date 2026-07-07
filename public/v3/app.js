@@ -1006,9 +1006,50 @@
    * 14) SMOOTH IN-PAGE ANCHOR SCROLL — respects reduced-motion (auto), moves
    *     focus for a11y, updates the hash without a second jump.
    * ======================================================================= */
-  function initSmoothScroll() {
-    var behavior = prefersReduced ? "auto" : "smooth";
+  // Re-targeting smooth scroll: native scrollIntoView lands short because
+  // content-visibility:auto sections between here and the target expand as we
+  // pass them, pushing the target down mid-animation. This re-reads the
+  // target's live position every frame and eases toward it, so it always
+  // lands correctly under the sticky header.
+  function perfNow() {
+    return win.performance && win.performance.now ? win.performance.now() : Date.now();
+  }
 
+  // Layout is stable (content-visibility neutralized) and CSS scroll-behavior
+  // is 'auto', so we compute the goal once and ease to it ourselves. Doing our
+  // own animation avoids the CSS-smooth-scroll conflict (each scrollTo would
+  // otherwise restart a browser animation and never settle).
+  function scrollToTarget(target) {
+    var header = $("[data-header]") || $(".site-header");
+    var offset = (header ? header.getBoundingClientRect().height : 0) + 16;
+    var startY = win.pageYOffset || 0;
+    var goal = startY + target.getBoundingClientRect().top - offset;
+    goal = Math.max(0, Math.min(goal, doc.documentElement.scrollHeight - win.innerHeight));
+    var dist = goal - startY;
+    if (prefersReduced || Math.abs(dist) < 4) {
+      win.scrollTo(0, goal);
+      return;
+    }
+    var dur = Math.min(1000, Math.max(420, Math.abs(dist) * 0.4));
+    var startT = perfNow();
+    function correct() {
+      // Lazy images/reveals above the target can shift it during the scroll;
+      // re-read once at the end and snap to the true position.
+      var g = (win.pageYOffset || 0) + target.getBoundingClientRect().top - offset;
+      g = Math.max(0, Math.min(g, doc.documentElement.scrollHeight - win.innerHeight));
+      if (Math.abs(g - (win.pageYOffset || 0)) > 6) win.scrollTo(0, g);
+    }
+    function step() {
+      var e = Math.min((perfNow() - startT) / dur, 1);
+      var ease = e < 0.5 ? 4 * e * e * e : 1 - Math.pow(-2 * e + 2, 3) / 2; // easeInOutCubic
+      win.scrollTo(0, Math.round(startY + dist * ease));
+      if (e < 1) raf(step);
+      else { correct(); win.setTimeout(correct, 60); }
+    }
+    raf(step);
+  }
+
+  function initSmoothScroll() {
     $all('a[href^="#"]').forEach(function (link) {
       link.addEventListener("click", function (e) {
         var href = link.getAttribute("href");
@@ -1017,7 +1058,7 @@
         if (!target) return;
 
         e.preventDefault();
-        target.scrollIntoView({ behavior: behavior, block: "start" });
+        scrollToTarget(target);
 
         var hadTab = target.hasAttribute("tabindex");
         if (!hadTab) target.setAttribute("tabindex", "-1");
