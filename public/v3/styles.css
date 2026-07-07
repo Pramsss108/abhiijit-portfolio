@@ -14980,7 +14980,7 @@ html.media-player-open{ overflow:hidden; }
    trackings, radii scattered across 8 values.
    ============================================================ */
 :root{
-  --sec-pad: clamp(3.25rem, 5.5vw, 4.75rem);           /* 52 -> 76px */
+  --sec-pad: clamp(2.4rem, 3.8vw, 3.25rem);            /* 38 -> 52px; seams ~104px */
   --title-lg: clamp(2.35rem, 1.6rem + 2.6vw, 3.5rem);  /* cap at 56px */
   --title-md: clamp(2.2rem, 1.7rem + 1.8vw, 2.9rem);   /* ~35 -> 46px */
 }
@@ -15083,3 +15083,19 @@ html.media-player-open{ overflow:hidden; }
     content-visibility: visible !important;
   }
 }
+
+/* --- Video showcase header: the copy was vertically centered inside a ~480px
+   min-height row (sized for the portrait), floating the "Video Editing"
+   eyebrow ~140px down and leaving a dead void above it. Top-align the copy
+   with the portrait and tighten the row so the heading leads immediately. --- */
+@media (min-width: 821px){
+  .showreel__head{
+    align-items: start !important;
+    min-height: 0 !important;
+    padding-top: clamp(.5rem, 1.2vw, 1rem) !important;
+  }
+  .showreel__portrait{ align-self: stretch; }
+}
+/* Skills section already gives 76px below; trim the video section's own top
+   so the seam between them isn't doubled. */
+#work.section{ padding-top: clamp(.5rem, 1.2vw, 1rem) !important; }  /* skills section already gives the seam below */
