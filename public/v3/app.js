@@ -1023,7 +1023,14 @@
     var header = $("[data-header]") || $(".site-header");
     var offset = (header ? header.getBoundingClientRect().height : 0) + 16;
     var startY = win.pageYOffset || 0;
-    var goal = startY + target.getBoundingClientRect().top - offset;
+    // The header (#top) is position:sticky so its rect.top is always ~0 — using
+    // it as a target would only nudge up by `offset`. "Home" means the very top.
+    var goal;
+    if (target === header || target.id === "top" || getComputedStyle(target).position === "sticky") {
+      goal = 0;
+    } else {
+      goal = startY + target.getBoundingClientRect().top - offset;
+    }
     goal = Math.max(0, Math.min(goal, doc.documentElement.scrollHeight - win.innerHeight));
     var dist = goal - startY;
     if (prefersReduced || Math.abs(dist) < 4) {
@@ -1032,10 +1039,11 @@
     }
     var dur = Math.min(1000, Math.max(420, Math.abs(dist) * 0.4));
     var startT = perfNow();
+    var toTop = goal === 0;
     function correct() {
       // Lazy images/reveals above the target can shift it during the scroll;
       // re-read once at the end and snap to the true position.
-      var g = (win.pageYOffset || 0) + target.getBoundingClientRect().top - offset;
+      var g = toTop ? 0 : (win.pageYOffset || 0) + target.getBoundingClientRect().top - offset;
       g = Math.max(0, Math.min(g, doc.documentElement.scrollHeight - win.innerHeight));
       if (Math.abs(g - (win.pageYOffset || 0)) > 6) win.scrollTo(0, g);
     }

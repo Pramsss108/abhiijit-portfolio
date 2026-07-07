@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const messages = document.getElementById("ai-ab-messages");
   if (!toggle || !panel || !closeBtn || !input || !send || !messages) return;
 
+  const suggest = document.getElementById("ai-ab-suggest");
   const history = [];
   let pending = false;
 
@@ -22,6 +23,17 @@ document.addEventListener("DOMContentLoaded", () => {
   input.maxLength = 500;
   messages.setAttribute("aria-live", "polite");
   toggle.setAttribute("aria-expanded", "false");
+
+  // Suggested-question chips: fill the input and send, then retire them.
+  if (suggest) {
+    suggest.addEventListener("click", (e) => {
+      const chip = e.target.closest("[data-q]");
+      if (!chip) return;
+      input.value = chip.getAttribute("data-q");
+      suggest.hidden = true;
+      submit();
+    });
+  }
 
   function setOpen(open) {
     panel.hidden = !open;
@@ -75,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
   async function submit() {
     const text = input.value.trim();
     if (!text || pending) return;
+    if (suggest) suggest.hidden = true;
     pending = true;
     send.disabled = true;
     addMessage(text, "user");

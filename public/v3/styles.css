@@ -11467,7 +11467,7 @@ body::before{
 .company-ribbon{
   position:relative;
   padding:0;
-  border-block:1px solid rgba(216,167,62,.13);
+  border-block:0;
   background:linear-gradient(90deg,rgba(216,167,62,.012),rgba(255,255,255,.018) 50%,rgba(216,167,62,.012));
   overflow:visible;
   isolation:isolate;
@@ -13600,8 +13600,14 @@ html.media-player-open{ overflow:hidden; }
   align-items:center;
   gap:clamp(1.5rem,4vw,4.5rem);
   padding:clamp(1.25rem,2.5vw,2rem) 0 clamp(1rem,2vw,1.5rem);
-  border-bottom:1px solid rgba(216,167,62,.16);
+  border-bottom:0;
   background:none;
+}
+/* premium faded hairline under the video header (replaces the hard gold line) */
+.showreel__head{ position:relative; }
+.showreel__head::after{
+  content:""; position:absolute; left:0; right:0; bottom:0; height:1px; pointer-events:none;
+  background:linear-gradient(90deg, transparent, rgba(216,167,62,.24) 22%, rgba(216,167,62,.30) 50%, rgba(216,167,62,.24) 78%, transparent);
 }
 .showreel__copy{ min-width:0; }
 .showreel__copy .eyebrow{ margin:0 0 .65rem; }
@@ -15099,3 +15105,131 @@ html.media-player-open{ overflow:hidden; }
 /* Skills section already gives 76px below; trim the video section's own top
    so the seam between them isn't doubled. */
 #work.section{ padding-top: clamp(.5rem, 1.2vw, 1rem) !important; }  /* skills section already gives the seam below */
+
+
+/* ============================================================
+   PREMIUM SECTION DIVIDERS (2026-07-07) — replace hard border
+   lines with an ultra-thin gold hairline that fades to nothing
+   at both edges. Centered, whisper-faint. NOT on the ribbon.
+   ============================================================ */
+#services, #work, #process, #about, #faq, #contact{ position: relative; }
+#services::before, #work::before, #process::before,
+#about::before, #faq::before, #contact::before{
+  content:""; position:absolute; top:0; left:50%; transform:translateX(-50%);
+  width:min(1080px, 78%); height:1px; pointer-events:none; z-index:2;
+  background:linear-gradient(90deg,
+    transparent,
+    rgba(216,167,62,.20) 20%,
+    rgba(216,167,62,.30) 50%,
+    rgba(216,167,62,.20) 80%,
+    transparent);
+  opacity:.55;
+}
+@media (max-width:820px){
+  #services::before, #work::before, #process::before,
+  #about::before, #faq::before, #contact::before{ width:min(88%, 32rem); opacity:.4; }
+}
+
+/* ============================================================
+   PREMIUM CHAT — sellable, $10k feel (2026-07-07)
+   ============================================================ */
+/* Toggle FAB: gold gradient + soft pulse ring */
+.ai-ab-toggle{ position:relative; width:3.6rem; height:3.6rem; }
+.ai-ab-toggle__ico{ position:relative; z-index:2; }
+.ai-ab-toggle__pulse{
+  position:absolute; inset:0; border-radius:50%; z-index:1;
+  box-shadow:0 0 0 0 rgba(216,167,62,.45);
+  animation:aiAbPulse 2.6s ease-out infinite;
+}
+@keyframes aiAbPulse{
+  0%{ box-shadow:0 0 0 0 rgba(216,167,62,.45); }
+  70%{ box-shadow:0 0 0 14px rgba(216,167,62,0); }
+  100%{ box-shadow:0 0 0 0 rgba(216,167,62,0); }
+}
+@media (prefers-reduced-motion:reduce){ .ai-ab-toggle__pulse{ animation:none; } }
+
+/* Panel shell */
+.ai-ab-panel{
+  width:378px;
+  border:1px solid rgba(216,167,62,.24);
+  box-shadow:0 40px 90px -30px rgba(0,0,0,.9), 0 0 0 1px rgba(255,255,255,.02) inset, 0 0 60px -20px rgba(216,167,62,.35);
+}
+
+/* Header: gradient, avatar, name + status */
+.ai-ab-head{
+  display:flex; align-items:center; gap:.7rem;
+  padding:.85rem .9rem .8rem;
+  background:linear-gradient(135deg, rgba(216,167,62,.16), rgba(216,167,62,.04) 60%), #0e1218;
+  border-bottom:1px solid rgba(216,167,62,.16);
+}
+.ai-ab-avatar{
+  flex:none; width:2.4rem; height:2.4rem; border-radius:50%;
+  display:grid; place-items:center;
+  font:700 .82rem/1 var(--font-display, "Syne"), sans-serif; letter-spacing:.02em;
+  color:#14100a;
+  background:linear-gradient(140deg, var(--gold-bright,#f1c45a), var(--gold,#d8a73e) 70%);
+  box-shadow:0 4px 14px -4px rgba(216,167,62,.6), inset 0 1px 0 rgba(255,255,255,.4);
+}
+.ai-ab-head__meta{ display:flex; flex-direction:column; gap:1px; min-width:0; }
+.ai-ab-title{ font:600 .98rem/1.1 var(--font-display,"Syne"),sans-serif; color:#fdf7ea; letter-spacing:.005em; }
+.ai-ab-sub{ display:flex; align-items:center; gap:.4rem; font-size:.72rem; color:#a7a08e; letter-spacing:.01em; }
+.ai-ab-status{ width:7px; height:7px; border-radius:50%; background:#54e08a; box-shadow:0 0 8px rgba(84,224,138,.9); flex:none; }
+.ai-ab-close{
+  margin-left:auto; width:2rem; height:2rem; display:grid; place-items:center;
+  border:0; border-radius:9px; background:transparent; color:#b7b0a0; cursor:pointer;
+  transition:background .18s ease, color .18s ease;
+}
+.ai-ab-close:hover{ background:rgba(255,255,255,.08); color:#fff; }
+
+/* Messages + bubbles */
+.ai-ab-messages{ padding:1rem .95rem .5rem; gap:.6rem; }
+.ai-ab-msg{
+  font-size:.875rem; line-height:1.5; padding:.68rem .9rem; border-radius:15px; max-width:86%;
+  animation:aiAbRise .32s cubic-bezier(.22,1,.36,1) both;
+}
+@keyframes aiAbRise{ from{ opacity:0; transform:translateY(8px); } to{ opacity:1; transform:none; } }
+@media (prefers-reduced-motion:reduce){ .ai-ab-msg{ animation:none; } }
+.ai-ab-msg--bot, .ai-ab-msg--ai, .ai-ab-msg--loading{
+  background:#161b24; border:1px solid rgba(255,255,255,.06); color:#e9e4d7;
+  align-self:flex-start; border-bottom-left-radius:5px;
+}
+.ai-ab-msg--user{
+  background:linear-gradient(140deg, var(--gold-bright,#f1c45a), var(--gold,#d8a73e) 75%);
+  color:#14100a; font-weight:500; align-self:flex-end; border-bottom-right-radius:5px;
+}
+.ai-ab-msg--ai a{ color:var(--gold-bright,#f1c45a); text-decoration:underline; }
+
+/* Suggested-question chips */
+.ai-ab-suggest{ display:flex; flex-wrap:wrap; gap:.4rem; padding:.15rem .95rem .7rem; }
+.ai-ab-suggest[hidden]{ display:none; }
+.ai-ab-chip{
+  font:500 .76rem/1 var(--font-body,"Inter"),sans-serif; color:var(--gold-bright,#f1c45a);
+  background:rgba(216,167,62,.07); border:1px solid rgba(216,167,62,.32);
+  padding:.5rem .8rem; border-radius:999px; cursor:pointer;
+  transition:background .18s ease, transform .12s ease, border-color .18s ease;
+}
+.ai-ab-chip:hover{ background:rgba(216,167,62,.16); border-color:rgba(216,167,62,.5); transform:translateY(-1px); }
+.ai-ab-chip:active{ transform:translateY(0); }
+
+/* WhatsApp CTA — slim, premium, always visible */
+.ai-ab-whatsapp{
+  display:flex; align-items:center; justify-content:center; gap:.5rem;
+  margin:0 .95rem .1rem; padding:.6rem .9rem; border-radius:12px;
+  font:600 .8rem/1 var(--font-body,"Inter"),sans-serif; letter-spacing:.01em;
+  color:#eafff1; text-decoration:none;
+  background:linear-gradient(135deg, rgba(37,211,102,.16), rgba(37,211,102,.06));
+  border:1px solid rgba(37,211,102,.34);
+  transition:background .2s ease, border-color .2s ease, transform .12s ease;
+}
+.ai-ab-whatsapp svg{ color:#25d366; flex:none; }
+.ai-ab-whatsapp:hover{ background:linear-gradient(135deg, rgba(37,211,102,.24), rgba(37,211,102,.1)); border-color:rgba(37,211,102,.5); transform:translateY(-1px); }
+
+/* Input row + tiny footer */
+.ai-ab-input-area{ padding:.7rem .95rem .55rem; gap:.5rem; border-top:1px solid rgba(255,255,255,.06); background:#0e1218; }
+#ai-ab-input{ font-size:16px; background:#161b24; border:1px solid rgba(255,255,255,.09); border-radius:22px; }
+#ai-ab-input:focus{ border-color:var(--gold,#d8a73e); box-shadow:0 0 0 3px rgba(216,167,62,.16); }
+#ai-ab-send{ background:linear-gradient(140deg, var(--gold-bright,#f1c45a), var(--gold,#d8a73e) 75%); color:#14100a; }
+.ai-ab-foot{
+  margin:0; padding:0 .95rem .7rem; text-align:center;
+  font-size:.66rem; letter-spacing:.02em; color:#6c6759;
+}

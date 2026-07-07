@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-07T07:46:56.848Z",
+  "generatedAt": "2026-07-07T08:13:06.683Z",
   "files": 87,
-  "bytes": 15545663,
+  "bytes": 15549086,
   "excludedRoots": [
     "public/_proof",
     "public/madquick-ref",
@@ -357,8 +357,8 @@
     },
     {
       "file": "index.html",
-      "bytes": 117717,
-      "sha256": "30df2bc8d264ad6e1f09f4061aafc24733408f3d86395786e8a077424e0fba37"
+      "bytes": 117533,
+      "sha256": "94292d8d5c76fc4eebc943864d3b08705e4a87cdfe81e61fb696ab1d94ca5b4b"
     },
     {
       "file": "llms.txt",
@@ -387,13 +387,13 @@
     },
     {
       "file": "v3/app.min.js",
-      "bytes": 38411,
-      "sha256": "60a687743636adb09dce4369c5cdb127c29585a69eee9649f70caae9325f5770"
+      "bytes": 38492,
+      "sha256": "7dc56e96aeaac15ef73f9576d915a465bd57adb33d19f880c2aadf10d295a17e"
     },
     {
       "file": "v3/chat.js",
-      "bytes": 2439,
-      "sha256": "442b9f0df4b7e02166c40ca2b24623f3decd7ba760eadd1793fa41d9ada7b1a6"
+      "bytes": 2626,
+      "sha256": "1ea49a680425d4b10c97dbdf69a851b6118c96f247199b199aea70a8c7f5e7b2"
     },
     {
       "file": "v3/fonts/fraunces-latin-italic-used.woff2",
@@ -407,8 +407,8 @@
     },
     {
       "file": "v3/styles.min.css",
-      "bytes": 252377,
-      "sha256": "fe961c6b1c0683c59276ccf58c557637ff76202207fcccc8bc954e465ec96ea9"
+      "bytes": 255716,
+      "sha256": "60f3f7d9a82d74af6bfbfe144a8c4c6ef2316b080550fa3fd9d08b2f15018aaf"
     },
     {
       "file": "v3/vendor/chart.umd.min.js",
