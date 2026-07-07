@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-07T15:34:39.640Z",
+  "generatedAt": "2026-07-07T15:42:42.560Z",
   "files": 88,
-  "bytes": 15664421,
+  "bytes": 15664851,
   "excludedRoots": [
     "public/_proof",
     "public/madquick-ref",
@@ -363,7 +363,7 @@
     {
       "file": "index.html",
       "bytes": 118004,
-      "sha256": "b58f295f76eccecf6a0f17b8a2f7e2ba1aa470ba4b00b67984c4c0a80d58e155"
+      "sha256": "32cef9fac6d217dc5d63c007f30869aed561c28ab73387f9a4ae75c60d0f518a"
     },
     {
       "file": "llms.txt",
@@ -397,8 +397,8 @@
     },
     {
       "file": "v3/chat.js",
-      "bytes": 3225,
-      "sha256": "6e31582c7b60d39ccdc1e6dc4b05bfc4639e1066240ec182da5c4c6269c1b9b0"
+      "bytes": 3655,
+      "sha256": "939d579600de2aa60ace122c6171d05f87f2344e764a82e4ba01da100c728cf6"
     },
     {
       "file": "v3/fonts/fraunces-latin-italic-used.woff2",

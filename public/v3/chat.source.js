@@ -103,6 +103,26 @@ document.addEventListener("DOMContentLoaded", () => {
     return el;
   }
 
+  // Conversation memory that survives a page reload (within the session): the
+  // last turns are cached, so Kriti keeps the thread even if the visitor
+  // navigates away and comes back.
+  const HISTORY_KEY = "ai-ab-history";
+  function saveHistory() {
+    try { sessionStorage.setItem(HISTORY_KEY, JSON.stringify(history.slice(-12))); } catch (e) {}
+  }
+  function restoreHistory() {
+    let saved = null;
+    try { saved = JSON.parse(sessionStorage.getItem(HISTORY_KEY) || "null"); } catch (e) {}
+    if (!Array.isArray(saved) || !saved.length) return;
+    saved.forEach((m) => {
+      if (!m || (m.role !== "user" && m.role !== "assistant") || typeof m.content !== "string") return;
+      history.push({ role: m.role, content: m.content });
+      addMessage(m.content, m.role === "user" ? "user" : "ai");
+    });
+    if (history.length && suggest) suggest.hidden = true; // returning visitor: no starter chips
+  }
+  restoreHistory();
+
   // One fetch attempt; throws on any non-OK status so the caller can retry.
   async function askWorker() {
     const res = await fetch(WORKER_URL, {
@@ -129,6 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
     history.push({ role: "user", content: text });
     // Cap what we resend: old turns cost tokens and can outgrow the model context.
     if (history.length > 12) history.splice(0, history.length - 12);
+    saveHistory();
     const loadingId = "ai-ab-loading-" + Date.now();
     addMessage("", "loading", loadingId);
 
@@ -157,6 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       addMessage(reply, "ai");
       history.push({ role: "assistant", content: reply });
+      saveHistory();
     } else {
       console.error(lastErr);
       const msg = lastErr && lastErr.status === 429
