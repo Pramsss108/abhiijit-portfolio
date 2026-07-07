@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-07T15:42:42.560Z",
+  "generatedAt": "2026-07-07T15:49:37.540Z",
   "files": 88,
-  "bytes": 15664851,
+  "bytes": 15667597,
   "excludedRoots": [
     "public/_proof",
     "public/madquick-ref",
@@ -122,8 +122,8 @@
     },
     {
       "file": "images/brand/kriti-avatar.png",
-      "bytes": 112069,
-      "sha256": "8519c67079988bdf201172366eb2122dfd77a74eac599276cd969f3cfb04b8b8"
+      "bytes": 114803,
+      "sha256": "0f147300cbce2448fb3edbd82c86121f1854fe54dc4ddc28e8d37c28303d9198"
     },
     {
       "file": "images/brand/pwa-icon-192.png",
@@ -362,8 +362,8 @@
     },
     {
       "file": "index.html",
-      "bytes": 118004,
-      "sha256": "32cef9fac6d217dc5d63c007f30869aed561c28ab73387f9a4ae75c60d0f518a"
+      "bytes": 118016,
+      "sha256": "91210f0cc07973e4346e84ea7c52d211dbc80054f5474f32a857015b3566a919"
     },
     {
       "file": "llms.txt",
