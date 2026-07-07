@@ -10,25 +10,17 @@
  * SECURITY: your token is read from an environment variable — it is NEVER
  * written to a file or pasted into a chat. Nothing here stores the token.
  *
- * ── HOW TO RUN (PowerShell) ────────────────────────────────────────────────
- *   cd "D:\A scret project\abhiijit-portfolio\ai-proxy\whatsapp"
- *   $env:WA_TOKEN   = "<paste your PERMANENT system-user token here>"
- *   $env:WA_WABA_ID = "2124935384968157"   # your WhatsApp Business Account ID
- *   node create-templates.mjs              # creates the templates
- *   node create-templates.mjs --list       # check approval status any time
- *
- * The token lives only in that terminal session and vanishes when you close it.
+ * ── HOW TO USE ─────────────────────────────────────────────────────────────
+ *   1. Paste your PERMANENT token into  whatsapp/secret.token  (git-ignored).
+ *   2. Then this runs with no token in the terminal:
+ *        node create-templates.mjs           # creates the templates
+ *        node create-templates.mjs --list    # check approval status any time
  * ───────────────────────────────────────────────────────────────────────────
  */
+import { loadToken, WABA_ID } from "./_token.mjs";
 
 const GRAPH = "https://graph.facebook.com/v23.0";
-const TOKEN = process.env.WA_TOKEN;
-const WABA_ID = process.env.WA_WABA_ID || "2124935384968157";
-
-if (!TOKEN) {
-  console.error("❌ WA_TOKEN is not set. In PowerShell run:\n   $env:WA_TOKEN = \"<your token>\"\n   then re-run this script.");
-  process.exit(1);
-}
+const TOKEN = loadToken();
 
 // The templates to create. Both are UTILITY (easy, correct category for lead
 // alerts). Two variants so at least one sails through review.

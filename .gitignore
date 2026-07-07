@@ -6,3 +6,10 @@ backups/
 Thumbs.db
 .wrangler/
 ai-proxy/.wrangler/
+
+# Secrets — never commit. WhatsApp token lives here, read at runtime only.
+ai-proxy/whatsapp/secret.token
+*.token
+.env
+.env.local
+.dev.vars
