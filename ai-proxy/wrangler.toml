@@ -16,6 +16,10 @@ binding = "AI_PROXY_KV"
 id = "1cdccde57c674561b0658b3c028588c1"
 
 [vars]
+# Where new-lead alert emails are delivered. Currently the Resend signup Gmail
+# (free sandbox can only send to the account's own email until a domain is
+# verified). Switch to growabhijit@gmail.com after verifying abhiijit.works.
+LEAD_TO = "guitarguitarabhijit@gmail.com"
 # You will need to set this via wrangler secret put HUGGINGFACE_API_KEY
 # Do NOT commit your API key here.
 # To view analytics: wrangler secret put STATS_KEY (pick any password), then visit
