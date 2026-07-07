@@ -15206,18 +15206,32 @@ html.media-player-open{ overflow:hidden; }
 .ai-ab-chip:hover{ background:rgba(216,167,62,.16); border-color:rgba(216,167,62,.5); transform:translateY(-1px); }
 .ai-ab-chip:active{ transform:translateY(0); }
 
-/* WhatsApp CTA — slim, premium, always visible */
+/* Booking + WhatsApp CTA row — slim, premium, always visible */
+.ai-ab-ctarow{ display:flex; gap:.5rem; margin:0 .95rem .1rem; }
+.ai-ab-ctarow > a{
+  flex:1; display:flex; align-items:center; justify-content:center; gap:.4rem;
+  padding:.6rem .7rem; border-radius:12px;
+  font:600 .76rem/1 var(--font-body,"Inter"),sans-serif; letter-spacing:.01em;
+  text-decoration:none; white-space:nowrap;
+  transition:background .2s ease, border-color .2s ease, transform .12s ease;
+}
+.ai-ab-book{
+  color:#fff3d9;
+  background:linear-gradient(135deg, rgba(216,167,62,.2), rgba(216,167,62,.07));
+  border:1px solid rgba(216,167,62,.4);
+}
+.ai-ab-book svg{ color:#d8a73e; flex:none; }
+.ai-ab-book:hover{ background:linear-gradient(135deg, rgba(216,167,62,.3), rgba(216,167,62,.12)); border-color:rgba(216,167,62,.6); transform:translateY(-1px); }
 .ai-ab-whatsapp{
-  display:flex; align-items:center; justify-content:center; gap:.5rem;
-  margin:0 .95rem .1rem; padding:.6rem .9rem; border-radius:12px;
-  font:600 .8rem/1 var(--font-body,"Inter"),sans-serif; letter-spacing:.01em;
-  color:#eafff1; text-decoration:none;
+  color:#eafff1;
   background:linear-gradient(135deg, rgba(37,211,102,.16), rgba(37,211,102,.06));
   border:1px solid rgba(37,211,102,.34);
-  transition:background .2s ease, border-color .2s ease, transform .12s ease;
 }
 .ai-ab-whatsapp svg{ color:#25d366; flex:none; }
 .ai-ab-whatsapp:hover{ background:linear-gradient(135deg, rgba(37,211,102,.24), rgba(37,211,102,.1)); border-color:rgba(37,211,102,.5); transform:translateY(-1px); }
+@media (max-width:380px){
+  .ai-ab-ctarow{ flex-direction:column; }
+}
 
 /* Input row + tiny footer */
 .ai-ab-input-area{ padding:.7rem .95rem .55rem; gap:.5rem; border-top:1px solid rgba(255,255,255,.06); background:#0e1218; }
