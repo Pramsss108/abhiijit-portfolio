@@ -5,6 +5,12 @@ compatibility_date = "2024-03-20"
 [observability]
 enabled = true
 
+# Cloudflare Workers AI — Kriti's primary brain. Same account, same edge network
+# as this Worker, so it's far more reliable than the third-party HuggingFace API
+# (which was dropping calls with 502s). Free tier ~10,000 neurons/day (~650 chats).
+[ai]
+binding = "AI"
+
 [[kv_namespaces]]
 binding = "AI_PROXY_KV"
 id = "1cdccde57c674561b0658b3c028588c1"
