@@ -11467,7 +11467,7 @@ body::before{
 .company-ribbon{
   position:relative;
   padding:0;
-  border-block:0;
+  border-block:1px solid rgba(216,167,62,.13);
   background:linear-gradient(90deg,rgba(216,167,62,.012),rgba(255,255,255,.018) 50%,rgba(216,167,62,.012));
   overflow:visible;
   isolation:isolate;
@@ -13603,12 +13603,7 @@ html.media-player-open{ overflow:hidden; }
   border-bottom:0;
   background:none;
 }
-/* premium faded hairline under the video header (replaces the hard gold line) */
-.showreel__head{ position:relative; }
-.showreel__head::after{
-  content:""; position:absolute; left:0; right:0; bottom:0; height:1px; pointer-events:none;
-  background:linear-gradient(90deg, transparent, rgba(216,167,62,.24) 22%, rgba(216,167,62,.30) 50%, rgba(216,167,62,.24) 78%, transparent);
-}
+/* (video header divider removed — it split one section) */
 .showreel__copy{ min-width:0; }
 .showreel__copy .eyebrow{ margin:0 0 .65rem; }
 .showreel__copy h2{

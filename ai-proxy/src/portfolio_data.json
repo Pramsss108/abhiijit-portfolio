@@ -1,35 +1,35 @@
 {
  "name": "Abhijit Pramanik",
- "tagline": "I Build Proof — Proof-Backed SEO, Content, WordPress & AI Workflows",
- "summary": "Freelance digital marketing specialist from India, working hands-on since 2019 across SEO, content writing, social media, video editing and websites for 36+ companies in India, Dubai and the USA.",
+ "tagline": "I Build Proof — proof-backed SEO, content, video & websites",
+ "summary": "Abhijit Pramanik is a freelance digital marketing and content specialist from India, working hands-on since 2019 across SEO, content writing, social media, video editing and websites for 36+ companies in India, Dubai and the USA.",
  "headline_stats": [
-  "36+ companies served across India, Dubai and the USA (since 2019)",
-  "300+ videos edited and delivered for 13+ different companies (not just one client)",
-  "400+ SEO articles written across his career (including 33 articles in 30 days for Ymedia)",
-  "3.78M views (3,783,817) grown on his own Instagram page @thebongbari, with 2.53M accounts reached (+436.5% reach in 90 days)",
-  "+117% organic search clicks (8,480 to 18,400) and +115% impressions (192,000 to 412,000) in 6 months on bongbari.com",
+  "36+ companies served across India, Dubai and the USA since 2019",
+  "300+ videos edited and delivered for 13+ different companies",
+  "400+ SEO articles written across his career (including 33 in 30 days for Ymedia)",
+  "3.78M views (3,783,817) grown on his own Instagram @thebongbari, 2.53M accounts reached (+436.5% in 90 days)",
+  "+117% organic search clicks and +115% impressions in 6 months on bongbari.com",
   "40+ documented proof projects"
  ],
- "services": [
+ "skills": [
   {
    "name": "Video Editing",
-   "detail": "Platform-aware short-form (Reels/Shorts) and long-form editing — hooks, pacing, trend-led audio, motion graphics. 300+ videos delivered for clients including MadQuick, Pursueit Dubai, RuDe Labs, Kaboodle, Indica AI, X1RACE, Marpu Foundation and more."
+   "detail": "Platform-aware short-form (Reels/Shorts) and long-form editing — hooks, pacing, trend-led audio, motion graphics. 300+ videos across 13+ companies."
   },
   {
-   "name": "Content Writing (SEO + GEO)",
-   "detail": "SEO articles that rank in search, plus GEO (Generative Engine Optimization) so AI assistants cite the work. 400+ articles on record."
+   "name": "SEO + GEO Content Writing",
+   "detail": "Articles that rank in search and get cited by AI answer engines. 400+ articles on record."
   },
   {
-   "name": "Growth Strategy & Social Media",
-   "detail": "He plans, publishes and reviews social content so the next post is informed by the last one — tested on his own 3.78M-view page and client accounts."
+   "name": "Social Media & Growth",
+   "detail": "Plans, publishes and reviews social content on a feedback loop — proven on his own 3.78M-view page and client accounts."
   },
   {
    "name": "Websites",
-   "detail": "Custom-coded, WordPress and template-based websites — mobile-friendly and SEO-ready."
+   "detail": "Custom-coded, WordPress and template-based sites — mobile-friendly and SEO-ready. He designed and coded this very portfolio end to end."
   },
   {
-   "name": "Canva Design",
-   "detail": "Polished Canva assets that teams can edit and reuse themselves."
+   "name": "Canva & Motion Design",
+   "detail": "Polished, reusable Canva assets and motion graphics for teams."
   }
  ],
  "process_six_steps": [
@@ -42,17 +42,17 @@
  ],
  "video_editing_clients": [
   "Aura Love Yourself USA",
-  "Dinco Automobiles Private Limited",
-  "Indica Ai",
+  "Dinco Automobiles",
+  "Indica AI",
   "Kaboodle",
   "Kodeclamp",
   "Lazy Quote Lab",
-  "MAMAI CARE",
-  "Madquick",
+  "Mamai Care",
+  "MadQuick",
   "Marpu Foundation",
-  "Pregamate PVT LTD",
+  "Pregamate",
   "Pursueit Dubai",
-  "RuDe Labs Private Limited",
+  "RuDe Labs",
   "X1RACE"
  ],
  "companies": [
@@ -60,322 +60,576 @@
    "company": "Aura Love Yourself USA",
    "highlights": [
     "Executed Facebook ad funnels for engagement and edited creative assets with CapCut for short-form social campaigns.",
-    "Developed SEO-friendly content using AI research, SEMrush, keyword strategy, blog writing, eBooks, and social media content."
+    "Developed SEO-friendly content using AI research, SEMrush, keyword strategy, blog writing, eBooks, and social media content.",
+    "LinkedIn skill associations: SEO-Friendly Content, Social Media Management, Motion Graphics, Facebook Ad Funnels, CapCut Resume-safe bullets: Developed SEO-friendly content using AI…"
    ],
    "roles": [
     "Content Specialist, Social Media Manager and Motion Graphics Editor"
+   ],
+   "skills": [
+    "Canva design",
+    "content writing",
+    "paid media",
+    "SEO",
+    "social media",
+    "video editing"
    ]
   },
   {
-   "company": "BYJUS",
+   "company": "BYJU'S",
    "highlights": [
     "Technical keywords: BYJU'S, logo design, branding.",
-    "My approach combined advanced customer engagement techniques like personalized communication, strategic upselling, and effective objection handling."
+    "My approach combined advanced customer engagement techniques like personalized communication, strategic upselling, and effective objection handling.",
+    "In this role, I was responsible for managing outbound calls, strictly adhering to BYJU'S and Squadrun's guidelines and scripts."
    ],
    "roles": [
     "Advanced Outbound Customer Service Executive"
+   ],
+   "skills": [
+    "analytics",
+    "Canva design",
+    "customer support",
+    "social media"
    ]
   },
   {
-   "company": "Balihans Bengaluru",
+   "company": "Balihans",
    "highlights": [
     "Supported ServiceNow-focused lead generation, LinkedIn content, website updates, content strategy, CRM management, data analytics, and customer engagement.",
-    "Managed client communication, digital marketing, SEO, copywriting, WordPress updates, email marketing, and Canva design."
+    "Managed client communication, digital marketing, SEO, copywriting, WordPress updates, email marketing, and Canva design.",
+    "Led end-to-end marketing strategy for service clients including a makeup artist and a fitness trainer with a 200k follower base."
    ],
    "roles": [
     "Associate Marketing Analyst",
     "Marketing Analyst"
+   ],
+   "skills": [
+    "analytics",
+    "Canva design",
+    "content writing",
+    "customer support",
+    "digital marketing",
+    "no code ai",
+    "SEO",
+    "social media",
+    "WordPress"
    ]
   },
   {
-   "company": "Betterzila B2B SaaS",
+   "company": "Betterzila",
    "highlights": [
     "Used advanced tools for emotional and confident word inclusion, ensuring SEO optimization.",
-    "Technical keywords: B2B SaaS, logo design, branding."
+    "Technical keywords: B2B SaaS, logo design, branding.",
+    "Our unique approach to indirect promotion, like crafting blogs that highlight a client's strengths in comparison to competitors, proved highly effective."
+   ],
+   "skills": [
+    "Canva design",
+    "content writing",
+    "customer support",
+    "SEO",
+    "WordPress"
    ]
   },
   {
    "company": "Bilex",
    "highlights": [
     "My responsibilities expanded to include SEO keyword research using tools like SEMrush, SurferSEO, and Ubersuggest.",
-    "Used AI, I crafted blogs adhering to SEO density rules, implementing long-tail keywords, PAA (People Also Ask), SERP (Search Engine Results Page) analysis, LSI…"
+    "Used AI, I crafted blogs adhering to SEO density rules, implementing long-tail keywords, PAA (People Also Ask), SERP (Search Engine Results Page) analysis, LSI (Latent Semantic…",
+    "No specific work claim can be made based on this image."
    ],
    "roles": [
     "Advanced Content Strategist and SEO Specialist"
+   ],
+   "skills": [
+    "Canva design",
+    "content writing",
+    "no code ai",
+    "SEO",
+    "social media",
+    "WordPress"
    ]
   },
   {
    "company": "CS MOCK",
    "highlights": [
     "Day-to-day, I managed LinkedIn and Instagram accounts for multiple clients, crafting engaging captions and implementing strategies across SEO, SEM, SMM, and SMO.",
-    "They appreciated our advanced tactics like predictive analytics for content performance and AI-driven insights for audience engagement, which kept them with us for an…"
+    "They appreciated our advanced tactics like predictive analytics for content performance and AI-driven insights for audience engagement, which kept them with us for an extended period.",
+    "The positive feedback from clients was overwhelming."
    ],
    "roles": [
     "Social Media Marketing"
+   ],
+   "skills": [
+    "analytics",
+    "content writing",
+    "SEO",
+    "social media"
    ]
   },
   {
-   "company": "Contract with Siddharth Dalmia",
+   "company": "Siddharth Dalmia (contract)",
    "highlights": [
     "Used advanced tools like SEMrush for keyword optimization, ensuring high visibility.",
-    "My strategy included creating short blogs for LinkedIn, derived from existing website content, to drive traffic back to their site, a technique rooted in Off-Page SEO."
+    "My strategy included creating short blogs for LinkedIn, derived from existing website content, to drive traffic back to their site, a technique rooted in Off-Page SEO.",
+    "Additionally, I managed their LinkedIn profiles, crafting posts and captions, and integrating relevant hashtags for targeted audience reach."
+   ],
+   "skills": [
+    "Canva design",
+    "content writing",
+    "digital marketing",
+    "no code ai",
+    "SEO",
+    "social media",
+    "WordPress"
    ]
   },
   {
-   "company": "Dinco Automobiles Private Limited",
+   "company": "Dinco Automobiles",
    "highlights": [
     "Used advanced audio mixing techniques, such as dynamic range compression, equalization, and spatial effects, I enhanced the clarity and impact of the vocals.",
-    "This project demanded not only technical skills but also a creative touch to ensure the highest quality of sound."
+    "This project demanded not only technical skills but also a creative touch to ensure the highest quality of sound.",
+    "This file acts as contract, certificate, or offer-letter evidence rather than task-level workflow proof."
    ],
    "roles": [
     "Vocal Artist and Sound Engineer"
+   ],
+   "skills": [
+    "Canva design",
+    "no code ai",
+    "video editing"
    ]
   },
   {
-   "company": "Google Project",
+   "company": "Google (via Powwow/Appen)",
    "highlights": [
-    "Used advanced communication techniques, data accuracy validation, customer engagement strategies, script adherence, and AI-driven software, I ensured each interaction…",
-    "The project demanded a blend of technical acumen and interpersonal skills, which I thoroughly enjoyed."
+    "Used advanced communication techniques, data accuracy validation, customer engagement strategies, script adherence, and AI-driven software, I ensured each interaction was both…",
+    "The project demanded a blend of technical acumen and interpersonal skills, which I thoroughly enjoyed.",
+    "My task involved outbound calls to local businesses for Google's business profile verification."
+   ],
+   "skills": [
+    "customer support",
+    "no code ai",
+    "social media"
    ]
   },
   {
    "company": "Greenverze",
    "highlights": [
     "Utilized WordPress to manage and publish articles on the Greenverze website.",
-    "Technical keywords: logo design, graphic design, branding, content writing, digital marketing, Greenverze, WordPress, posts management, bulk edit, Elementor Pro,…"
+    "Technical keywords: logo design, graphic design, branding, content writing, digital marketing, Greenverze, WordPress, posts management, bulk edit, Elementor Pro, Element Pack Pro, SEO…",
+    "I was responsible for developing blogs, designing banners, and optimizing content on WordPress using the RankMath SEO plugin."
    ],
    "roles": [
     "SEO Content Specialist & Digital Marketer"
+   ],
+   "skills": [
+    "Canva design",
+    "content writing",
+    "digital marketing",
+    "SEO",
+    "WordPress"
    ]
   },
   {
-   "company": "IDEOHOLICS",
+   "company": "Ideoholics",
    "highlights": [
     "This involved SEO tasks like on-page and off-page optimization to boost website visibility.",
-    "Technical keywords: Logo Design, Graphic Design, Branding."
+    "Technical keywords: Logo Design, Graphic Design, Branding.",
+    "My approach was to seamlessly integrate various digital platforms to maximize engagement and reach."
    ],
    "roles": [
     "Digital Marketing Strategist"
+   ],
+   "skills": [
+    "analytics",
+    "Canva design",
+    "content writing",
+    "paid media",
+    "SEO",
+    "social media",
+    "WordPress"
    ]
   },
   {
    "company": "IIMI",
    "highlights": [
     "This file acts as contract, certificate, or offer-letter evidence rather than task-level workflow proof.",
-    "Project proof supports wordpress work for IIMI."
+    "Project proof supports wordpress work for IIMI.",
+    "Project proof supports ai and no-code work for IIMI."
    ],
    "roles": [
     "Data Entry Operator"
+   ],
+   "skills": [
+    "no code ai",
+    "WordPress"
    ]
   },
   {
-   "company": "Indica Ai",
+   "company": "Indica AI",
    "highlights": [
     "Working under the project manager's guidance, I honed my skills in audio analysis, linguistic precision, and efficient workflow management.",
-    "This required keen listening skills and a strong grasp of the English language."
+    "This required keen listening skills and a strong grasp of the English language.",
+    "This file acts as contract, certificate, or offer-letter evidence rather than task-level workflow proof."
    ],
    "roles": [
     "English Trascriber"
+   ],
+   "skills": [
+    "no code ai",
+    "video editing",
+    "WordPress"
    ]
   },
   {
    "company": "Kaboodle",
    "highlights": [
-    "Used advanced techniques such as spectral editing, dynamic range compression, 3D audio spatialization, psychoacoustic modeling, and adaptive equalization, I…",
-    "These skills allowed me to enhance the overall auditory impact of each video."
+    "Used advanced techniques such as spectral editing, dynamic range compression, 3D audio spatialization, psychoacoustic modeling, and adaptive equalization, I transformed the audio experience.",
+    "These skills allowed me to enhance the overall auditory impact of each video.",
+    "I was tasked with Audio Clarity Enhancement, adding Sound and Music Effects, and integrating Background Music into their videos."
    ],
    "roles": [
     "Audio Enhancement Specialist"
+   ],
+   "skills": [
+    "video editing",
+    "WordPress"
    ]
   },
   {
    "company": "Kodeclamp",
    "highlights": [
     "The final step involved seamlessly integrating the polished audio with the video using Adobe Premiere Pro.",
-    "Adobe Premiere Pro Integration My role in this project demonstrates my expertise in audio editing and video integration, ensuring a professional and high quality…"
+    "Adobe Premiere Pro Integration My role in this project demonstrates my expertise in audio editing and video integration, ensuring a professional and high quality final product.",
+    "To ensure top quality audio, I applied advanced sound techniques like acoustic enhancement, sound balancing, noise reduction, dynamic range compression, and equalization."
    ],
    "roles": [
     "Voiceover and Audio-Video Integration Specialist"
+   ],
+   "skills": [
+    "customer support",
+    "no code ai",
+    "video editing"
    ]
   },
   {
-   "company": "Kutum Bari",
+   "company": "Kutumbari",
    "highlights": [
     "We managed their Instagram effectively and guided them in listing their products on Zomato and Swiggy, enhancing their online presence.",
-    "Organized and managed files and folders for projects."
+    "Organized and managed files and folders for projects.",
+    "Designed a logo for Kutum Bari."
    ],
    "roles": [
     "Online and Offline Marketing Asssociate"
+   ],
+   "skills": [
+    "Canva design",
+    "content writing",
+    "digital marketing",
+    "no code ai",
+    "SEO",
+    "social media",
+    "WordPress"
    ]
   },
   {
    "company": "Lazy Quote Lab",
    "highlights": [
-    "Technical keywords: content creation, logo design, icon creation, graphic design, blockchain, peer-to-peer networks, presentation design, digital slides, Instagram…",
-    "Organized and managed digital files for social media content creation, including creation of folders and files for Instagram Story Templates and announcements."
+    "Technical keywords: content creation, logo design, icon creation, graphic design, blockchain, peer-to-peer networks, presentation design, digital slides, Instagram Story template, video…",
+    "Organized and managed digital files for social media content creation, including creation of folders and files for Instagram Story Templates and announcements.",
+    "I also crafted a weekly content calendar, designed templates in Canva for stories, and scheduled posts using Meta Business Suite."
    ],
    "roles": [
     "Social Media and Digital Marketing Strategist"
+   ],
+   "skills": [
+    "Canva design",
+    "content writing",
+    "digital marketing",
+    "SEO",
+    "social media",
+    "video editing",
+    "WordPress"
    ]
   },
   {
-   "company": "MAMAI CARE",
+   "company": "Mamai Care",
    "highlights": [
     "Tools/platforms: Canva, image editing software, canva design, Instagram, Graphic Design.",
-    "Managed managing their social media presence on Facebook and Instagram using Meta Business Suite."
+    "Managed managing their social media presence on Facebook and Instagram using Meta Business Suite.",
+    "Crafted engaging carousels and static posts using Canva Premium, ensuring each piece resonated with our target audience."
    ],
    "roles": [
     "Social Media Manager"
+   ],
+   "skills": [
+    "analytics",
+    "Canva design",
+    "content writing",
+    "SEO",
+    "social media",
+    "video editing"
    ]
   },
   {
-   "company": "Madquick",
+   "company": "MadQuick",
    "highlights": [
     "Technical keywords: Voice Over artist, Music Production.",
-    "My work involved using techniques such as spectral noise reduction, dynamic range compression, equalization fine-tuning, and audio layering."
+    "My work involved using techniques such as spectral noise reduction, dynamic range compression, equalization fine-tuning, and audio layering.",
+    "I also specialized in creating engaging pop-up and transitional sounds, ensuring they perfectly matched the video or audio content."
    ],
    "roles": [
     "Sound Production Specialist"
+   ],
+   "skills": [
+    "content writing",
+    "video editing",
+    "WordPress"
    ]
   },
   {
    "company": "Marpu Foundation",
    "highlights": [
     "My task involved creating engaging reels using Adobe Premiere Pro and Canva Premium.",
-    "This wasn't just about posting content; it was about crafting stories that resonate with the audience and drive engagement."
+    "This wasn't just about posting content; it was about crafting stories that resonate with the audience and drive engagement.",
+    "This file acts as contract, certificate, or offer-letter evidence rather than task-level workflow proof."
    ],
    "roles": [
     "Content Development"
+   ],
+   "skills": [
+    "analytics",
+    "Canva design",
+    "content writing",
+    "no code ai",
+    "SEO",
+    "social media",
+    "video editing"
    ]
   },
   {
-   "company": "OTAKUKART",
+   "company": "OtakuKart",
    "highlights": [
     "This included keyword optimization, meta-tagging, backlinking, user engagement techniques, and SERP analysis to ensure maximum online visibility and reader engagement.",
-    "Technical keywords: graphic design, visual design, spiral shape, star shape, gradient background."
+    "Technical keywords: graphic design, visual design, spiral shape, star shape, gradient background.",
+    "Tasked with writing about new and trending topics, I first immersed myself in watching the complete series or anime to gain a comprehensive understanding."
    ],
    "roles": [
     "SEO Content Specialist"
+   ],
+   "skills": [
+    "Canva design",
+    "content writing",
+    "SEO",
+    "social media"
    ]
   },
   {
-   "company": "Panalal Bengali And Other Grocery Stores OPC pvt ltd",
+   "company": "Panalal Bengali Grocery",
    "highlights": [
     "Developed a promotional banner for a grocery sale event.",
-    "Designed a logo for a grocery store."
+    "Designed a logo for a grocery store.",
+    "Created a social media post for World Health Day."
    ],
    "roles": [
     "Digital Marketing Specialist"
+   ],
+   "skills": [
+    "analytics",
+    "Canva design",
+    "content writing",
+    "digital marketing",
+    "paid media",
+    "SEO",
+    "social media"
    ]
   },
   {
    "company": "Pathshala",
    "highlights": [
-    "This involved reviewing their entire work process, collaborating with all teams including website, social media, and more, and creating a compelling strategy that…",
-    "In Pathshala, which was a one time project, I was assigned to identify their content gaps and devise a unique social media strategy."
+    "This involved reviewing their entire work process, collaborating with all teams including website, social media, and more, and creating a compelling strategy that would surely be effective.",
+    "In Pathshala, which was a one time project, I was assigned to identify their content gaps and devise a unique social media strategy.",
+    "Project proof supports wordpress work for Pathshala."
    ],
    "roles": [
     "Strategy and Content Gap Specialist"
+   ],
+   "skills": [
+    "content writing",
+    "social media",
+    "WordPress"
    ]
   },
   {
-   "company": "Pregamate PVT LTD",
+   "company": "Pregamate",
    "highlights": [
     "This file acts as contract, certificate, or offer-letter evidence rather than task-level workflow proof.",
-    "Position Name: Audio Visual Production Specialist --- At Pregamate Pvt Ltd, my role as an Audio-Visual Production Specialist brought diverse and challenging tasks."
+    "Position Name: Audio Visual Production Specialist --- At Pregamate Pvt Ltd, my role as an Audio-Visual Production Specialist brought diverse and challenging tasks.",
+    "My expertise extends to audio restoration, dynamic range compression, spectral editing, and advanced equalization techniques."
    ],
    "roles": [
     "Audio Visual Production Specialist"
+   ],
+   "skills": [
+    "Canva design",
+    "content writing",
+    "no code ai",
+    "video editing"
    ]
   },
   {
    "company": "Pursueit Dubai",
    "highlights": [
     "Mastered advanced SEO and crafted data-driven content strategies using SEMrush, LSI keywords, PAA analysis, and SERP insights.",
-    "Managed social media engagement with Meta Business Suite while supporting project management, content visibility, and audience growth."
+    "Managed social media engagement with Meta Business Suite while supporting project management, content visibility, and audience growth.",
+    "Managed WordPress publishing, featured images, meta tags, descriptions, Instagram captions, and SEO content workflows."
    ],
    "roles": [
     "Advanced SEO Content Strategist & Social Media Manager",
     "SEO Content Strategist and Social Media Manager"
    ],
-   "metrics": [
-    "898 followers"
+   "skills": [
+    "analytics",
+    "Canva design",
+    "content writing",
+    "digital marketing",
+    "SEO",
+    "social media",
+    "video editing",
+    "WordPress"
    ]
   },
   {
    "company": "Rabin's Photography",
    "highlights": [
     "Increased followers from 5k to 25k through social media campaigns, content calendar management, and analytics-led adjustments.",
-    "Created platform content and campaign improvements that supported brand awareness, engagement, and SEO-friendly web traffic."
+    "Created platform content and campaign improvements that supported brand awareness, engagement, and SEO-friendly web traffic.",
+    "Technical keywords: Photography, Wedding Photography, Pre-wedding Photography, Modelling Photoshoot, Corporate Event Photography, Instagram Profile Management."
    ],
    "roles": [
     "Senior Digital Marketer"
+   ],
+   "skills": [
+    "analytics",
+    "content writing",
+    "digital marketing",
+    "social media"
    ]
   },
   {
    "company": "ReachHub",
    "highlights": [
     "Managed Instagram and Facebook through Meta Business Suite while leading WordPress integration and social media planning.",
-    "Executed on-page and off-page SEO with Ubersuggest keyword research, short-tail and long-tail keywords, PAA, LSI, and content optimization."
+    "Executed on-page and off-page SEO with Ubersuggest keyword research, short-tail and long-tail keywords, PAA, LSI, and content optimization.",
+    "Enhanced brand image using UTM Link Builder, social media promotion, blog promotion, brand tonality, banners, and logo design."
    ],
    "roles": [
     "Digital Marketing Strategist"
+   ],
+   "skills": [
+    "analytics",
+    "Canva design",
+    "content writing",
+    "digital marketing",
+    "SEO",
+    "social media",
+    "WordPress"
    ]
   },
   {
-   "company": "Revenue Rushy Inc.",
+   "company": "Revenue Rushy",
    "highlights": [
     "Managed online presence through social media content creation, visual design, and project coordination for digital marketing work.",
-    "Built SEO content strategy with keyword research, LSI and PAA optimization, search-focused blog content, and audience-first copy."
+    "Built SEO content strategy with keyword research, LSI and PAA optimization, search-focused blog content, and audience-first copy.",
+    "Applied SEO strategy, content optimization, and social media execution to improve discoverability and engagement for varied content needs."
    ],
    "roles": [
     "Senior Digital Marketing Executive"
+   ],
+   "skills": [
+    "Canva design",
+    "content writing",
+    "digital marketing",
+    "SEO",
+    "social media"
    ]
   },
   {
-   "company": "RuDe Labs Private Limited",
+   "company": "RuDe Labs",
    "highlights": [
     "Additionally, I managed SEM campaigns by running targeted Google Ads for select videos, significantly boosting their visibility and engagement.",
-    "This required a deep understanding of YouTube's algorithms and content guidelines."
+    "This required a deep understanding of YouTube's algorithms and content guidelines.",
+    "This file acts as contract, certificate, or offer-letter evidence rather than task-level workflow proof."
    ],
    "roles": [
     "YouTube SEO and SEM Specialist"
+   ],
+   "skills": [
+    "content writing",
+    "no code ai",
+    "paid media",
+    "SEO",
+    "social media",
+    "video editing"
    ]
   },
   {
    "company": "X1RACE",
    "highlights": [
     "My role extended to mixing and mastering the entire track, ensuring seamless integration with the game's visuals using Adobe Premiere Pro.",
-    "Used advanced audio techniques like spatial audio design, dynamic range compression, 3D sound layering, adaptive audio sequencing, and Foley artistry, I crafted an…"
+    "Used advanced audio techniques like spatial audio design, dynamic range compression, 3D sound layering, adaptive audio sequencing, and Foley artistry, I crafted an engaging auditory…",
+    "Technical keywords: logo design, rebranding, visual identity."
    ],
    "roles": [
     "Audio Engineer and Sound Designer"
+   ],
+   "skills": [
+    "Canva design",
+    "video editing",
+    "WordPress"
    ]
   },
   {
    "company": "Ymedia",
    "highlights": [
     "My assignment was to craft 33 SEO optimized articles in 30 days.",
-    "Managed Twitter and LinkedIn accounts, enhancing social media presence."
+    "Managed Twitter and LinkedIn accounts, enhancing social media presence.",
+    "Employing advanced SEO techniques like keyword density optimization, strategic backlinking, meta tagging, and WordPress management, I ensured high quality content delivery."
    ],
    "roles": [
     "Advanced SEO Content Specialist"
    ],
-   "metrics": [
-    "30 days"
+   "skills": [
+    "content writing",
+    "customer support",
+    "SEO",
+    "social media",
+    "WordPress"
    ]
   },
   {
-   "company": "Zest Money",
+   "company": "ZestMoney",
    "highlights": [
     "Working with Zest Money Outbound, a project from Squadrun, was a unique experience in outbound calling.",
-    "Worked on a project related to Zest Money."
+    "Worked on a project related to Zest Money.",
+    "Throughout the project, I employed advanced communication strategies, such as active listening, empathy, and clear articulation, to ensure customer satisfaction."
    ],
    "roles": [
     "Outbond Calling Executive"
+   ],
+   "skills": [
+    "customer support",
+    "no code ai",
+    "WordPress"
    ]
   }
  ],
+ "this_website": {
+  "built_by": "Abhijit Pramanik built this entire portfolio himself, end to end — design, code and the AI assistant you're talking to now.",
+  "approach": "Hand-coded with semantic HTML, a custom CSS design system (design tokens, fluid clamp-based spacing) and vanilla JavaScript — no page-builder, no bloated framework, so it loads fast and scores near-perfect on Google's performance, accessibility and SEO checks.",
+  "ai_assistant": "This chat assistant is powered by a Cloudflare Worker that Abhijit set up, connected to a large language model with a private knowledge base of his real experience — showing he can ship modern AI features, not just talk about them.",
+  "why_it_matters": "It's living proof: the site a client or employer is looking at was designed, engineered and AI-enabled by the same person they'd be hiring."
+ },
  "contact": {
   "email": "growabhijit@gmail.com",
   "whatsapp": "+91 87778 49865",
