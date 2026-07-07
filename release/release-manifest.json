@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-07T08:22:33.368Z",
-  "files": 87,
-  "bytes": 15548906,
+  "generatedAt": "2026-07-07T15:27:29.238Z",
+  "files": 88,
+  "bytes": 15661338,
   "excludedRoots": [
     "public/_proof",
     "public/madquick-ref",
@@ -119,6 +119,11 @@
       "file": "images/brand/favicon.ico",
       "bytes": 898,
       "sha256": "45aa280c375ea82cb7b1f7e7c3d42c370f40febcef0c043809a5cf7204015f17"
+    },
+    {
+      "file": "images/brand/kriti-avatar.png",
+      "bytes": 112069,
+      "sha256": "8519c67079988bdf201172366eb2122dfd77a74eac599276cd969f3cfb04b8b8"
     },
     {
       "file": "images/brand/pwa-icon-192.png",
@@ -357,8 +362,8 @@
     },
     {
       "file": "index.html",
-      "bytes": 117574,
-      "sha256": "b63eec60992f516047b68a34c5f8a7fa87b5745bd7b394b97dceb3c09a7db6e7"
+      "bytes": 117455,
+      "sha256": "7424d811806900fde0e6be3cde29d77c426727e2f37db62edb4d92f117f1573a"
     },
     {
       "file": "llms.txt",
@@ -407,8 +412,8 @@
     },
     {
       "file": "v3/styles.min.css",
-      "bytes": 255495,
-      "sha256": "9496448fdcd2c0752c435a534652f9d225284a78639cc887e5695c8003ca832b"
+      "bytes": 255977,
+      "sha256": "1b732365bb349d421fb92406e470804a49bf527f96fba1a63d37f1a45068fda6"
     },
     {
       "file": "v3/vendor/chart.umd.min.js",
