@@ -83,6 +83,47 @@ async function handleStats(request, env, origin) {
   return json({ totalPageviews: total, byDay: days }, 200, origin);
 }
 
+// --- Lead capture ----------------------------------------------------------
+// When a visitor shares contact details in the chat, email Abhijit so no lead
+// is missed. This detects DATA the visitor typed (an email / phone), not intent.
+// Sending uses Resend (free tier) and ONLY runs if RESEND_API_KEY is set, so it
+// is a safe no-op until that secret is configured.
+const RESEND_API = "https://api.resend.com/emails";
+
+function extractContact(text) {
+  if (!text) return null;
+  const email = (text.match(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/) || [])[0] || "";
+  const phoneRaw = (text.match(/\+?\d[\d\s().-]{7,}\d/) || [])[0] || "";
+  const phone = phoneRaw.replace(/[^\d+]/g, "");
+  if (!email && phone.length < 8) return null;
+  return { email, phone };
+}
+
+function recentVisitorText(clean, n = 6) {
+  return clean
+    .filter((m) => m.role === "user")
+    .slice(-n)
+    .map((m) => "• " + (m.content || "").slice(0, 300))
+    .join("\n");
+}
+
+async function sendLeadEmail(env, contact, clean) {
+  const to = env.LEAD_TO || "growabhijit@gmail.com";
+  const from = env.LEAD_FROM || "Kriti · abhiijit.works <onboarding@resend.dev>";
+  const body =
+    "You have a new lead from your portfolio chat.\n\n" +
+    (contact.email ? "Email: " + contact.email + "\n" : "") +
+    (contact.phone ? "Phone: " + contact.phone + "\n" : "") +
+    "\nWhat they said:\n" + recentVisitorText(clean) +
+    "\n\n— Sent automatically by Kriti on abhiijit.works";
+  const res = await fetch(RESEND_API, {
+    method: "POST",
+    headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, "Content-Type": "application/json" },
+    body: JSON.stringify({ from, to, subject: "🔔 New lead from abhiijit.works", text: body }),
+  });
+  if (!res.ok) console.error("Resend lead email failed:", res.status, (await res.text()).slice(0, 300));
+}
+
 export default {
   async fetch(request, env, ctx) {
     const origin = request.headers.get("Origin") || "";
@@ -162,7 +203,7 @@ REPLY RULES — follow every time:
 ${introRule}
 - Answer confidently and specifically. Never hedge. Never say "according to", "based on", "the data", "his profile", "I found", "it says", "I don't have that", "I can't find", or "as an AI" — just state the fact, or if you truly don't know it, offer to connect them with Abhijit.
 - Use the conversation so far. Don't repeat what you've already said or re-explain who Abhijit is every turn.
-- READ THEIR INTENT YOURSELF from the meaning of their words — however they phrase it, in any language or wording. Do not wait for specific keywords. When the visitor expresses ANY goal, need, problem, frustration, or interest in working with Abhijit (e.g. "my sales are flat", "can someone fix my Instagram", "I want more views", "need a website", "how do we start"), switch into helpful-consultant mode: (1) in ONE sentence, confirm Abhijit does exactly this with a concrete proof point; (2) ask ONE short question about their goal (business, platform, or timeline); (3) warmly invite the next step — booking a free 15-min call (https://cal.com/abhiijit.works/15min), WhatsApp (+91 87778 49865), or email (growabhijit@gmail.com). Offer the call link first when they seem ready to talk specifics — it's the lowest-friction next step. Keep it under ~55 words, confident and inviting.
+- READ THEIR INTENT YOURSELF from the meaning of their words — however they phrase it, in any language or wording. Do not wait for specific keywords. When the visitor expresses ANY goal, need, problem, frustration, or interest in working with Abhijit (e.g. "my sales are flat", "can someone fix my Instagram", "I want more views", "need a website", "how do we start"), switch into helpful-consultant mode: (1) in ONE sentence, confirm Abhijit does exactly this with a concrete proof point; (2) ask ONE short question about their goal (business, platform, or timeline); (3) warmly invite the next step — booking a free 15-min call (https://cal.com/abhiijit.works/15min), WhatsApp (+91 87778 49865), or email (growabhijit@gmail.com). Offer the call link first when they seem ready to talk specifics — it's the lowest-friction next step. If they're keen but not ready to book, offer to take their email or phone right here so Abhijit can reach out personally — and if they share it, warmly confirm you've passed it to Abhijit. Keep it under ~55 words, confident and inviting.
 - When they are only asking for information (no goal or buying signal), just answer crisply and helpfully — do not push contact details.
 - He edited videos for 13+ companies — never imply MadQuick was his only video client. Call his offerings SKILLS, not services.
 - If asked who built this site: Abhijit built it end to end — design, code, and this AI — with clean semantic HTML, a custom CSS system, vanilla JavaScript, and a Cloudflare Worker. Proof of his skills.
@@ -265,6 +306,17 @@ ${introRule}
         reply = reply.replace(/([.!?]\s+)([a-z])/g, (m, p, c) => p + c.toUpperCase()).trim();
         if (!reply) reply = "Happy to help! Ask me about Abhijit's video editing, SEO content, growth results, or how to start a project.";
       }
+      // Lead capture: if the visitor just shared contact details, email Abhijit
+      // in the background (never blocks or breaks the chat reply).
+      if (env.RESEND_API_KEY) {
+        try {
+          const contact = extractContact(lastUser && lastUser.content);
+          if (contact) ctx.waitUntil(sendLeadEmail(env, contact, clean));
+        } catch (e) {
+          console.error("lead notify error:", String(e));
+        }
+      }
+
       // Return the OpenAI-style shape the browser client already expects,
       // regardless of which provider produced the reply.
       const responseData = {
