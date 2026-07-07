@@ -226,14 +226,20 @@ ${introRule}
         }
         reply = reply
           .replace(/^\s*(well[,!.\s]+)?(according to|based on|as (stated|shown|mentioned) (in|by)|from what i (can see|have|find)|looking at)\b[^,.!?]*[,.:]?\s*/i, "")
+          // Strip robotic "according to / based on …," clauses ANYWHERE in the
+          // reply (not just the start) — the model sometimes buries them
+          // mid-sentence, e.g. "I'm Kriti. According to his verified data, …".
+          .replace(/\b(according to|based on)\b[^,.!?]{0,70}[,]\s*/gi, "")
           .replace(/\b(according to|based on) (his|the|abhijit'?s?) (portfolio|data|profile|information|records|details)[,.]?\s*/gi, "")
           .replace(/\bthe (json|data|information provided|facts provided)\b/gi, "his work")
           .replace(/\bi (don'?t|do not) have (that|the|any) (detail|information|data)[^.!?]*/gi,
                    "for that specific detail, the best next step is a quick message to Abhijit")
           .replace(/\bi (can'?t|cannot) find[^.!?]*/gi,
                    "the fastest way to get that is straight from Abhijit");
-        // Recapitalize if we trimmed a leading clause.
-        reply = reply.replace(/^\s*([a-z])/, (m, c) => c.toUpperCase()).trim();
+        // Recapitalize the first letter, and any letter after sentence-ending
+        // punctuation (in case we trimmed a clause mid-reply).
+        reply = reply.replace(/^\s*([a-z])/, (m, c) => c.toUpperCase());
+        reply = reply.replace(/([.!?]\s+)([a-z])/g, (m, p, c) => p + c.toUpperCase()).trim();
         if (!reply) reply = "Happy to help! Ask me about Abhijit's video editing, SEO content, growth results, or how to start a project.";
       }
       if (hfData?.choices?.[0]?.message) hfData.choices[0].message.content = reply;

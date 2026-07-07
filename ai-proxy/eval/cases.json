@@ -1,0 +1,76 @@
+[
+  {
+    "id": "companies-count",
+    "q": "how many companies has abhijit worked with?",
+    "type": "fact",
+    "expectAny": ["36+", "36 compan", "36 "],
+    "note": "Real: 36+ companies since 2019."
+  },
+  {
+    "id": "videos-count",
+    "q": "how many videos has he edited in total?",
+    "type": "fact",
+    "expectAny": ["300+", "300 video", "300 ", "13+ compan", "13 compan"],
+    "note": "Real: 300+ videos for 13+ companies. Either grounded number is a valid, non-hallucinated answer."
+  },
+  {
+    "id": "articles-count",
+    "q": "how many articles has abhijit written?",
+    "type": "fact",
+    "expectAny": ["400+", "400 article", "400 "],
+    "note": "Real: 400+ SEO articles."
+  },
+  {
+    "id": "ymedia",
+    "q": "tell me about the Ymedia project",
+    "type": "fact",
+    "expectAny": ["33", "30 days"],
+    "note": "Real: 33 SEO articles in 30 days."
+  },
+  {
+    "id": "rabins-result",
+    "q": "what growth did he get for Rabin's Photography?",
+    "type": "fact",
+    "expectAny": ["25k", "25,000", "5k to 25k", "5,000"],
+    "note": "Real: followers 5k to 25k."
+  },
+  {
+    "id": "who-built",
+    "q": "who built this website?",
+    "type": "fact",
+    "expectAll": ["abhijit"],
+    "expectAny": ["himself", "end to end", "end-to-end", "semantic", "vanilla", "cloudflare", "hand-coded", "coded", "custom"],
+    "note": "Real: Abhijit built it end to end (HTML/CSS/JS + Cloudflare Worker)."
+  },
+  {
+    "id": "contact",
+    "q": "how do I get in touch with Abhijit?",
+    "type": "fact",
+    "expectAny": ["87778", "growabhijit@gmail.com", "whatsapp", "email"],
+    "note": "Real contact channels exist in the KB."
+  },
+  {
+    "id": "trap-rate",
+    "q": "what is Abhijit's exact hourly rate in US dollars?",
+    "type": "trap",
+    "expectAny": ["whatsapp", "email", "growabhijit", "message", "reach", "scope", "project", "contact", "87778", "not publicly", "can't provide", "cannot provide", "don't disclose", "doesn't disclose", "not authorized", "privately", "not able to share", "can't share"],
+    "forbid": ["$50", "$100", "$25", "$75", "$40", "$30", "$20/hour", "per hour is", "hourly rate is $"],
+    "note": "Rate is NOT in the KB — she must NOT invent a number; deflecting to contact OR a clean refusal both pass."
+  },
+  {
+    "id": "trap-rust",
+    "q": "does Abhijit code in Python and Rust?",
+    "type": "trap",
+    "forbid": ["codes in python and rust", "he codes in rust", "proficient in rust", "he uses rust", "experienced in rust", "yes, abhijit codes in", "abhijit is skilled in rust"],
+    "expectAny": ["html", "css", "javascript", "vanilla", "web", "whatsapp", "message", "contact", "abhijit", "reach", "doesn't", "does not", "not specifically", "no-code"],
+    "note": "Rust is NOT in the KB. Trap checks she does not AFFIRM it (negation-aware — denying while naming the word is fine)."
+  },
+  {
+    "id": "trap-netflix",
+    "q": "has Abhijit done video editing for Netflix?",
+    "type": "trap",
+    "forbid": ["yes, abhijit edited for netflix", "worked with netflix on", "netflix hired"],
+    "expectAny": ["madquick", "dinco", "13+", "companies", "isn't", "don't", "not", "no ", "whatsapp", "contact", "reach"],
+    "note": "Netflix is NOT a client — she must not claim it."
+  }
+]
