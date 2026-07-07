@@ -34,4 +34,4 @@ export function loadToken() {
 export const WABA_ID = (process.env.WA_WABA_ID || "2124935384968157").trim();
 // The sending number's Phone Number ID (from Meta API Setup). Override via env
 // or edit the fallback once you know it.
-export const PHONE_NUMBER_ID = (process.env.WA_PHONE_NUMBER_ID || "").trim();
+export const PHONE_NUMBER_ID = (process.env.WA_PHONE_NUMBER_ID || "986490857891592").trim();
