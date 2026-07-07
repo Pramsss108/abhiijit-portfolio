@@ -14968,3 +14968,63 @@ html.media-player-open{ overflow:hidden; }
 @supports (height: 100svh) {
   .work__lede, #work .work__lede { max-height: calc(100svh - var(--header-h) - 2rem); }
 }
+
+/* ============================================================
+   PREMIUM POLISH LAYER (2026-07-07)
+   One vertical rhythm, one headline band, snapped radii,
+   consistent CTAs. Measured against the live DOM at 1440px:
+   section padding ranged 18-88px, h2 40-66px, three eyebrow
+   trackings, radii scattered across 8 values.
+   ============================================================ */
+:root{
+  --sec-pad: clamp(3.25rem, 5.5vw, 4.75rem);           /* 52 -> 76px */
+  --title-lg: clamp(2.35rem, 1.6rem + 2.6vw, 3.5rem);  /* cap at 56px */
+  --title-md: clamp(2.2rem, 1.7rem + 1.8vw, 2.9rem);   /* ~35 -> 46px */
+}
+
+/* --- One section rhythm (pinned scenes #work/#process untouched) --- */
+#services.section{ padding-block: var(--sec-pad) !important; }   /* was 88px */
+#about.section{ padding-block: var(--sec-pad) !important; }      /* was 18px */
+/* FAQ keeps its own rhythm: it's a full-viewport centered scene by design */
+#evidence{ padding-block: clamp(2.75rem, 4.5vw, 4rem) !important; } /* was 23px, nested */
+#contact.section{ padding-block: var(--sec-pad) !important; }    /* was 49px */
+
+/* --- Headline band: every section title lives between 35 and 56px --- */
+.section__title, #evidence-title{ text-wrap: balance; }
+#evidence-title{ font-size: var(--title-md) !important; }        /* was 40px */
+/* about title (43px) already sits inside the band — left as designed */
+/* FAQ display title stays large — statement type inside a full-screen scene */
+#work .work__title{ font-size: var(--title-lg) !important; }     /* 60 -> 56px, joins the band */
+
+/* --- One eyebrow voice --- */
+.eyebrow{ letter-spacing: .26em !important; }
+
+/* --- Body copy: readable measure, no awkward rag --- */
+.section__lead{ max-width: 62ch; }
+.section__lead, .faq__answer, .about__copy p{ text-wrap: pretty; }
+
+/* --- Radii snapped to stops: 12 / 16 / 20 (larger panels keep theirs) --- */
+.hero__metric{ border-radius: 12px !important; }                 /* was 11 */
+.faq__item{ border-radius: 16px !important; }                    /* was 14 */
+.skl-card{ border-radius: 20px !important; }                     /* was 18 */
+.ai-ab-panel{ border-radius: 20px !important; }                  /* was 18 */
+
+/* --- CTAs: one confident scale (44px floor, 52px for large) --- */
+.btn{ min-height: 2.75rem; }
+.btn--lg{ min-height: 3.25rem; }
+.work__cta-ig, .work__cta .btn--gold-ghost{ font-size: .8125rem !important; letter-spacing: .02em; }
+
+/* --- Rotator pause control: sits after the words, quiet until needed --- */
+.hero__rotator .motion-pause{
+  order: 9; margin-left: .5rem; width: 1.5rem; height: 1.5rem; opacity: .7;
+}
+.hero__rotator .motion-pause:hover,
+.hero__rotator .motion-pause:focus-visible{ opacity: 1; }
+
+/* --- Modern finishing touches --- */
+[id]{ scroll-margin-top: calc(var(--header-h, 4.5rem) + 1rem); } /* anchors clear the sticky header */
+::selection{ background: rgba(216,167,62,.9); color: #0b0d11; }
+:where(a, button, summary, [tabindex]):focus-visible{
+  outline: 2px solid var(--gold-bright, #f1c45a); outline-offset: 3px;
+}
+.site-footer{ padding-bottom: clamp(1.5rem, 3vw, 2.5rem); }      /* was 0 — breathing room */
