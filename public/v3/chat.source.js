@@ -35,9 +35,43 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Proactive welcome bubble: introduces Kriti so visitors know it's a live AI.
+  const nudge = document.getElementById("ai-ab-nudge");
+  const nudgeClose = document.getElementById("ai-ab-nudge-close");
+  let nudgeShown = false;
+  function hideNudge(remember) {
+    if (nudge) nudge.hidden = true;
+    if (remember) {
+      try { sessionStorage.setItem("ai-ab-nudge-seen", "1"); } catch (e) {}
+    }
+  }
+  function maybeShowNudge() {
+    if (!nudge || nudgeShown || !panel.hidden) return;
+    let seen = false;
+    try { seen = sessionStorage.getItem("ai-ab-nudge-seen") === "1"; } catch (e) {}
+    if (seen) return;
+    nudgeShown = true;
+    nudge.hidden = false;
+  }
+  if (nudge) {
+    // Show it a few seconds after load, once per session.
+    window.setTimeout(maybeShowNudge, 3500);
+    nudge.addEventListener("click", (e) => {
+      if (e.target === nudgeClose) return; // handled below
+      hideNudge(true);
+      setOpen(true);
+    });
+    if (nudgeClose) {
+      const dismiss = (e) => { e.stopPropagation(); e.preventDefault(); hideNudge(true); };
+      nudgeClose.addEventListener("click", dismiss);
+      nudgeClose.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") dismiss(e); });
+    }
+  }
+
   function setOpen(open) {
     panel.hidden = !open;
     toggle.setAttribute("aria-expanded", String(open));
+    if (open) hideNudge(true);
     if (open && finePointer) input.focus();
     if (!open) toggle.focus();
   }

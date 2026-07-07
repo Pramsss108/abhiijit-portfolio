@@ -62,7 +62,7 @@
 </style>
 
 <!-- Optimized production design system. -->
-<link rel="stylesheet" href="/v3/styles.min.css?v=20260707f" />
+<link rel="stylesheet" href="/v3/styles.min.css?v=20260707g" />
 
 <!-- Structured data: Person + WebSite + ProfilePage, one linked graph -->
 <script type="application/ld+json">
@@ -1961,7 +1961,7 @@
     <a class="site-footer__top" href="#top" aria-label="Back to top">Back to top ↑</a>
   </div>
 </footer>
-<script src="/v3/app.min.js?v=20260707f" defer></script>
+<script src="/v3/app.min.js?v=20260707g" defer></script>
 
 <!-- Mega-menu: keyboard / Escape / outside-click (hover + focus-within are pure CSS) -->
 <script>
@@ -2118,9 +2118,16 @@
 
 <!-- AI Chat Widget -->
 <div id="ai-ab-box" class="ai-ab-container">
+  <!-- proactive welcome bubble — introduces Kriti so visitors know it's an AI -->
+  <button id="ai-ab-nudge" class="ai-ab-nudge" type="button" hidden aria-label="Open chat with Kriti">
+    <img class="ai-ab-nudge__ava" src="/images/brand/kriti-avatar.png" alt="" width="38" height="38" aria-hidden="true">
+    <span class="ai-ab-nudge__text"><strong>Hi, I&rsquo;m Kriti &#128075;</strong>Abhijit&rsquo;s AI assistant &mdash; ask me anything!</span>
+    <span id="ai-ab-nudge-close" class="ai-ab-nudge__close" role="button" tabindex="0" aria-label="Dismiss">&times;</span>
+  </button>
   <button id="ai-ab-toggle" class="ai-ab-toggle ai-ab-toggle--avatar" aria-label="Chat with Kriti, Abhijit's AI assistant">
     <span class="ai-ab-toggle__pulse" aria-hidden="true"></span>
     <img class="ai-ab-toggle__face" src="/images/brand/kriti-avatar.png" alt="" width="58" height="58" aria-hidden="true">
+    <span class="ai-ab-toggle__badge" aria-hidden="true">AI</span>
   </button>
   <div id="ai-ab-panel" class="ai-ab-panel" role="dialog" aria-label="Abhijit's AI assistant" hidden>
     <header class="ai-ab-head">
@@ -2154,7 +2161,7 @@
     <p class="ai-ab-foot">AI assistant &middot; may occasionally be imperfect</p>
   </div>
 </div>
-<script src="/v3/chat.js?v=20260707f" type="module"></script>
+<script src="/v3/chat.js?v=20260707g" type="module"></script>
 </body>
 </html>
 
