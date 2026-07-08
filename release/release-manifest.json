@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-07T15:49:37.540Z",
+  "generatedAt": "2026-07-08T22:02:58.454Z",
   "files": 88,
-  "bytes": 15667597,
+  "bytes": 15673251,
   "excludedRoots": [
     "public/_proof",
     "public/madquick-ref",
@@ -362,8 +362,8 @@
     },
     {
       "file": "index.html",
-      "bytes": 118016,
-      "sha256": "91210f0cc07973e4346e84ea7c52d211dbc80054f5474f32a857015b3566a919"
+      "bytes": 123195,
+      "sha256": "10eeb52fcfd12d73e8742196bea2a008b2b66eb32c9db4e23f5d5678555e5916"
     },
     {
       "file": "llms.txt",
@@ -412,8 +412,8 @@
     },
     {
       "file": "v3/styles.min.css",
-      "bytes": 257912,
-      "sha256": "856c81599739016d6b45ab0162f54357659587b27c2dcc51e06dbeea0099def8"
+      "bytes": 258387,
+      "sha256": "12b7edd0ade1003ca8d75856a7e77f7b327b2138a13432653aeb2ff43b53d062"
     },
     {
       "file": "v3/vendor/chart.umd.min.js",
