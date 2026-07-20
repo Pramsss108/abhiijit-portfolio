@@ -48,8 +48,8 @@
       imagesrcset="/images/abhijit-hero-v7-320.webp 320w, /images/abhijit-hero-v7-480.webp 480w, /images/abhijit-hero-v7-640.webp 640w, /images/abhijit-hero-v7.webp 801w"
       imagesizes="(max-width: 820px) 60vw, 50vw" type="image/webp" fetchpriority="high" />
 
-<!-- Layout detection bootloader: detects mobile vs desktop BEFORE any CSS/JS loads.
-     Mobile and desktop are two completely separate design systems. -->
+<!-- Progressive-enhancement flag: scopes the reveal-hide rule to html.js so the
+     page is NEVER permanently blank if JS is disabled or fails to load. -->
 <script>
 (function (win, root) {
   var query = "(max-width: 820px), (max-width: 1024px) and (hover: none) and (pointer: coarse)";
@@ -61,6 +61,8 @@
     portrait = win.matchMedia("(orientation: portrait)").matches;
     preview = new URLSearchParams(win.location.search).get("preview") || "";
   } catch (error) {}
+  // Local QA convenience: the outer preview shell and its real-phone iframe
+  // both use the compact bundle; neither changes real responsive visitors.
   if (preview === "mobile" || preview === "mobile-frame") compact = true;
   if (preview === "desktop") compact = false;
   win.__apBootStart = performance.now();
@@ -84,14 +86,15 @@
   .intro-skip .intro__glyph,.intro-skip .intro__wordmark{opacity:1!important;transform:none!important;}
 </style>
 
-<!-- Layout-isolated CSS: mobile gets mobile.min.css, desktop gets styles.min.css -->
+<!-- Layout-isolated production design system. Only the selected CSS bundle is
+     requested, so compact devices never inherit the desktop override chain. -->
 <script>
 (function (doc) {
   var link = doc.createElement("link");
   link.rel = "stylesheet";
   link.id = "ap-layout-css";
   link.href = window.__apCompact
-    ? "/v3/mobile.min.css?v=20260720m"
+    ? "/v3/mobile.min.css?v=20260717m"
     : "/v3/styles.min.css?v=20260707h";
   doc.head.appendChild(link);
 })(document);
@@ -245,128 +248,6 @@
 </script>
 </head>
 <body>
-
-<!-- ============================================================
-     MOBILE NOTICE BANNER
-     Shows on phones / small tablets only. Dismissible.
-     Inline CSS + JS so it works before any external resource loads.
-     ============================================================ -->
-<div id="ap-mob-notice" style="
-  display:none;
-  position:fixed;
-  bottom:0;left:0;right:0;
-  z-index:99999;
-  background:linear-gradient(135deg,#0f0f1a 0%,#1a1a2e 60%,#16213e 100%);
-  border-top:1px solid rgba(255,255,255,0.08);
-  padding:18px 20px 22px;
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
-  box-shadow:0 -8px 40px rgba(0,0,0,0.55);
-  animation:ap-mob-slide-in 0.45s cubic-bezier(0.22,1,0.36,1) both;
-">
-  <style>
-    @keyframes ap-mob-slide-in{from{transform:translateY(100%);opacity:0}to{transform:translateY(0);opacity:1}}
-    #ap-mob-notice .ap-mob-icon{font-size:28px;line-height:1;margin-bottom:6px}
-    #ap-mob-notice .ap-mob-title{font-size:15px;font-weight:700;color:#fff;margin:0 0 5px;letter-spacing:-0.2px}
-    #ap-mob-notice .ap-mob-sub{font-size:12.5px;color:rgba(255,255,255,0.62);margin:0 0 14px;line-height:1.5}
-    #ap-mob-notice .ap-mob-sub strong{color:rgba(255,255,255,0.85);font-weight:600}
-    #ap-mob-notice .ap-mob-actions{display:flex;gap:10px;flex-wrap:wrap}
-    #ap-mob-notice .ap-mob-btn{
-      display:inline-flex;align-items:center;gap:6px;
-      padding:9px 16px;border-radius:10px;font-size:13px;font-weight:600;
-      cursor:pointer;border:none;outline:none;transition:opacity 0.18s,transform 0.18s;
-      text-decoration:none;
-    }
-    #ap-mob-notice .ap-mob-btn:active{opacity:0.75;transform:scale(0.97)}
-    #ap-mob-notice .ap-mob-btn-primary{background:linear-gradient(135deg,#6c63ff,#a78bfa);color:#fff}
-    #ap-mob-notice .ap-mob-btn-ghost{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.75);border:1px solid rgba(255,255,255,0.12)}
-    #ap-mob-notice .ap-mob-close{
-      position:absolute;top:12px;right:14px;
-      background:rgba(255,255,255,0.07);border:none;
-      color:rgba(255,255,255,0.5);font-size:18px;line-height:1;
-      width:28px;height:28px;border-radius:50%;cursor:pointer;
-      display:flex;align-items:center;justify-content:center;
-      transition:background 0.18s,color 0.18s;
-    }
-    #ap-mob-notice .ap-mob-close:hover{background:rgba(255,255,255,0.14);color:#fff}
-    #ap-mob-notice .ap-mob-copy-flash{
-      font-size:11px;color:#6ee7b7;margin-left:4px;
-      opacity:0;transition:opacity 0.3s;
-    }
-    #ap-mob-notice .ap-mob-copy-flash.show{opacity:1}
-  </style>
-  <button class="ap-mob-close" id="ap-mob-close-btn" aria-label="Dismiss notice">✕</button>
-  <div class="ap-mob-icon">💻</div>
-  <p class="ap-mob-title">You're on mobile — some things look broken here.</p>
-  <p class="ap-mob-sub">
-    This portfolio is designed for <strong>desktop or laptop screens</strong> where the full layout, proof gallery and videos show properly.<br>
-    On mobile the CSS layout breaks and you'll miss the best parts.
-  </p>
-  <div class="ap-mob-actions">
-    <button class="ap-mob-btn ap-mob-btn-primary" id="ap-mob-copy-btn" onclick="apMobCopyLink()">
-      <span>📋</span> Copy link to open on desktop
-      <span class="ap-mob-copy-flash" id="ap-mob-copy-flash">Copied!</span>
-    </button>
-    <button class="ap-mob-btn ap-mob-btn-ghost" id="ap-mob-continue-btn" onclick="apMobDismiss()">
-      Continue anyway
-    </button>
-  </div>
-</div>
-<script>
-(function(){
-  // Skip entirely when the dedicated mobile design is active —
-  // the mobile layout is a proper premium experience, not a broken desktop.
-  if(window.__apCompact) return;
-
-  // Only show on actual mobile / small tablets (width <= 900px AND touch device)
-  var isMobile = (window.innerWidth <= 900) && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
-  if(!isMobile) return;
-
-  // Don't show again if user already dismissed in this session
-  try{ if(sessionStorage.getItem('ap_mob_dismissed')==='1') return; }catch(e){}
-
-  var el = document.getElementById('ap-mob-notice');
-  if(el) el.style.display = 'block';
-
-  // Push page content up so banner doesn't overlap footer CTAs
-  document.body.style.paddingBottom = (el ? el.offsetHeight + 8 : 150) + 'px';
-
-  document.getElementById('ap-mob-close-btn').addEventListener('click', apMobDismiss);
-})();
-
-function apMobDismiss(){
-  try{ sessionStorage.setItem('ap_mob_dismissed','1'); }catch(e){}
-  var el = document.getElementById('ap-mob-notice');
-  if(!el) return;
-  el.style.transition = 'transform 0.35s cubic-bezier(0.55,0,1,0.45), opacity 0.35s';
-  el.style.transform = 'translateY(100%)';
-  el.style.opacity = '0';
-  document.body.style.paddingBottom = '';
-  setTimeout(function(){ el.style.display = 'none'; }, 380);
-}
-
-function apMobCopyLink(){
-  var url = window.location.href;
-  if(navigator.clipboard && navigator.clipboard.writeText){
-    navigator.clipboard.writeText(url).then(apMobShowCopied, apMobFallbackCopy.bind(null,url));
-  } else {
-    apMobFallbackCopy(url);
-  }
-}
-function apMobFallbackCopy(url){
-  var ta = document.createElement('textarea');
-  ta.value = url; ta.style.position='fixed'; ta.style.opacity='0';
-  document.body.appendChild(ta); ta.focus(); ta.select();
-  try{ document.execCommand('copy'); apMobShowCopied(); }catch(e){}
-  document.body.removeChild(ta);
-}
-function apMobShowCopied(){
-  var f = document.getElementById('ap-mob-copy-flash');
-  if(!f) return;
-  f.classList.add('show');
-  setTimeout(function(){ f.classList.remove('show'); }, 2200);
-}
-</script>
-
 
 <!-- ============================================================
      PAGE-LOAD INTRO — logo reveal + curtain wipe (first paint).
@@ -2119,15 +2000,14 @@ function apMobShowCopied(){
     <a class="site-footer__top" href="#top" aria-label="Back to top">Back to top ↑</a>
   </div>
 </footer>
-<!-- Layout-isolated JS: mobile gets mobile-app.min.js, desktop gets app.min.js -->
 <script>
 (function (doc) {
-  var s = doc.createElement("script");
-  s.src = window.__apCompact
-    ? "/v3/mobile-app.min.js?v=20260720m"
+  var script = doc.createElement("script");
+  script.defer = true;
+  script.src = window.__apCompact
+    ? "/v3/mobile-app.min.js?v=20260717m"
     : "/v3/app.min.js?v=20260707g";
-  s.defer = true;
-  doc.body.appendChild(s);
+  doc.body.appendChild(script);
 })(document);
 </script>
 
@@ -2336,6 +2216,133 @@ function apMobShowCopied(){
   </div>
 </div>
 <script src="/v3/chat.js?v=20260707h" type="module"></script>
+<script>
+/* Desktop QA only: show a complete, scaled 430 x 932 phone artboard instead
+   of trying to force mobile viewport units into a short landscape browser. */
+(function (win, doc) {
+  var params;
+  try { params = new URLSearchParams(win.location.search); } catch (error) { return; }
+  if (params.get("preview") !== "mobile" || win.top !== win) return;
+
+  var PHONE_WIDTH = 430;
+  var PHONE_HEIGHT = 932;
+  var PAD = 12;
+  var previewScale = 1;
+  var shell = doc.createElement("div");
+  var stage = doc.createElement("div");
+  var frame = doc.createElement("iframe");
+
+  shell.id = "ap-mobile-preview-shell";
+  stage.id = "ap-mobile-preview-stage";
+  frame.id = "ap-mobile-preview-frame";
+  frame.title = "Abhijit Pramanik mobile portfolio preview";
+  frame.src = "/v3/?preview=mobile-frame#home";
+  // Keep the real phone document scrollable: the desktop preview is a live
+  // mobile browser, not a static poster.  This lets reviewers wheel/touch
+  // through Proof, Expertise and every section below the hero.
+  frame.setAttribute("loading", "eager");
+
+  function enableMouseDragScroll() {
+    var inner = frame.contentWindow;
+    var innerDoc = frame.contentDocument;
+    if (!inner || !innerDoc || innerDoc.documentElement.dataset.apPreviewDragReady === "true") return;
+    innerDoc.documentElement.dataset.apPreviewDragReady = "true";
+
+    var drag = null;
+    var suppressClick = false;
+    var threshold = 7;
+    function isEditable(node) {
+      return Boolean(node && node.closest && node.closest("input, textarea, select, [contenteditable='true']"));
+    }
+    function finish(event) {
+      if (!drag || (event && event.pointerId !== drag.id)) return;
+      var wasDragging = drag.dragging;
+      try { drag.capture?.releasePointerCapture(drag.id); } catch (error) {}
+      drag = null;
+      innerDoc.documentElement.style.cursor = "";
+      if (wasDragging) {
+        suppressClick = true;
+        win.setTimeout(function () { suppressClick = false; }, 0);
+      }
+    }
+
+    // A mouse behaves like a touch finger inside this preview: a tap still
+    // activates a control, while a clear vertical drag scrolls the live phone.
+    innerDoc.addEventListener("pointerdown", function (event) {
+      if (event.pointerType !== "mouse" || event.button !== 0 || !event.isPrimary || isEditable(event.target)) return;
+      drag = {
+        id: event.pointerId,
+        originX: event.clientX,
+        originY: event.clientY,
+        lastY: event.clientY,
+        dragging: false,
+        capture: null
+      };
+    }, true);
+    innerDoc.addEventListener("pointermove", function (event) {
+      if (!drag || event.pointerId !== drag.id) return;
+      var dx = event.clientX - drag.originX;
+      var dy = event.clientY - drag.originY;
+      if (!drag.dragging) {
+        if (Math.abs(dx) < threshold && Math.abs(dy) < threshold) return;
+        // Do not turn an intentional horizontal gesture into a vertical scroll.
+        if (Math.abs(dy) <= Math.abs(dx)) { drag = null; return; }
+        drag.dragging = true;
+        // Do not capture a simple tap. Capture only after it becomes a real
+        // drag, so links and buttons retain their native click behaviour.
+        drag.capture = innerDoc.documentElement;
+        try { drag.capture.setPointerCapture(event.pointerId); } catch (error) {}
+      }
+      var step = drag.lastY - event.clientY;
+      if (step) inner.scrollTo({ top: inner.scrollY + step, behavior: "instant" });
+      drag.lastY = event.clientY;
+      innerDoc.documentElement.style.cursor = "grabbing";
+      try { inner.getSelection()?.removeAllRanges(); } catch (error) {}
+      event.preventDefault();
+    }, { capture: true, passive: false });
+    innerDoc.addEventListener("pointerup", finish, true);
+    innerDoc.addEventListener("pointercancel", finish, true);
+    innerDoc.addEventListener("click", function (event) {
+      if (!suppressClick) return;
+      suppressClick = false;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    }, true);
+  }
+  frame.addEventListener("load", enableMouseDragScroll);
+  stage.appendChild(frame);
+  shell.appendChild(stage);
+  doc.body.appendChild(shell);
+
+  function fit() {
+    var visual = win.visualViewport;
+    var width = visual ? visual.width : win.innerWidth;
+    var height = visual ? visual.height : win.innerHeight;
+    previewScale = Math.min(1, (width - PAD * 2) / PHONE_WIDTH, (height - PAD * 2) / PHONE_HEIGHT);
+    previewScale = Math.max(0.1, previewScale);
+    stage.style.width = (PHONE_WIDTH * previewScale) + "px";
+    stage.style.height = (PHONE_HEIGHT * previewScale) + "px";
+    frame.style.transform = "scale(" + previewScale + ")";
+  }
+
+  fit();
+  win.addEventListener("resize", fit, { passive: true });
+  if (win.visualViewport) win.visualViewport.addEventListener("resize", fit, { passive: true });
+
+  // Wheel events inside the iframe scroll the real phone page normally. When
+  // a reviewer is over the surrounding preview canvas, forward the gesture
+  // into that same page so the whole preview still behaves like one document.
+  shell.addEventListener("wheel", function (event) {
+    if (event.target !== shell && event.target !== stage) return;
+    if (!frame.contentWindow) return;
+    event.preventDefault();
+    frame.contentWindow.scrollTo({
+      top: frame.contentWindow.scrollY + event.deltaY / previewScale,
+      behavior: "instant"
+    });
+  }, { passive: false });
+})(window, document);
+</script>
 </body>
 </html>
 
