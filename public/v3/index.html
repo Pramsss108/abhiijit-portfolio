@@ -50,7 +50,32 @@
 
 <!-- Progressive-enhancement flag: scopes the reveal-hide rule to html.js so the
      page is NEVER permanently blank if JS is disabled or fails to load. -->
-<script>window.__apBootStart=performance.now();document.documentElement.classList.add('js');</script>
+<script>
+(function (win, root) {
+  var query = "(max-width: 820px), (max-width: 1024px) and (hover: none) and (pointer: coarse)";
+  var compact = false;
+  var preview = "";
+  var portrait = false;
+  try {
+    compact = win.matchMedia(query).matches;
+    portrait = win.matchMedia("(orientation: portrait)").matches;
+    preview = new URLSearchParams(win.location.search).get("preview") || "";
+  } catch (error) {}
+  // Local QA convenience: the outer preview shell and its real-phone iframe
+  // both use the compact bundle; neither changes real responsive visitors.
+  if (preview === "mobile" || preview === "mobile-frame") compact = true;
+  if (preview === "desktop") compact = false;
+  win.__apBootStart = performance.now();
+  win.__apCompact = compact;
+  win.__apPreviewLayout = preview === "mobile" || preview === "mobile-frame" || preview === "desktop" ? preview : "";
+  root.dataset.layout = compact ? "mobile" : "desktop";
+  if (win.__apPreviewLayout) root.dataset.preview = win.__apPreviewLayout;
+  else root.removeAttribute("data-preview");
+  if (preview === "mobile" || preview === "mobile-frame" || (compact && portrait)) root.dataset.mobilePortrait = "true";
+  else root.removeAttribute("data-mobile-portrait");
+  root.classList.add("js");
+})(window, document.documentElement);
+</script>
 
 <!-- Page-load intro: critical CSS so the curtain is opaque from the FIRST paint (no FOUC) -->
 <style>
@@ -61,8 +86,22 @@
   .intro-skip .intro__glyph,.intro-skip .intro__wordmark{opacity:1!important;transform:none!important;}
 </style>
 
-<!-- Optimized production design system. -->
-<link rel="stylesheet" href="/v3/styles.min.css?v=20260707h" />
+<!-- Layout-isolated production design system. Only the selected CSS bundle is
+     requested, so compact devices never inherit the desktop override chain. -->
+<script>
+(function (doc) {
+  var link = doc.createElement("link");
+  link.rel = "stylesheet";
+  link.id = "ap-layout-css";
+  link.href = window.__apCompact
+    ? "/v3/mobile.min.css?v=20260717m"
+    : "/v3/styles.min.css?v=20260707h";
+  doc.head.appendChild(link);
+})(document);
+</script>
+<noscript>
+  <link rel="stylesheet" href="/v3/styles.min.css?v=20260707h" />
+</noscript>
 
 <!-- Structured data: Person + WebSite + ProfilePage, one linked graph -->
 <script type="application/ld+json">
@@ -2079,7 +2118,16 @@ function apMobShowCopied(){
     <a class="site-footer__top" href="#top" aria-label="Back to top">Back to top ↑</a>
   </div>
 </footer>
-<script src="/v3/app.min.js?v=20260707g" defer></script>
+<script>
+(function (doc) {
+  var script = doc.createElement("script");
+  script.defer = true;
+  script.src = window.__apCompact
+    ? "/v3/mobile-app.min.js?v=20260717m"
+    : "/v3/app.min.js?v=20260707g";
+  doc.body.appendChild(script);
+})(document);
+</script>
 
 <!-- Mega-menu: keyboard / Escape / outside-click (hover + focus-within are pure CSS) -->
 <script>
@@ -2286,6 +2334,133 @@ function apMobShowCopied(){
   </div>
 </div>
 <script src="/v3/chat.js?v=20260707h" type="module"></script>
+<script>
+/* Desktop QA only: show a complete, scaled 430 x 932 phone artboard instead
+   of trying to force mobile viewport units into a short landscape browser. */
+(function (win, doc) {
+  var params;
+  try { params = new URLSearchParams(win.location.search); } catch (error) { return; }
+  if (params.get("preview") !== "mobile" || win.top !== win) return;
+
+  var PHONE_WIDTH = 430;
+  var PHONE_HEIGHT = 932;
+  var PAD = 12;
+  var previewScale = 1;
+  var shell = doc.createElement("div");
+  var stage = doc.createElement("div");
+  var frame = doc.createElement("iframe");
+
+  shell.id = "ap-mobile-preview-shell";
+  stage.id = "ap-mobile-preview-stage";
+  frame.id = "ap-mobile-preview-frame";
+  frame.title = "Abhijit Pramanik mobile portfolio preview";
+  frame.src = "/v3/?preview=mobile-frame#home";
+  // Keep the real phone document scrollable: the desktop preview is a live
+  // mobile browser, not a static poster.  This lets reviewers wheel/touch
+  // through Proof, Expertise and every section below the hero.
+  frame.setAttribute("loading", "eager");
+
+  function enableMouseDragScroll() {
+    var inner = frame.contentWindow;
+    var innerDoc = frame.contentDocument;
+    if (!inner || !innerDoc || innerDoc.documentElement.dataset.apPreviewDragReady === "true") return;
+    innerDoc.documentElement.dataset.apPreviewDragReady = "true";
+
+    var drag = null;
+    var suppressClick = false;
+    var threshold = 7;
+    function isEditable(node) {
+      return Boolean(node && node.closest && node.closest("input, textarea, select, [contenteditable='true']"));
+    }
+    function finish(event) {
+      if (!drag || (event && event.pointerId !== drag.id)) return;
+      var wasDragging = drag.dragging;
+      try { drag.capture?.releasePointerCapture(drag.id); } catch (error) {}
+      drag = null;
+      innerDoc.documentElement.style.cursor = "";
+      if (wasDragging) {
+        suppressClick = true;
+        win.setTimeout(function () { suppressClick = false; }, 0);
+      }
+    }
+
+    // A mouse behaves like a touch finger inside this preview: a tap still
+    // activates a control, while a clear vertical drag scrolls the live phone.
+    innerDoc.addEventListener("pointerdown", function (event) {
+      if (event.pointerType !== "mouse" || event.button !== 0 || !event.isPrimary || isEditable(event.target)) return;
+      drag = {
+        id: event.pointerId,
+        originX: event.clientX,
+        originY: event.clientY,
+        lastY: event.clientY,
+        dragging: false,
+        capture: null
+      };
+    }, true);
+    innerDoc.addEventListener("pointermove", function (event) {
+      if (!drag || event.pointerId !== drag.id) return;
+      var dx = event.clientX - drag.originX;
+      var dy = event.clientY - drag.originY;
+      if (!drag.dragging) {
+        if (Math.abs(dx) < threshold && Math.abs(dy) < threshold) return;
+        // Do not turn an intentional horizontal gesture into a vertical scroll.
+        if (Math.abs(dy) <= Math.abs(dx)) { drag = null; return; }
+        drag.dragging = true;
+        // Do not capture a simple tap. Capture only after it becomes a real
+        // drag, so links and buttons retain their native click behaviour.
+        drag.capture = innerDoc.documentElement;
+        try { drag.capture.setPointerCapture(event.pointerId); } catch (error) {}
+      }
+      var step = drag.lastY - event.clientY;
+      if (step) inner.scrollTo({ top: inner.scrollY + step, behavior: "instant" });
+      drag.lastY = event.clientY;
+      innerDoc.documentElement.style.cursor = "grabbing";
+      try { inner.getSelection()?.removeAllRanges(); } catch (error) {}
+      event.preventDefault();
+    }, { capture: true, passive: false });
+    innerDoc.addEventListener("pointerup", finish, true);
+    innerDoc.addEventListener("pointercancel", finish, true);
+    innerDoc.addEventListener("click", function (event) {
+      if (!suppressClick) return;
+      suppressClick = false;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    }, true);
+  }
+  frame.addEventListener("load", enableMouseDragScroll);
+  stage.appendChild(frame);
+  shell.appendChild(stage);
+  doc.body.appendChild(shell);
+
+  function fit() {
+    var visual = win.visualViewport;
+    var width = visual ? visual.width : win.innerWidth;
+    var height = visual ? visual.height : win.innerHeight;
+    previewScale = Math.min(1, (width - PAD * 2) / PHONE_WIDTH, (height - PAD * 2) / PHONE_HEIGHT);
+    previewScale = Math.max(0.1, previewScale);
+    stage.style.width = (PHONE_WIDTH * previewScale) + "px";
+    stage.style.height = (PHONE_HEIGHT * previewScale) + "px";
+    frame.style.transform = "scale(" + previewScale + ")";
+  }
+
+  fit();
+  win.addEventListener("resize", fit, { passive: true });
+  if (win.visualViewport) win.visualViewport.addEventListener("resize", fit, { passive: true });
+
+  // Wheel events inside the iframe scroll the real phone page normally. When
+  // a reviewer is over the surrounding preview canvas, forward the gesture
+  // into that same page so the whole preview still behaves like one document.
+  shell.addEventListener("wheel", function (event) {
+    if (event.target !== shell && event.target !== stage) return;
+    if (!frame.contentWindow) return;
+    event.preventDefault();
+    frame.contentWindow.scrollTo({
+      top: frame.contentWindow.scrollY + event.deltaY / previewScale,
+      behavior: "instant"
+    });
+  }, { passive: false });
+})(window, document);
+</script>
 </body>
 </html>
 

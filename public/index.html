@@ -211,6 +211,124 @@
 <body>
 
 <!-- ============================================================
+     MOBILE NOTICE BANNER
+     Shows on phones / small tablets only. Dismissible.
+     Inline CSS + JS so it works before any external resource loads.
+     ============================================================ -->
+<div id="ap-mob-notice" style="
+  display:none;
+  position:fixed;
+  bottom:0;left:0;right:0;
+  z-index:99999;
+  background:linear-gradient(135deg,#0f0f1a 0%,#1a1a2e 60%,#16213e 100%);
+  border-top:1px solid rgba(255,255,255,0.08);
+  padding:18px 20px 22px;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  box-shadow:0 -8px 40px rgba(0,0,0,0.55);
+  animation:ap-mob-slide-in 0.45s cubic-bezier(0.22,1,0.36,1) both;
+">
+  <style>
+    @keyframes ap-mob-slide-in{from{transform:translateY(100%);opacity:0}to{transform:translateY(0);opacity:1}}
+    #ap-mob-notice .ap-mob-icon{font-size:28px;line-height:1;margin-bottom:6px}
+    #ap-mob-notice .ap-mob-title{font-size:15px;font-weight:700;color:#fff;margin:0 0 5px;letter-spacing:-0.2px}
+    #ap-mob-notice .ap-mob-sub{font-size:12.5px;color:rgba(255,255,255,0.62);margin:0 0 14px;line-height:1.5}
+    #ap-mob-notice .ap-mob-sub strong{color:rgba(255,255,255,0.85);font-weight:600}
+    #ap-mob-notice .ap-mob-actions{display:flex;gap:10px;flex-wrap:wrap}
+    #ap-mob-notice .ap-mob-btn{
+      display:inline-flex;align-items:center;gap:6px;
+      padding:9px 16px;border-radius:10px;font-size:13px;font-weight:600;
+      cursor:pointer;border:none;outline:none;transition:opacity 0.18s,transform 0.18s;
+      text-decoration:none;
+    }
+    #ap-mob-notice .ap-mob-btn:active{opacity:0.75;transform:scale(0.97)}
+    #ap-mob-notice .ap-mob-btn-primary{background:linear-gradient(135deg,#6c63ff,#a78bfa);color:#fff}
+    #ap-mob-notice .ap-mob-btn-ghost{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.75);border:1px solid rgba(255,255,255,0.12)}
+    #ap-mob-notice .ap-mob-close{
+      position:absolute;top:12px;right:14px;
+      background:rgba(255,255,255,0.07);border:none;
+      color:rgba(255,255,255,0.5);font-size:18px;line-height:1;
+      width:28px;height:28px;border-radius:50%;cursor:pointer;
+      display:flex;align-items:center;justify-content:center;
+      transition:background 0.18s,color 0.18s;
+    }
+    #ap-mob-notice .ap-mob-close:hover{background:rgba(255,255,255,0.14);color:#fff}
+    #ap-mob-notice .ap-mob-copy-flash{
+      font-size:11px;color:#6ee7b7;margin-left:4px;
+      opacity:0;transition:opacity 0.3s;
+    }
+    #ap-mob-notice .ap-mob-copy-flash.show{opacity:1}
+  </style>
+  <button class="ap-mob-close" id="ap-mob-close-btn" aria-label="Dismiss notice">✕</button>
+  <div class="ap-mob-icon">💻</div>
+  <p class="ap-mob-title">You're on mobile — some things look broken here.</p>
+  <p class="ap-mob-sub">
+    This portfolio is designed for <strong>desktop or laptop screens</strong> where the full layout, proof gallery and videos show properly.<br>
+    On mobile the CSS layout breaks and you'll miss the best parts.
+  </p>
+  <div class="ap-mob-actions">
+    <button class="ap-mob-btn ap-mob-btn-primary" id="ap-mob-copy-btn" onclick="apMobCopyLink()">
+      <span>📋</span> Copy link to open on desktop
+      <span class="ap-mob-copy-flash" id="ap-mob-copy-flash">Copied!</span>
+    </button>
+    <button class="ap-mob-btn ap-mob-btn-ghost" id="ap-mob-continue-btn" onclick="apMobDismiss()">
+      Continue anyway
+    </button>
+  </div>
+</div>
+<script>
+(function(){
+  // Only show on actual mobile / small tablets (width <= 900px AND touch device)
+  var isMobile = (window.innerWidth <= 900) && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+  if(!isMobile) return;
+
+  // Don't show again if user already dismissed in this session
+  try{ if(sessionStorage.getItem('ap_mob_dismissed')==='1') return; }catch(e){}
+
+  var el = document.getElementById('ap-mob-notice');
+  if(el) el.style.display = 'block';
+
+  // Push page content up so banner doesn't overlap footer CTAs
+  document.body.style.paddingBottom = (el ? el.offsetHeight + 8 : 150) + 'px';
+
+  document.getElementById('ap-mob-close-btn').addEventListener('click', apMobDismiss);
+})();
+
+function apMobDismiss(){
+  try{ sessionStorage.setItem('ap_mob_dismissed','1'); }catch(e){}
+  var el = document.getElementById('ap-mob-notice');
+  if(!el) return;
+  el.style.transition = 'transform 0.35s cubic-bezier(0.55,0,1,0.45), opacity 0.35s';
+  el.style.transform = 'translateY(100%)';
+  el.style.opacity = '0';
+  document.body.style.paddingBottom = '';
+  setTimeout(function(){ el.style.display = 'none'; }, 380);
+}
+
+function apMobCopyLink(){
+  var url = window.location.href;
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(url).then(apMobShowCopied, apMobFallbackCopy.bind(null,url));
+  } else {
+    apMobFallbackCopy(url);
+  }
+}
+function apMobFallbackCopy(url){
+  var ta = document.createElement('textarea');
+  ta.value = url; ta.style.position='fixed'; ta.style.opacity='0';
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  try{ document.execCommand('copy'); apMobShowCopied(); }catch(e){}
+  document.body.removeChild(ta);
+}
+function apMobShowCopied(){
+  var f = document.getElementById('ap-mob-copy-flash');
+  if(!f) return;
+  f.classList.add('show');
+  setTimeout(function(){ f.classList.remove('show'); }, 2200);
+}
+</script>
+
+
+<!-- ============================================================
      PAGE-LOAD INTRO — logo reveal + curtain wipe (first paint).
      ============================================================ -->
 <script>
