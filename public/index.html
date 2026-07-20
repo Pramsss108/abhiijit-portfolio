@@ -313,6 +313,10 @@
 </div>
 <script>
 (function(){
+  // Skip entirely when the dedicated mobile design is active —
+  // the mobile layout is a proper premium experience, not a broken desktop.
+  if(window.__apCompact) return;
+
   // Only show on actual mobile / small tablets (width <= 900px AND touch device)
   var isMobile = (window.innerWidth <= 900) && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
   if(!isMobile) return;
