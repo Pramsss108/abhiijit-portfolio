@@ -25,6 +25,7 @@ const required = [
   "index.html", "privacy.html", "404.html", "robots.txt", "sitemap.xml", "llms.txt", "manifest.json",
   "abhijit-pramanik-resume.pdf",
   "CNAME", "v3/styles.min.css", "v3/app.min.js", "v3/chat.js", "v3/vendor/chart.umd.min.js",
+  "v3/mobile.css", "v3/mobile.min.css", "v3/mobile-app.js", "v3/mobile-app.min.js",
   "images/brand/favicon.ico", "images/brand/apple-touch-icon-180.png",
   "images/brand/pwa-icon-192.png", "images/brand/pwa-icon-512.png",
 ];
